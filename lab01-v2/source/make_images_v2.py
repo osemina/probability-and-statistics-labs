@@ -141,7 +141,7 @@ def figure_types_of_data():
     card(ax, 4.95, 0.2, 2.5, 1.8, SURF, r=0.08)
     ax.text(6.2, 1.72, "Examples", ha="center", fontproperties=F("Montserrat", 700, 10), color=NAVY)
     for i, e in enumerate(["marital status: single, married, divorced",
-                           "political party", "eye colour: blue, green, brown"]):
+                           "political party", "eye color: blue, green, brown"]):
         ax.text(6.2, 1.3 - i * 0.3, e, ha="center", fontproperties=F("OpenSans", 400, 8.2), color=INK)
     fig.savefig(os.path.join(OUT, "fig2_types_of_data.png"), dpi=200, facecolor=WHITE)
     plt.close(fig)
