@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=600" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 600px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 600px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .title { font: 700 28px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .day { font: 600 21px "Open Sans"; color: #3c4043; width: 160px; text-align: center; }
+      .bar { width: 4px; border-radius: 2px 2px 0 0; background: #c39a3d; }
+      .fbar { width: 4px; border-radius: 2px 2px 0 0; background: #9aa5b1; }
+      .lbl { font: 600 23px "Open Sans"; white-space: nowrap; }
+      .muted { font: 400 20px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      #count { font: 600 26px "Open Sans"; color: #202020; white-space: nowrap; }
+      #proc { left: 80px; top: 470px; width: 1480px; border-left: 4px solid #b3473a; background: #f7f7f5; padding: 16px 22px; font: 400 23px "Open Sans"; color: #202020; }
+      #proc b { color: #b3473a; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="10" data-width="1640" data-height="600">
+      <div id="scene" class="clip abs" data-start="0" data-duration="10" style="left:0;top:0;width:1640px;height:600px">
+        <div class="title abs" style="left:80px;top:28px">Orders keep arriving at the restaurant</div>
+        <div id="count" class="abs" style="left:1210px;top:30px">Orders timed: 0</div>
+        <div class="muted abs" style="left:80px;top:76px">Each bar is one order; its height is the delivery time.</div>
+        <div class="abs" style="left:80px;top:360px;width:1120px;height:3px;background:#3c4043"></div>
+        <div class="abs" style="left:1200px;top:360px;width:360px;height:0;border-top:3px dashed #9aa5b1"></div>
+        <div id="days"></div>
+        <div id="bars"></div>
+        <div id="brace" class="abs" style="left:80px;top:150px;width:1120px;height:16px;border:3px solid #003e67;border-bottom:none;opacity:0"></div>
+        <div id="sampleLbl" class="lbl abs" style="left:300px;top:112px;color:#003e67;opacity:0">Sample: the 2,109 orders timed in these 7 days (n = 2,109)</div>
+        <div id="futLbl" class="muted abs" style="left:1225px;top:150px;opacity:0">Next week: orders not placed yet</div>
+        <div id="proc" class="abs" style="opacity:0"><b>Process:</b> every order this restaurant will ever deliver. It never stops, so we cannot list all of it; we study a sample instead.</div>
+      </div>
+    </div>
+    <script>
+      let seed = 5;
+      const rand = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
+      const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+      const days = document.getElementById("days");
+      DAYS.forEach((d, i) => {
+        const el = document.createElement("div");
+        el.className = "day abs"; el.style.left = 80 + i * 160 + "px"; el.style.top = 372 + "px"; el.textContent = d;
+        days.appendChild(el);
+      });
+      const nxt = document.createElement("div");
+      nxt.className = "day abs"; nxt.style.left = "1220px"; nxt.style.top = "372px"; nxt.style.width = "320px";
+      nxt.style.color = "#5f6368"; nxt.textContent = "Mon   Tue   Wed  ...";
+      days.appendChild(nxt);
+
+      const bars = document.getElementById("bars");
+      const make = (cls, x) => {
+        const h = 40 + rand() * 120;
+        const b = document.createElement("div");
+        b.className = cls + " abs"; b.style.left = x + "px"; b.style.top = 360 - h + "px"; b.style.height = h + "px";
+        b.style.opacity = 0; bars.appendChild(b); return b;
+      };
+      const sample = [];
+      for (let i = 0; i < 7 * 26; i++) sample.push(make("bar", 86 + i * 6.1 + (i % 26 === 0 ? 0 : 0)));
+      const future = [];
+      for (let i = 0; i < 56; i++) future.push(make("fbar", 1210 + i * 6.1));
+
+      const tl = gsap.timeline({ paused: true });
+      const SWEEP = 5.0;
+      sample.forEach((b, i) => {
+        const t = 0.4 + (i / sample.length) * SWEEP;
+        tl.fromTo(b, { opacity: 0, scaleY: 0, transformOrigin: "50% 100%" }, { opacity: 1, scaleY: 1, duration: 0.25 }, t);
+      });
+      const counter = { n: 0 };
+      const countEl = document.getElementById("count");
+      tl.to(counter, {
+        n: 2109, duration: SWEEP, ease: "none",
+        onUpdate: () => { countEl.textContent = "Orders timed: " + Math.round(counter.n).toLocaleString("en-US"); }
+      }, 0.4);
+      tl.to("#brace", { opacity: 1, duration: 0.4 }, 5.7);
+      tl.to("#sampleLbl", { opacity: 1, duration: 0.4 }, 5.8);
+      future.forEach((b, i) => tl.fromTo(b, { opacity: 0, scaleY: 0, transformOrigin: "50% 100%" }, { opacity: 0.8, scaleY: 1, duration: 0.25 }, 6.4 + i * 0.03));
+      tl.to("#futLbl", { opacity: 1, duration: 0.4 }, 6.6);
+      tl.fromTo("#proc", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5 }, 8.0);
+      tl.to({}, { duration: 0.01 }, 9.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

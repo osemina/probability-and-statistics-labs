@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=720" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 720px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 720px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .step { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step.off { color: #8d959e; }
+      .step.on { color: #003e67; }
+      .panel { background: #f7f7f5; border-radius: 24px; }
+      .ptitle { font: 700 28px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .muted { font: 400 22px "Open Sans"; color: #6b6b6b; }
+      .dot { width: 14px; height: 22px; border-radius: 5px 5px 4px 4px; background: #c9d6e3; }
+      .gold { background: #c39a3d; }
+      .slot { width: 18px; height: 30px; border-radius: 6px 6px 5px 5px; border: 2px solid #d8dee5; }
+      .fly { width: 18px; height: 30px; border-radius: 6px 6px 5px 5px; background: #c39a3d; opacity: 0; }
+      .arrow { height: 6px; border-radius: 3px; }
+      .head { width: 0; height: 0; border-top: 14px solid transparent; border-bottom: 14px solid transparent; }
+      .label { font: 600 24px "Open Sans"; white-space: nowrap; }
+      #stat { left: 1040px; top: 460px; width: 560px; height: 140px; border: 3px solid #c39a3d; border-radius: 18px; background: #fff; padding: 24px 28px; }
+      #stat p { font: 600 25px "Open Sans"; }
+      #stat p + p { font-weight: 400; margin-top: 12px; }
+      .xbar { position: relative; display: inline-block; } .xbar::before { content: ""; position: absolute; left: 1px; right: 0; top: 4px; height: 2px; background: #202020; }
+      #inf { left: 1040px; top: 625px; width: 560px; font: 600 25px "Open Sans"; color: #b3473a; line-height: 1.35; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="9" data-width="1640" data-height="720">
+      <div id="scene" class="clip abs" data-start="0" data-duration="9" style="left:0;top:0;width:1640px;height:720px">
+        <!-- step indicator: grey copy underneath, navy copy fades in when the step is active -->
+        <div data-layout-allow-overlap class="step off abs" style="left:50px;top:28px">1&nbsp; Population</div>
+        <div data-layout-allow-overlap class="step off abs" style="left:440px;top:28px">2&nbsp; Sample</div>
+        <div data-layout-allow-overlap class="step off abs" style="left:830px;top:28px">3&nbsp; Statistic</div>
+        <div data-layout-allow-overlap class="step off abs" style="left:1220px;top:28px">4&nbsp; Inference</div>
+        <div id="s1" data-layout-allow-overlap class="step on abs" style="left:50px;top:28px">1&nbsp; Population</div>
+        <div id="s2" data-layout-allow-overlap class="step on abs" style="left:440px;top:28px;opacity:0">2&nbsp; Sample</div>
+        <div id="s3" data-layout-allow-overlap class="step on abs" style="left:830px;top:28px;opacity:0">3&nbsp; Statistic</div>
+        <div id="s4" data-layout-allow-overlap class="step on abs" style="left:1220px;top:28px;opacity:0">4&nbsp; Inference</div>
+
+        <div class="panel abs" style="left:40px;top:100px;width:820px;height:480px"></div>
+        <div class="ptitle abs" style="left:80px;top:128px">POPULATION: all 2,440 bottles&nbsp; (N = 2,440)</div>
+        <div id="grid"></div>
+        <div id="cap1" class="muted abs" style="left:80px;top:600px">Choosing 50 bottles at random</div>
+
+        <div id="selArrow" class="abs" style="left:880px;top:252px;width:150px;height:30px;opacity:0">
+          <div class="arrow abs" style="left:0;top:12px;width:126px;background:#003e67"></div>
+          <div class="head abs" style="left:122px;top:1px;border-left:26px solid #003e67"></div>
+        </div>
+        <div id="selLabel" class="label abs" style="left:916px;top:212px;color:#003e67;opacity:0">select</div>
+
+        <div class="panel abs" style="left:1040px;top:100px;width:560px;height:330px"></div>
+        <div class="ptitle abs" style="left:1080px;top:128px">SAMPLE: 50 bottles&nbsp; (n = 50)</div>
+        <div id="slots"></div>
+        <div id="flyers"></div>
+
+        <div id="stat" class="abs" style="opacity:0">
+          <p>Statistic: mean volume of the 50 bottles</p>
+          <p><span class="xbar">x</span> = 497.6 ml &nbsp;&nbsp;(label: 500 ml)</p>
+        </div>
+
+        <div id="infArrow" class="abs" style="left:880px;top:548px;width:150px;height:30px;opacity:0">
+          <div class="head abs" style="left:0;top:1px;border-right:26px solid #b3473a"></div>
+          <div class="arrow abs" style="left:24px;top:12px;width:126px;background:#b3473a"></div>
+        </div>
+        <div id="infLabel" class="label abs" style="left:926px;top:508px;color:#b3473a;opacity:0">infer</div>
+        <div id="inf" class="abs" style="opacity:0">Inference: the whole delivery is probably under-filled, so send it back.</div>
+      </div>
+    </div>
+    <script>
+      // Deterministic layout: seeded pseudo-random choice of the 50 sampled cans.
+      let seed = 7;
+      const rand = () => ((seed = (seed * 1103515245 + 12345) % 2147483648) / 2147483648);
+      const COLS = 26, ROWS = 12, X0 = 82, Y0 = 196, STEP = 29;
+      const grid = document.getElementById("grid");
+      const dots = [];
+      for (let i = 0; i < COLS * ROWS; i++) {
+        const d = document.createElement("div");
+        d.className = "dot abs";
+        d.style.left = X0 + (i % COLS) * STEP + "px";
+        d.style.top = Y0 + Math.floor(i / COLS) * STEP + "px";
+        grid.appendChild(d);
+        dots.push(d);
+      }
+      const order = [...Array(COLS * ROWS).keys()];
+      for (let i = order.length - 1; i > 0; i--) {
+        const j = Math.floor(rand() * (i + 1));
+        [order[i], order[j]] = [order[j], order[i]];
+      }
+      const picked = order.slice(0, 50);
+      const slots = document.getElementById("slots");
+      const flyers = document.getElementById("flyers");
+      const fly = [];
+      const gold = [];
+      picked.forEach((idx, k) => {
+        const sx = 1090 + (k % 10) * 46, sy = 186 + Math.floor(k / 10) * 46;
+        const s = document.createElement("div");
+        s.className = "slot abs"; s.style.left = sx + "px"; s.style.top = sy + "px";
+        slots.appendChild(s);
+        const f = document.createElement("div");
+        const px = X0 + (idx % COLS) * STEP - 2, py = Y0 + Math.floor(idx / COLS) * STEP - 4;
+        f.className = "fly abs"; f.style.left = px + "px"; f.style.top = py + "px";
+        f.dataset.dx = sx - px; f.dataset.dy = sy - py;
+        flyers.appendChild(f);
+        fly.push(f);
+        const g = document.createElement("div");
+        g.className = "dot gold abs"; g.style.opacity = 0;
+        g.style.left = X0 + (idx % COLS) * STEP + "px"; g.style.top = Y0 + Math.floor(idx / COLS) * STEP + "px";
+        grid.appendChild(g);
+        gold.push(g);
+      });
+
+      const tl = gsap.timeline({ paused: true });
+      tl.to("#selArrow", { opacity: 1, duration: 0.4 }, 0.5);
+      tl.to("#selLabel", { opacity: 1, duration: 0.4 }, 0.5);
+      tl.to("#s2", { opacity: 1, duration: 0.3 }, 0.6);
+      picked.forEach((idx, k) => {
+        const t = 0.8 + k * 0.06;
+        // the can lights up in the population, then a copy travels into its slot in the sample
+        tl.set(gold[k], { opacity: 1 }, t);
+        tl.fromTo(gold[k], { scale: 1.4 }, { scale: 1, duration: 0.3 }, t);
+        tl.set(fly[k], { opacity: 1 }, t + 0.1);
+        tl.to(fly[k], { x: +fly[k].dataset.dx, y: +fly[k].dataset.dy, duration: 0.6, ease: "power2.inOut" }, t + 0.1);
+      });
+      tl.to("#cap1", { opacity: 0, duration: 0.3 }, 4.4);
+      tl.to("#s3", { opacity: 1, duration: 0.3 }, 4.6);
+      tl.fromTo("#stat", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, 4.6);
+      tl.to("#s4", { opacity: 1, duration: 0.3 }, 6.0);
+      tl.to("#infArrow", { opacity: 1, duration: 0.4 }, 6.0);
+      tl.to("#infLabel", { opacity: 1, duration: 0.4 }, 6.0);
+      tl.fromTo("#inf", { opacity: 0, x: -20 }, { opacity: 1, x: 0, duration: 0.5 }, 6.3);
+      tl.to({}, { duration: 0.01 }, 8.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

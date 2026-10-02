@@ -25,3 +25,13 @@ IBU 014 Probability and Statistics at International Burch University.
 | `lab01-v2/images/fig3_who_answered_hf.gif` | Figure 3, who answered the survey (HyperFrames animation, Problem 4) |
 | `lab01-v2/hyperframes/` | HyperFrames compositions for Figures 1 and 3. Render with `npx hyperframes render`, then convert to GIF with ffmpeg; fonts (Montserrat, Open Sans) go in `assets/` |
 | `lab01-v2/source/make_images_v2.py` | Script that generates these figures |
+
+## Lab 1, improved version 2 (FENMS 0021, relatable scenarios)
+
+| File | Used in |
+|---|---|
+| `lab01-v3/images/fig1_cafe_population_to_inference.gif` | Figure 1, café bottles: population, sample, statistic, inference (HyperFrames) |
+| `lab01-v3/images/fig2_types_of_data.png` | Figure 2, types of data |
+| `lab01-v3/images/fig3_who_answered.gif` | Figure 3, who answered the social-media survey (HyperFrames) |
+| `lab01-v3/images/fig4_process_orders.gif` | Figure 4, delivery orders as a process (HyperFrames) |
+| `lab01-v3/hyperframes/` | HyperFrames compositions; fonts (Montserrat, Open Sans) go in `assets/` before rendering |
