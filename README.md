@@ -20,7 +20,8 @@ IBU 014 Probability and Statistics at International Burch University.
 
 | File | Used in |
 |---|---|
-| `lab01-v2/images/fig1_population_to_inference_v2.gif` | Figure 1, from population to inference (animated, Problem 1) |
+| `lab01-v2/images/fig1_population_to_inference_hf.gif` | Figure 1, from population to inference (HyperFrames animation, Problem 1) |
 | `lab01-v2/images/fig2_types_of_data.png` | Figure 2, types of data |
-| `lab01-v2/images/fig3_who_answered.png` | Figure 3, who answered the survey (Problem 4) |
+| `lab01-v2/images/fig3_who_answered_hf.gif` | Figure 3, who answered the survey (HyperFrames animation, Problem 4) |
+| `lab01-v2/hyperframes/` | HyperFrames compositions for Figures 1 and 3. Render with `npx hyperframes render`, then convert to GIF with ffmpeg; fonts (Montserrat, Open Sans) go in `assets/` |
 | `lab01-v2/source/make_images_v2.py` | Script that generates these figures |
