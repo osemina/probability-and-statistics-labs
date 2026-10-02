@@ -94,9 +94,12 @@ def gif_population_to_inference():
         frames.append(to_pil(fig))
         durs.append(450 if not show_s else 1800)
     durs[-1] = 4500
-    pal = frames[-1].quantize(colors=64, method=Image.Quantize.MEDIANCUT)
+    # Start on the finished diagram so a printout or PDF shows the full picture.
+    frames = [frames[-1]] + frames[:-1]
+    durs = [3500] + durs[:-1]
+    pal = frames[0].quantize(colors=64, method=Image.Quantize.MEDIANCUT)
     q = [fr.quantize(palette=pal, dither=Image.Dither.NONE) for fr in frames]
-    q[0].save(os.path.join(OUT, "fig1_population_to_inference.gif"), save_all=True, append_images=q[1:],
+    q[0].save(os.path.join(OUT, "fig1_population_to_inference_v2.gif"), save_all=True, append_images=q[1:],
               duration=durs, loop=0, optimize=True, disposal=1)
 
 

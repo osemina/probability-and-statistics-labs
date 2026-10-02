@@ -20,7 +20,7 @@ IBU 014 Probability and Statistics at International Burch University.
 
 | File | Used in |
 |---|---|
-| `lab01-v2/images/fig1_population_to_inference.gif` | Figure 1, from population to inference (animated, Problem 1) |
+| `lab01-v2/images/fig1_population_to_inference_v2.gif` | Figure 1, from population to inference (animated, Problem 1) |
 | `lab01-v2/images/fig2_types_of_data.png` | Figure 2, types of data |
 | `lab01-v2/images/fig3_who_answered.png` | Figure 3, who answered the survey (Problem 4) |
 | `lab01-v2/source/make_images_v2.py` | Script that generates these figures |
