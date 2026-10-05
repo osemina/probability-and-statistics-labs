@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      .dot { width: 36px; height: 36px; border-radius: 50%; background: #c9d6e3; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="15" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="15" style="left:0;top:0;width:1640px;height:740px">
+        <div class="abs card" style="left:50px;top:70px;width:640px;height:640px"></div>
+        <div class="abs"><div class="abs dot spot" style="left:105px;top:125px"></div><div class="abs dot spot" style="left:159px;top:125px"></div><div class="abs dot spot" style="left:213px;top:125px"></div><div class="abs dot spot" style="left:267px;top:125px"></div><div class="abs dot spot" style="left:321px;top:125px"></div><div class="abs dot spot" style="left:375px;top:125px"></div><div class="abs dot spot" style="left:429px;top:125px"></div><div class="abs dot spot" style="left:483px;top:125px"></div><div class="abs dot spot" style="left:537px;top:125px"></div><div class="abs dot spot" style="left:591px;top:125px"></div><div class="abs dot spot" style="left:105px;top:179px"></div><div class="abs dot spot" style="left:159px;top:179px"></div><div class="abs dot spot" style="left:213px;top:179px"></div><div class="abs dot spot" style="left:267px;top:179px"></div><div class="abs dot spot" style="left:321px;top:179px"></div><div class="abs dot spot" style="left:375px;top:179px"></div><div class="abs dot spot" style="left:429px;top:179px"></div><div class="abs dot spot" style="left:483px;top:179px"></div><div class="abs dot spot" style="left:537px;top:179px"></div><div class="abs dot spot" style="left:591px;top:179px"></div><div class="abs dot spot" style="left:105px;top:233px"></div><div class="abs dot spot" style="left:159px;top:233px"></div><div class="abs dot spot" style="left:213px;top:233px"></div><div class="abs dot spot" style="left:267px;top:233px"></div><div class="abs dot spot" style="left:321px;top:233px"></div><div class="abs dot spot" style="left:375px;top:233px"></div><div class="abs dot spot" style="left:429px;top:233px"></div><div class="abs dot spot" style="left:483px;top:233px"></div><div class="abs dot spot" style="left:537px;top:233px"></div><div class="abs dot spot" style="left:591px;top:233px"></div><div class="abs dot spot" style="left:105px;top:287px"></div><div class="abs dot spot" style="left:159px;top:287px"></div><div class="abs dot spot" style="left:213px;top:287px"></div><div class="abs dot spot" style="left:267px;top:287px"></div><div class="abs dot spot" style="left:321px;top:287px"></div><div class="abs dot spot" style="left:375px;top:287px"></div><div class="abs dot spot" style="left:429px;top:287px"></div><div class="abs dot spot" style="left:483px;top:287px"></div><div class="abs dot spot" style="left:537px;top:287px"></div><div class="abs dot spot" style="left:591px;top:287px"></div><div class="abs dot spot" style="left:105px;top:341px"></div><div class="abs dot spot" style="left:159px;top:341px"></div><div class="abs dot spot" style="left:213px;top:341px"></div><div class="abs dot spot" style="left:267px;top:341px"></div><div class="abs dot spot" style="left:321px;top:341px"></div><div class="abs dot spot" style="left:375px;top:341px"></div><div class="abs dot spot" style="left:429px;top:341px"></div><div class="abs dot spot" style="left:483px;top:341px"></div><div class="abs dot spot" style="left:537px;top:341px"></div><div class="abs dot spot" style="left:591px;top:341px"></div><div class="abs dot spot both" style="left:105px;top:395px"></div><div class="abs dot spot both" style="left:159px;top:395px"></div><div class="abs dot spot both" style="left:213px;top:395px"></div><div class="abs dot spot both" style="left:267px;top:395px"></div><div class="abs dot spot both" style="left:321px;top:395px"></div><div class="abs dot spot both" style="left:375px;top:395px"></div><div class="abs dot spot both" style="left:429px;top:395px"></div><div class="abs dot spot both" style="left:483px;top:395px"></div><div class="abs dot spot both" style="left:537px;top:395px"></div><div class="abs dot spot both" style="left:591px;top:395px"></div><div class="abs dot spot both" style="left:105px;top:449px"></div><div class="abs dot spot both" style="left:159px;top:449px"></div><div class="abs dot spot both" style="left:213px;top:449px"></div><div class="abs dot spot both" style="left:267px;top:449px"></div><div class="abs dot spot both" style="left:321px;top:449px"></div><div class="abs dot spot both" style="left:375px;top:449px"></div><div class="abs dot spot both" style="left:429px;top:449px"></div><div class="abs dot spot both" style="left:483px;top:449px"></div><div class="abs dot spot both" style="left:537px;top:449px"></div><div class="abs dot spot both" style="left:591px;top:449px"></div><div class="abs dot nonly out" style="left:105px;top:503px"></div><div class="abs dot nonly out" style="left:159px;top:503px"></div><div class="abs dot nonly out" style="left:213px;top:503px"></div><div class="abs dot nonly out" style="left:267px;top:503px"></div><div class="abs dot nonly out" style="left:321px;top:503px"></div><div class="abs dot nonly out" style="left:375px;top:503px"></div><div class="abs dot nonly out" style="left:429px;top:503px"></div><div class="abs dot nonly out" style="left:483px;top:503px"></div><div class="abs dot nonly out" style="left:537px;top:503px"></div><div class="abs dot nonly out" style="left:591px;top:503px"></div><div class="abs dot nonly out" style="left:105px;top:557px"></div><div class="abs dot nonly out" style="left:159px;top:557px"></div><div class="abs dot nonly out" style="left:213px;top:557px"></div><div class="abs dot nonly out" style="left:267px;top:557px"></div><div class="abs dot nonly out" style="left:321px;top:557px"></div><div class="abs dot nonly out" style="left:375px;top:557px"></div><div class="abs dot nonly out" style="left:429px;top:557px"></div><div class="abs dot nonly out" style="left:483px;top:557px"></div><div class="abs dot nonly out" style="left:537px;top:557px"></div><div class="abs dot nonly out" style="left:591px;top:557px"></div><div class="abs dot out" style="left:105px;top:611px"></div><div class="abs dot out" style="left:159px;top:611px"></div><div class="abs dot out" style="left:213px;top:611px"></div><div class="abs dot out" style="left:267px;top:611px"></div><div class="abs dot out" style="left:321px;top:611px"></div><div class="abs dot out" style="left:375px;top:611px"></div><div class="abs dot out" style="left:429px;top:611px"></div><div class="abs dot out" style="left:483px;top:611px"></div><div class="abs dot out" style="left:537px;top:611px"></div><div class="abs dot out" style="left:591px;top:611px"></div></div>
+        <div id="frame" class="abs" style="left:91px;top:111px;width:552px;height:390px;border-radius:18px;border:5px solid #c39a3d;opacity:0"></div>
+        <div class="lbl abs" style="left:780px;top:70px;color:#c39a3d;font-size:22px;letter-spacing:2px">CONDITIONAL PROBABILITY</div>
+        <div class="lbl abs" style="left:780px;top:106px;color:#003e67;font-size:34px">&#8220;Given&#8221; shrinks the sample space</div>
+        <div id="s0" class="abs" style="left:780px;top:220px;width:820px;opacity:0">
+          <div class="lbl" style="color:#003e67;font-size:30px">100 students are surveyed</div>
+          <div class="rt" style="margin-top:22px;font-size:26px;line-height:1.45;color:#202020">Each dot is one student. Pick one at random.</div>
+          <div class="eq" style="margin-top:30px;font-size:38px"></div>
+        </div>
+        <div id="s1" class="abs" style="left:780px;top:220px;width:820px;opacity:0">
+          <div class="lbl" style="color:#003e67;font-size:30px">Spotify users: 70</div>
+          <div class="rt" style="margin-top:22px;font-size:26px;line-height:1.45;color:#202020"><span style="color:#003e67">&#9679;</span> uses Spotify (S)</div>
+          <div class="eq" style="margin-top:30px;font-size:38px">P(S) = 70/100 = 0.70</div>
+        </div>
+        <div id="s2" class="abs" style="left:780px;top:220px;width:820px;opacity:0">
+          <div class="lbl" style="color:#003e67;font-size:30px">Netflix users: 40</div>
+          <div class="rt" style="margin-top:22px;font-size:26px;line-height:1.45;color:#202020"><span style="color:#c39a3d">&#9679;</span> Spotify and Netflix: 20&#8195;<span style="color:#e8cf8f">&#9679;</span> Netflix only: 20</div>
+          <div class="eq" style="margin-top:30px;font-size:38px">P(N) = 40/100 = 0.40</div>
+        </div>
+        <div id="s3" class="abs" style="left:780px;top:220px;width:820px;opacity:0">
+          <div class="lbl" style="color:#003e67;font-size:30px">We are told: the student uses Spotify</div>
+          <div class="rt" style="margin-top:22px;font-size:26px;line-height:1.45;color:#202020">Everyone outside S is now impossible. The new sample space has only 70 students.</div>
+          <div class="eq" style="margin-top:30px;font-size:38px"></div>
+        </div>
+        <div id="s4" class="abs" style="left:780px;top:220px;width:820px;opacity:0">
+          <div class="lbl" style="color:#003e67;font-size:30px">Netflix, given Spotify</div>
+          <div class="rt" style="margin-top:22px;font-size:26px;line-height:1.45;color:#202020">Of the 70 Spotify users, 20 also use Netflix.</div>
+          <div class="eq" style="margin-top:30px;font-size:38px">P(N | S) = 20/70 &#8776; 0.29</div>
+        </div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.from(".dot", { scale: 0, duration: 0.4, stagger: 0.006, ease: "back.out(2)" }, 0.2);
+      tl.to("#s0", { opacity: 1, duration: 0.4 }, 0.4);
+      tl.to("#s0", { opacity: 0, duration: 0.3 }, 2.4499999999999997);
+      tl.to("#s1", { opacity: 1, duration: 0.4 }, 2.8);
+      tl.to("#s1", { opacity: 0, duration: 0.3 }, 5.050000000000001);
+      tl.to("#s2", { opacity: 1, duration: 0.4 }, 5.4);
+      tl.to("#s2", { opacity: 0, duration: 0.3 }, 7.85);
+      tl.to("#s3", { opacity: 1, duration: 0.4 }, 8.2);
+      tl.to("#s3", { opacity: 0, duration: 0.3 }, 10.65);
+      tl.to("#s4", { opacity: 1, duration: 0.4 }, 11.0);
+      tl.to(".spot", { backgroundColor: "#003e67", duration: 0.4, stagger: 0.004 }, 3.0);
+      tl.to(".both", { backgroundColor: "#c39a3d", duration: 0.4, stagger: 0.01 }, 5.6);
+      tl.to(".nonly", { backgroundColor: "#e8cf8f", duration: 0.4, stagger: 0.01 }, 5.8);
+      tl.to(".out", { opacity: 0.12, scale: 0.7, duration: 0.6 }, 8.4);
+      tl.to("#frame", { opacity: 1, duration: 0.5 }, 8.7);
+      tl.to(".spot:not(.both)", { opacity: 0.4, duration: 0.4 }, 11.1);
+      tl.to(".both", { scale: 1.18, duration: 0.3, yoyo: true, repeat: 1 }, 11.2);
+
+      tl.to({}, { duration: 0.01 }, 14.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="2" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="2" style="left:0;top:0;width:1640px;height:740px">
+        <svg class="abs" style="left:0;top:0" width="1640" height="740" viewBox="0 0 1640 740">
+          <rect x="60" y="40" width="1060" height="660" rx="26" fill="#fff" stroke="#003e67" stroke-width="4"/>
+          <text x="95" y="100" font-family="Montserrat" font-weight="700" font-size="40" fill="#003e67">S</text>
+          <circle cx="400" cy="380" r="220" fill="#dce5ee" fill-opacity="0.9" stroke="#1f5f99" stroke-width="4"/>
+          <circle cx="660" cy="380" r="220" fill="#f1e4c6" fill-opacity="0.75" stroke="#c39a3d" stroke-width="4"/>
+          <circle cx="980" cy="300" r="105" fill="#eef2f6" stroke="#003e67" stroke-width="4"/>
+          <text x="245" y="160" font-family="Montserrat" font-weight="700" font-size="40" fill="#1f5f99">A</text>
+          <text x="790" y="160" font-family="Montserrat" font-weight="700" font-size="40" fill="#8a6d1f">B</text>
+          <text x="965" y="170" font-family="Montserrat" font-weight="700" font-size="40" fill="#003e67">C</text>
+          <g font-family="Open Sans" font-weight="600" font-size="30" fill="#202020" text-anchor="middle">
+            <text x="320" y="340">copper</text><text x="320" y="440">zinc</text>
+            <text x="530" y="392">sodium</text>
+            <text x="745" y="340">nitrogen</text><text x="745" y="440">potassium</text>
+            <text x="980" y="310">oxygen</text>
+            <text x="980" y="600">uranium</text>
+          </g>
+        </svg>
+        <div class="abs" style="left:1170px;top:150px;width:440px">
+          <div class="lbl" style="color:#1f5f99;font-size:26px">A = {copper, sodium, zinc}</div>
+          <div class="lbl" style="color:#8a6d1f;font-size:26px;margin-top:26px;white-space:normal">B = {sodium, nitrogen, potassium}</div>
+          <div class="lbl" style="color:#003e67;font-size:26px;margin-top:26px">C = {oxygen}</div>
+          <div class="note" style="margin-top:40px">Uranium is in S but in none of the three events.</div>
+        </div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: 0.1 }, 0);
+
+      tl.to({}, { duration: 0.01 }, 1.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

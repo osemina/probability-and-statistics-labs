@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="12" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="12" style="left:0;top:0;width:1640px;height:740px">
+        <div class="lbl abs" style="left:60px;top:80px;color:#003e67;font-size:28px">A standard deck: 52 cards</div>
+        <div id="k0_0" class="abs" style="left:60px;top:170px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">A<br/>&#9829;</div>
+        <div id="k0_1" class="abs" style="left:126px;top:170px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">2<br/>&#9829;</div>
+        <div id="k0_2" class="abs" style="left:192px;top:170px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">3<br/>&#9829;</div>
+        <div id="k0_3" class="abs" style="left:258px;top:170px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">4<br/>&#9829;</div>
+        <div id="k0_4" class="abs" style="left:324px;top:170px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">5<br/>&#9829;</div>
+        <div id="k0_5" class="abs" style="left:390px;top:170px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">6<br/>&#9829;</div>
+        <div id="k0_6" class="abs" style="left:456px;top:170px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">7<br/>&#9829;</div>
+        <div id="k0_7" class="abs" style="left:522px;top:170px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">8<br/>&#9829;</div>
+        <div id="k0_8" class="abs" style="left:588px;top:170px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">9<br/>&#9829;</div>
+        <div id="k0_9" class="abs" style="left:654px;top:170px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">10<br/>&#9829;</div>
+        <div id="k0_10" class="abs" style="left:720px;top:170px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">J<br/>&#9829;</div>
+        <div id="k0_11" class="abs" style="left:786px;top:170px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">Q<br/>&#9829;</div>
+        <div id="k0_12" class="abs" style="left:852px;top:170px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">K<br/>&#9829;</div>
+        <div id="k1_0" class="abs" style="left:60px;top:258px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">A<br/>&#9830;</div>
+        <div id="k1_1" class="abs" style="left:126px;top:258px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">2<br/>&#9830;</div>
+        <div id="k1_2" class="abs" style="left:192px;top:258px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">3<br/>&#9830;</div>
+        <div id="k1_3" class="abs" style="left:258px;top:258px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">4<br/>&#9830;</div>
+        <div id="k1_4" class="abs" style="left:324px;top:258px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">5<br/>&#9830;</div>
+        <div id="k1_5" class="abs" style="left:390px;top:258px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">6<br/>&#9830;</div>
+        <div id="k1_6" class="abs" style="left:456px;top:258px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">7<br/>&#9830;</div>
+        <div id="k1_7" class="abs" style="left:522px;top:258px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">8<br/>&#9830;</div>
+        <div id="k1_8" class="abs" style="left:588px;top:258px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">9<br/>&#9830;</div>
+        <div id="k1_9" class="abs" style="left:654px;top:258px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">10<br/>&#9830;</div>
+        <div id="k1_10" class="abs" style="left:720px;top:258px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">J<br/>&#9830;</div>
+        <div id="k1_11" class="abs" style="left:786px;top:258px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">Q<br/>&#9830;</div>
+        <div id="k1_12" class="abs" style="left:852px;top:258px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#b34739;padding-top:12px;line-height:1.25">K<br/>&#9830;</div>
+        <div id="k2_0" class="abs" style="left:60px;top:346px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">A<br/>&#9827;</div>
+        <div id="k2_1" class="abs" style="left:126px;top:346px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">2<br/>&#9827;</div>
+        <div id="k2_2" class="abs" style="left:192px;top:346px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">3<br/>&#9827;</div>
+        <div id="k2_3" class="abs" style="left:258px;top:346px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">4<br/>&#9827;</div>
+        <div id="k2_4" class="abs" style="left:324px;top:346px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">5<br/>&#9827;</div>
+        <div id="k2_5" class="abs" style="left:390px;top:346px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">6<br/>&#9827;</div>
+        <div id="k2_6" class="abs" style="left:456px;top:346px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">7<br/>&#9827;</div>
+        <div id="k2_7" class="abs" style="left:522px;top:346px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">8<br/>&#9827;</div>
+        <div id="k2_8" class="abs" style="left:588px;top:346px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">9<br/>&#9827;</div>
+        <div id="k2_9" class="abs" style="left:654px;top:346px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">10<br/>&#9827;</div>
+        <div id="k2_10" class="abs" style="left:720px;top:346px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">J<br/>&#9827;</div>
+        <div id="k2_11" class="abs" style="left:786px;top:346px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">Q<br/>&#9827;</div>
+        <div id="k2_12" class="abs" style="left:852px;top:346px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">K<br/>&#9827;</div>
+        <div id="k3_0" class="abs" style="left:60px;top:434px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">A<br/>&#9824;</div>
+        <div id="k3_1" class="abs" style="left:126px;top:434px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">2<br/>&#9824;</div>
+        <div id="k3_2" class="abs" style="left:192px;top:434px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">3<br/>&#9824;</div>
+        <div id="k3_3" class="abs" style="left:258px;top:434px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">4<br/>&#9824;</div>
+        <div id="k3_4" class="abs" style="left:324px;top:434px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">5<br/>&#9824;</div>
+        <div id="k3_5" class="abs" style="left:390px;top:434px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">6<br/>&#9824;</div>
+        <div id="k3_6" class="abs" style="left:456px;top:434px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">7<br/>&#9824;</div>
+        <div id="k3_7" class="abs" style="left:522px;top:434px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">8<br/>&#9824;</div>
+        <div id="k3_8" class="abs" style="left:588px;top:434px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">9<br/>&#9824;</div>
+        <div id="k3_9" class="abs" style="left:654px;top:434px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">10<br/>&#9824;</div>
+        <div id="k3_10" class="abs" style="left:720px;top:434px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">J<br/>&#9824;</div>
+        <div id="k3_11" class="abs" style="left:786px;top:434px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">Q<br/>&#9824;</div>
+        <div id="k3_12" class="abs" style="left:852px;top:434px;width:58px;height:80px;border-radius:9px;background:#fff;border:2px solid #c9d6e3;opacity:0;text-align:center;font:700 19px Montserrat;color:#202020;padding-top:12px;line-height:1.25">K<br/>&#9824;</div>
+        <div id="kcol" class="abs" style="left:845px;top:163px;width:72px;height:358px;border-radius:14px;border:5px solid #c39a3d;opacity:0"></div>
+        <div id="twice" class="abs" style="left:622px;top:540px;width:310px;text-align:right;opacity:0"><div class="lbl" style="color:#b34739;font-size:22px">2 red Kings: counted twice!</div></div>
+        <div id="r1" class="abs" style="left:1000px;top:150px;opacity:0"><span class="lbl" style="color:#b34739">Red cards: 26</span><span class="sub" style="margin-left:14px">(hearts and diamonds)</span></div>
+        <div id="r2" class="abs" style="left:1000px;top:215px;opacity:0"><span class="lbl" style="color:#8a6d1f">Kings: 4</span></div>
+        <div id="r3" class="note abs" style="left:1000px;top:285px;width:600px;opacity:0">Adding 26 + 4 counts the King of hearts and the King of diamonds two times, so we subtract them once.</div>
+        <div id="r4" class="abs" style="left:1000px;top:430px;opacity:0"><div class="eq">P(Red &#8746; King)</div><div class="eq" style="margin-top:14px">= 26/52 + 4/52 &#8722; 2/52</div><div class="eq" style="margin-top:14px">= 28/52 = 7/13</div></div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.to("#k0_0", { opacity: 1, duration: 0.25 }, 0.2);
+      tl.to("#k0_1", { opacity: 1, duration: 0.25 }, 0.24000000000000002);
+      tl.to("#k0_2", { opacity: 1, duration: 0.25 }, 0.28);
+      tl.to("#k0_3", { opacity: 1, duration: 0.25 }, 0.32);
+      tl.to("#k0_4", { opacity: 1, duration: 0.25 }, 0.36);
+      tl.to("#k0_5", { opacity: 1, duration: 0.25 }, 0.4);
+      tl.to("#k0_6", { opacity: 1, duration: 0.25 }, 0.44);
+      tl.to("#k0_7", { opacity: 1, duration: 0.25 }, 0.48000000000000004);
+      tl.to("#k0_8", { opacity: 1, duration: 0.25 }, 0.52);
+      tl.to("#k0_9", { opacity: 1, duration: 0.25 }, 0.56);
+      tl.to("#k0_10", { opacity: 1, duration: 0.25 }, 0.6000000000000001);
+      tl.to("#k0_11", { opacity: 1, duration: 0.25 }, 0.64);
+      tl.to("#k0_12", { opacity: 1, duration: 0.25 }, 0.6799999999999999);
+      tl.to("#k1_0", { opacity: 1, duration: 0.25 }, 0.32);
+      tl.to("#k1_1", { opacity: 1, duration: 0.25 }, 0.36);
+      tl.to("#k1_2", { opacity: 1, duration: 0.25 }, 0.4);
+      tl.to("#k1_3", { opacity: 1, duration: 0.25 }, 0.44);
+      tl.to("#k1_4", { opacity: 1, duration: 0.25 }, 0.48);
+      tl.to("#k1_5", { opacity: 1, duration: 0.25 }, 0.52);
+      tl.to("#k1_6", { opacity: 1, duration: 0.25 }, 0.56);
+      tl.to("#k1_7", { opacity: 1, duration: 0.25 }, 0.6000000000000001);
+      tl.to("#k1_8", { opacity: 1, duration: 0.25 }, 0.64);
+      tl.to("#k1_9", { opacity: 1, duration: 0.25 }, 0.68);
+      tl.to("#k1_10", { opacity: 1, duration: 0.25 }, 0.7200000000000001);
+      tl.to("#k1_11", { opacity: 1, duration: 0.25 }, 0.76);
+      tl.to("#k1_12", { opacity: 1, duration: 0.25 }, 0.7999999999999999);
+      tl.to("#k2_0", { opacity: 1, duration: 0.25 }, 0.44);
+      tl.to("#k2_1", { opacity: 1, duration: 0.25 }, 0.48);
+      tl.to("#k2_2", { opacity: 1, duration: 0.25 }, 0.52);
+      tl.to("#k2_3", { opacity: 1, duration: 0.25 }, 0.56);
+      tl.to("#k2_4", { opacity: 1, duration: 0.25 }, 0.6);
+      tl.to("#k2_5", { opacity: 1, duration: 0.25 }, 0.64);
+      tl.to("#k2_6", { opacity: 1, duration: 0.25 }, 0.6799999999999999);
+      tl.to("#k2_7", { opacity: 1, duration: 0.25 }, 0.72);
+      tl.to("#k2_8", { opacity: 1, duration: 0.25 }, 0.76);
+      tl.to("#k2_9", { opacity: 1, duration: 0.25 }, 0.8);
+      tl.to("#k2_10", { opacity: 1, duration: 0.25 }, 0.8400000000000001);
+      tl.to("#k2_11", { opacity: 1, duration: 0.25 }, 0.88);
+      tl.to("#k2_12", { opacity: 1, duration: 0.25 }, 0.9199999999999999);
+      tl.to("#k3_0", { opacity: 1, duration: 0.25 }, 0.56);
+      tl.to("#k3_1", { opacity: 1, duration: 0.25 }, 0.6);
+      tl.to("#k3_2", { opacity: 1, duration: 0.25 }, 0.64);
+      tl.to("#k3_3", { opacity: 1, duration: 0.25 }, 0.6799999999999999);
+      tl.to("#k3_4", { opacity: 1, duration: 0.25 }, 0.72);
+      tl.to("#k3_5", { opacity: 1, duration: 0.25 }, 0.76);
+      tl.to("#k3_6", { opacity: 1, duration: 0.25 }, 0.8);
+      tl.to("#k3_7", { opacity: 1, duration: 0.25 }, 0.8400000000000001);
+      tl.to("#k3_8", { opacity: 1, duration: 0.25 }, 0.88);
+      tl.to("#k3_9", { opacity: 1, duration: 0.25 }, 0.92);
+      tl.to("#k3_10", { opacity: 1, duration: 0.25 }, 0.9600000000000001);
+      tl.to("#k3_11", { opacity: 1, duration: 0.25 }, 1.0);
+      tl.to("#k3_12", { opacity: 1, duration: 0.25 }, 1.04);
+      tl.to("#k0_0", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.0);
+      tl.to("#k0_1", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.03);
+      tl.to("#k0_2", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.06);
+      tl.to("#k0_3", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.09);
+      tl.to("#k0_4", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.12);
+      tl.to("#k0_5", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.15);
+      tl.to("#k0_6", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.18);
+      tl.to("#k0_7", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.21);
+      tl.to("#k0_8", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.24);
+      tl.to("#k0_9", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.27);
+      tl.to("#k0_10", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.3);
+      tl.to("#k0_11", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.33);
+      tl.to("#k0_12", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.36);
+      tl.to("#k1_0", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.1);
+      tl.to("#k1_1", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.13);
+      tl.to("#k1_2", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.16);
+      tl.to("#k1_3", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.19);
+      tl.to("#k1_4", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.22);
+      tl.to("#k1_5", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.25);
+      tl.to("#k1_6", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.2800000000000002);
+      tl.to("#k1_7", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.31);
+      tl.to("#k1_8", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.3400000000000003);
+      tl.to("#k1_9", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.37);
+      tl.to("#k1_10", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.4);
+      tl.to("#k1_11", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.43);
+      tl.to("#k1_12", { backgroundColor: "#f6dcd8", borderColor: "#b34739", duration: 0.3 }, 2.46);
+      tl.to("#r1", { opacity: 1, duration: 0.4 }, 2.2);
+      tl.to("#kcol", { opacity: 1, duration: 0.4 }, 4.0);
+      tl.to("#r2", { opacity: 1, duration: 0.4 }, 4.2);
+      tl.to(["#k0_12", "#k1_12"], { scale: 1.2, duration: 0.3, yoyo: true, repeat: 3 }, 5.8);
+      tl.to("#twice", { opacity: 1, duration: 0.4 }, 5.9);
+      tl.to("#r3", { opacity: 1, duration: 0.5 }, 6.3);
+      tl.fromTo("#r4", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6 }, 8.4);
+
+      tl.to({}, { duration: 0.01 }, 11.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

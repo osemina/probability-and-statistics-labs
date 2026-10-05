@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="12" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="12" style="left:0;top:0;width:1640px;height:740px">
+        <div class="lbl abs" style="left:80px;top:80px;color:#003e67;font-size:28px">Shuffle queue: 8 songs, each played only once</div>
+        <div class="abs" style="left:80px;top:410px;width:150px;height:104px;border-radius:16px;border:3px dashed #c9d6e3"></div>
+        <div class="abs" style="left:270px;top:410px;width:150px;height:104px;border-radius:16px;border:3px dashed #c9d6e3"></div>
+        <div class="step abs" style="left:80px;top:528px;width:150px;text-align:center">Song 1</div>
+        <div class="step abs" style="left:270px;top:528px;width:150px;text-align:center">Song 2</div>
+        <div id="t0" class="abs" style="left:80px;top:170px;width:150px;height:104px;border-radius:16px;background:#f1e4c6;border:3px solid #c39a3d;opacity:0;text-align:center;padding-top:16px"><div style="font:700 34px Montserrat;color:#8a6d1f">&#9835;</div><div style="font:700 22px Montserrat;color:#8a6d1f">Pop</div></div>
+        <div id="t1" class="abs" style="left:252px;top:170px;width:150px;height:104px;border-radius:16px;background:#dce5ee;border:3px solid #1f5f99;opacity:0;text-align:center;padding-top:16px"><div style="font:700 34px Montserrat;color:#1f5f99">&#9835;</div><div style="font:700 22px Montserrat;color:#1f5f99">Rock</div></div>
+        <div id="t2" class="abs" style="left:424px;top:170px;width:150px;height:104px;border-radius:16px;background:#f1e4c6;border:3px solid #c39a3d;opacity:0;text-align:center;padding-top:16px"><div style="font:700 34px Montserrat;color:#8a6d1f">&#9835;</div><div style="font:700 22px Montserrat;color:#8a6d1f">Pop</div></div>
+        <div id="t3" class="abs" style="left:596px;top:170px;width:150px;height:104px;border-radius:16px;background:#f1e4c6;border:3px solid #c39a3d;opacity:0;text-align:center;padding-top:16px"><div style="font:700 34px Montserrat;color:#8a6d1f">&#9835;</div><div style="font:700 22px Montserrat;color:#8a6d1f">Pop</div></div>
+        <div id="t4" class="abs" style="left:768px;top:170px;width:150px;height:104px;border-radius:16px;background:#dce5ee;border:3px solid #1f5f99;opacity:0;text-align:center;padding-top:16px"><div style="font:700 34px Montserrat;color:#1f5f99">&#9835;</div><div style="font:700 22px Montserrat;color:#1f5f99">Rock</div></div>
+        <div id="t5" class="abs" style="left:940px;top:170px;width:150px;height:104px;border-radius:16px;background:#f1e4c6;border:3px solid #c39a3d;opacity:0;text-align:center;padding-top:16px"><div style="font:700 34px Montserrat;color:#8a6d1f">&#9835;</div><div style="font:700 22px Montserrat;color:#8a6d1f">Pop</div></div>
+        <div id="t6" class="abs" style="left:1112px;top:170px;width:150px;height:104px;border-radius:16px;background:#dce5ee;border:3px solid #1f5f99;opacity:0;text-align:center;padding-top:16px"><div style="font:700 34px Montserrat;color:#1f5f99">&#9835;</div><div style="font:700 22px Montserrat;color:#1f5f99">Rock</div></div>
+        <div id="t7" class="abs" style="left:1284px;top:170px;width:150px;height:104px;border-radius:16px;background:#f1e4c6;border:3px solid #c39a3d;opacity:0;text-align:center;padding-top:16px"><div style="font:700 34px Montserrat;color:#8a6d1f">&#9835;</div><div style="font:700 22px Montserrat;color:#8a6d1f">Pop</div></div>
+        <div id="m1" class="abs" style="left:560px;top:395px;width:1040px;opacity:0"><div class="rt">Song 1: <b style="color:#8a6d1f">5</b> of 8 songs are pop&#8195;&#8594;&#8195;5/8</div></div>
+        <div id="m2" class="abs" style="left:560px;top:455px;width:1040px;opacity:0"><div class="rt">Song 2: only <b style="color:#8a6d1f">4</b> of the 7 songs left are pop&#8195;&#8594;&#8195;4/7</div></div>
+        <div id="m3" class="abs" style="left:560px;top:530px;opacity:0"><div class="eq">P(Pop&#8321; &#8745; Pop&#8322;) = 5/8 &#215; 4/7 = 20/56 = 5/14 &#8776; 0.36</div></div>
+        <div id="m4" class="note abs" style="left:560px;top:600px;width:1040px;opacity:0">No repeats: the first song changes what is left, so the two events are dependent.</div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#t0", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.35 }, 0.2);
+      tl.fromTo("#t1", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.35 }, 0.30000000000000004);
+      tl.fromTo("#t2", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.35 }, 0.4);
+      tl.fromTo("#t3", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.35 }, 0.5);
+      tl.fromTo("#t4", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.35 }, 0.6000000000000001);
+      tl.fromTo("#t5", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.35 }, 0.7);
+      tl.fromTo("#t6", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.35 }, 0.8);
+      tl.fromTo("#t7", { opacity: 0, y: -20 }, { opacity: 1, y: 0, duration: 0.35 }, 0.9000000000000001);
+      tl.to(['#t0', '#t2', '#t3', '#t5', '#t7'], { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1 }, 1.8);
+      tl.to("#m1", { opacity: 1, duration: 0.4 }, 1.9);
+      tl.to("#t0", { x: 0, y: 240, duration: 0.9, ease: "power2.inOut" }, 2.8);
+      tl.to("#t1", { x: -172, duration: 0.6, ease: "power2.inOut" }, 4.2);
+      tl.to("#t2", { x: -172, duration: 0.6, ease: "power2.inOut" }, 4.2);
+      tl.to("#t3", { x: -172, duration: 0.6, ease: "power2.inOut" }, 4.2);
+      tl.to("#t4", { x: -172, duration: 0.6, ease: "power2.inOut" }, 4.2);
+      tl.to("#t5", { x: -172, duration: 0.6, ease: "power2.inOut" }, 4.2);
+      tl.to("#t6", { x: -172, duration: 0.6, ease: "power2.inOut" }, 4.2);
+      tl.to("#t7", { x: -172, duration: 0.6, ease: "power2.inOut" }, 4.2);
+      tl.to(['#t2', '#t3', '#t5', '#t7'], { scale: 1.08, duration: 0.25, yoyo: true, repeat: 1 }, 5.1);
+      tl.to("#m2", { opacity: 1, duration: 0.4 }, 5.2);
+      tl.to("#t2", { x: -154, y: 240, duration: 0.9, ease: "power2.inOut" }, 6.2);
+      tl.to("#t1", { x: -172, duration: 0.6, ease: "power2.inOut" }, 7.3);
+      tl.to("#t3", { x: -344, duration: 0.6, ease: "power2.inOut" }, 7.3);
+      tl.to("#t4", { x: -344, duration: 0.6, ease: "power2.inOut" }, 7.3);
+      tl.to("#t5", { x: -344, duration: 0.6, ease: "power2.inOut" }, 7.3);
+      tl.to("#t6", { x: -344, duration: 0.6, ease: "power2.inOut" }, 7.3);
+      tl.to("#t7", { x: -344, duration: 0.6, ease: "power2.inOut" }, 7.3);
+      tl.fromTo("#m3", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, 8.3);
+      tl.to("#m4", { opacity: 1, duration: 0.5 }, 9.4);
+
+      tl.to({}, { duration: 0.01 }, 11.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

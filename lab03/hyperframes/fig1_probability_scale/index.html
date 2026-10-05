@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="10" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="10" style="left:0;top:0;width:1640px;height:740px">
+
+        <div class="abs" style="left:170px;top:361px;width:1300px;height:18px;border-radius:9px;background:linear-gradient(90deg,#c9d6e3,#003e67)"></div>
+        <div class="lbl abs" style="left:170px;top:600px;color:#5f6368;font-size:20px">less likely</div>
+        <div class="lbl abs" style="left:1330px;top:600px;color:#003e67;font-size:20px">more likely</div>
+        <div class="abs" style="left:320px;top:612px;width:980px;height:3px;background:#c9d6e3"></div>
+        <div class="abs" style="left:1290px;top:604px;width:0;height:0;border-left:16px solid #c9d6e3;border-top:10px solid transparent;border-bottom:10px solid transparent"></div>
+        <div id="mk" class="abs" style="left:148px;top:348px;width:44px;height:44px;border-radius:50%;background:#c39a3d;border:5px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.25)"></div>
+        <div class="abs" style="left:168.0px;top:344px;width:4px;height:52px;background:#202020"></div>
+        <div class="lbl abs" style="left:110.0px;top:404px;width:120px;text-align:center;color:#003e67">0</div>
+        <div id="c0" class="abs card" style="left:20px;top:140px;width:330px;height:150px;opacity:0;padding:22px 24px;border-left:6px solid #c39a3d">
+          <div class="lbl" style="color:#c39a3d;font-size:24px">Impossible</div>
+          <div class="rt" style="margin-top:12px;font-size:23px;line-height:1.35;white-space:normal">Rolling a 7 with one die</div>
+        </div>
+        <div class="abs" style="left:818.0px;top:344px;width:4px;height:52px;background:#202020"></div>
+        <div class="lbl abs" style="left:760.0px;top:300px;width:120px;text-align:center;color:#003e67">0.5</div>
+        <div id="c1" class="abs card" style="left:655.0px;top:420px;width:330px;height:150px;opacity:0;padding:22px 24px;border-left:6px solid #c39a3d">
+          <div class="lbl" style="color:#c39a3d;font-size:24px">Even chance</div>
+          <div class="rt" style="margin-top:12px;font-size:23px;line-height:1.35;white-space:normal">Heads on a fair coin</div>
+        </div>
+        <div class="abs" style="left:1078.0px;top:344px;width:4px;height:52px;background:#202020"></div>
+        <div class="lbl abs" style="left:1020.0px;top:404px;width:120px;text-align:center;color:#003e67">0.7</div>
+        <div id="c2" class="abs card" style="left:915.0px;top:140px;width:330px;height:150px;opacity:0;padding:22px 24px;border-left:6px solid #c39a3d">
+          <div class="lbl" style="color:#c39a3d;font-size:24px">Likely</div>
+          <div class="rt" style="margin-top:12px;font-size:23px;line-height:1.35;white-space:normal">Weather app: 70% chance of rain</div>
+        </div>
+        <div class="abs" style="left:1468.0px;top:344px;width:4px;height:52px;background:#202020"></div>
+        <div class="lbl abs" style="left:1410.0px;top:300px;width:120px;text-align:center;color:#003e67">1</div>
+        <div id="c3" class="abs card" style="left:1290px;top:420px;width:330px;height:150px;opacity:0;padding:22px 24px;border-left:6px solid #c39a3d">
+          <div class="lbl" style="color:#c39a3d;font-size:24px">Certain</div>
+          <div class="rt" style="margin-top:12px;font-size:23px;line-height:1.35;white-space:normal">Rolling a number from 1 to 6</div>
+        </div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.to("#mk", { x: 0.0, duration: 0.3, ease: "power2.inOut" }, 0.6);
+      tl.fromTo("#c0", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, 0.8999999999999999);
+      tl.to("#mk", { x: 650.0, duration: 1.0, ease: "power2.inOut" }, 2.8000000000000003);
+      tl.fromTo("#c1", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.5 }, 3.8000000000000003);
+      tl.to("#mk", { x: 910.0, duration: 1.0, ease: "power2.inOut" }, 5.0);
+      tl.fromTo("#c2", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.5 }, 6.0);
+      tl.to("#mk", { x: 1300.0, duration: 1.0, ease: "power2.inOut" }, 7.2);
+      tl.fromTo("#c3", { opacity: 0, y: -12 }, { opacity: 1, y: 0, duration: 0.5 }, 8.2);
+
+      tl.to({}, { duration: 0.01 }, 9.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

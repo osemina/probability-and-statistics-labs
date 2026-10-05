@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="10" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="10" style="left:0;top:0;width:1640px;height:740px">
+        <div id="t0" class="abs" style="left:30px;top:70px;width:360px;text-align:center;opacity:0"><div class="lbl" style="color:#003e67;font-size:30px">A &#8746; B</div><div class="sub" style="margin-top:6px">&#8220;A or B&#8221;</div></div>
+        <svg id="p0" class="abs" style="left:30px;top:200px;opacity:0" width="360" height="300" viewBox="0 0 360 300">
+          <rect x="8" y="8" width="344" height="284" rx="14" fill="#fff" stroke="#003e67" stroke-width="3"/>
+          <g id="sh0" opacity="0"><circle cx="130" cy="150" r="85" fill="#003e67" fill-opacity="0.75"/><circle cx="230" cy="150" r="85" fill="#003e67" fill-opacity="0.75"/></g>
+          <circle cx="130" cy="150" r="85" fill="none" stroke="#202020" stroke-width="3"/>
+          <circle cx="230" cy="150" r="85" fill="none" stroke="#202020" stroke-width="3"/>
+          <text x="26" y="40" font-family="Montserrat" font-weight="700" font-size="22" fill="#003e67">S</text>
+          <text x="49" y="77" font-family="Montserrat" font-weight="700" font-size="24" fill="#202020" stroke="#fff" stroke-width="5" paint-order="stroke">A</text>
+          <text x="293" y="77" font-family="Montserrat" font-weight="700" font-size="24" fill="#202020" stroke="#fff" stroke-width="5" paint-order="stroke">B</text>
+        </svg>
+        <div id="t1" class="abs" style="left:430px;top:70px;width:360px;text-align:center;opacity:0"><div class="lbl" style="color:#003e67;font-size:30px">A &#8745; B</div><div class="sub" style="margin-top:6px">&#8220;A and B&#8221;</div></div>
+        <svg id="p1" class="abs" style="left:430px;top:200px;opacity:0" width="360" height="300" viewBox="0 0 360 300">
+          <rect x="8" y="8" width="344" height="284" rx="14" fill="#fff" stroke="#003e67" stroke-width="3"/>
+          <g id="sh1" opacity="0"><clipPath id="cp1"><circle cx="130" cy="150" r="85"/></clipPath><circle cx="230" cy="150" r="85" fill="#003e67" fill-opacity="0.8" clip-path="url(#cp1)"/></g>
+          <circle cx="130" cy="150" r="85" fill="none" stroke="#202020" stroke-width="3"/>
+          <circle cx="230" cy="150" r="85" fill="none" stroke="#202020" stroke-width="3"/>
+          <text x="26" y="40" font-family="Montserrat" font-weight="700" font-size="22" fill="#003e67">S</text>
+          <text x="49" y="77" font-family="Montserrat" font-weight="700" font-size="24" fill="#202020" stroke="#fff" stroke-width="5" paint-order="stroke">A</text>
+          <text x="293" y="77" font-family="Montserrat" font-weight="700" font-size="24" fill="#202020" stroke="#fff" stroke-width="5" paint-order="stroke">B</text>
+        </svg>
+        <div id="t2" class="abs" style="left:830px;top:70px;width:360px;text-align:center;opacity:0"><div class="lbl" style="color:#003e67;font-size:30px">A&#8242;</div><div class="sub" style="margin-top:6px">&#8220;not A&#8221;</div></div>
+        <svg id="p2" class="abs" style="left:830px;top:200px;opacity:0" width="360" height="300" viewBox="0 0 360 300">
+          <rect x="8" y="8" width="344" height="284" rx="14" fill="#fff" stroke="#003e67" stroke-width="3"/>
+          <g id="sh2" opacity="0"><mask id="mk2"><rect x="0" y="0" width="360" height="300" fill="#fff"/><circle cx="130" cy="150" r="85" fill="#000"/></mask><rect x="8" y="8" width="344" height="284" rx="14" fill="#003e67" fill-opacity="0.72" mask="url(#mk2)"/></g>
+          <circle cx="130" cy="150" r="85" fill="none" stroke="#202020" stroke-width="3"/>
+          <circle cx="230" cy="150" r="85" fill="none" stroke="#202020" stroke-width="3"/>
+          <text x="26" y="40" font-family="Montserrat" font-weight="700" font-size="22" fill="#fff">S</text>
+          <text x="49" y="77" font-family="Montserrat" font-weight="700" font-size="24" fill="#202020" stroke="#fff" stroke-width="5" paint-order="stroke">A</text>
+          <text x="293" y="77" font-family="Montserrat" font-weight="700" font-size="24" fill="#202020" stroke="#fff" stroke-width="5" paint-order="stroke">B</text>
+        </svg>
+        <div id="t3" class="abs" style="left:1230px;top:70px;width:360px;text-align:center;opacity:0"><div class="lbl" style="color:#003e67;font-size:30px">A &#8745; B = &#8709;</div><div class="sub" style="margin-top:6px">&#8220;mutually exclusive&#8221;</div></div>
+        <svg id="p3" class="abs" style="left:1230px;top:200px;opacity:0" width="360" height="300" viewBox="0 0 360 300">
+          <rect x="8" y="8" width="344" height="284" rx="14" fill="#fff" stroke="#003e67" stroke-width="3"/>
+          <g id="sh3" opacity="0"><circle cx="100" cy="150" r="70" fill="#003e67" fill-opacity="0.75"/><circle cx="260" cy="150" r="70" fill="#c39a3d" fill-opacity="0.85"/></g>
+          <circle cx="100" cy="150" r="70" fill="none" stroke="#202020" stroke-width="3"/>
+          <circle cx="260" cy="150" r="70" fill="none" stroke="#202020" stroke-width="3"/>
+          <text x="26" y="40" font-family="Montserrat" font-weight="700" font-size="22" fill="#003e67">S</text>
+          <text x="34" y="92" font-family="Montserrat" font-weight="700" font-size="24" fill="#202020" stroke="#fff" stroke-width="5" paint-order="stroke">A</text>
+          <text x="308" y="92" font-family="Montserrat" font-weight="700" font-size="24" fill="#202020" stroke="#fff" stroke-width="5" paint-order="stroke">B</text>
+        </svg>
+        <div id="nt" class="note abs" style="left:30px;top:560px;width:1580px;text-align:center;opacity:0">The rectangle is the sample space S. The shaded part is the event named above each diagram.</div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.to("#p0", { opacity: 1, duration: 0.4 }, 0.2);
+      tl.to("#t0", { opacity: 1, duration: 0.4 }, 1.4);
+      tl.fromTo("#sh0", { opacity: 0 }, { opacity: 1, duration: 0.8 }, 1.5);
+      tl.to("#p1", { opacity: 1, duration: 0.4 }, 0.35);
+      tl.to("#t1", { opacity: 1, duration: 0.4 }, 3.0);
+      tl.fromTo("#sh1", { opacity: 0 }, { opacity: 1, duration: 0.8 }, 3.1);
+      tl.to("#p2", { opacity: 1, duration: 0.4 }, 0.5);
+      tl.to("#t2", { opacity: 1, duration: 0.4 }, 4.6);
+      tl.fromTo("#sh2", { opacity: 0 }, { opacity: 1, duration: 0.8 }, 4.7);
+      tl.to("#p3", { opacity: 1, duration: 0.4 }, 0.6499999999999999);
+      tl.to("#t3", { opacity: 1, duration: 0.4 }, 6.200000000000001);
+      tl.fromTo("#sh3", { opacity: 0 }, { opacity: 1, duration: 0.8 }, 6.300000000000001);
+      tl.to("#nt", { opacity: 1, duration: 0.5 }, 8.2);
+
+      tl.to({}, { duration: 0.01 }, 9.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
