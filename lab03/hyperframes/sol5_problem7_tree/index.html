@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="14" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="14" style="left:0;top:0;width:1640px;height:740px">
+        <svg class="abs" style="left:0;top:0" width="1640" height="740"><line id="e0" x1="235" y1="330" x2="435" y2="175" stroke="#1f5f99" stroke-width="4" stroke-dasharray="253" stroke-dashoffset="253"/><line id="e1" x1="235" y1="330" x2="435" y2="485" stroke="#1f5f99" stroke-width="4" stroke-dasharray="253" stroke-dashoffset="253"/><line id="e2" x1="605" y1="175" x2="795" y2="95" stroke="#1f5f99" stroke-width="4" stroke-dasharray="206" stroke-dashoffset="206"/><line id="e3" x1="605" y1="175" x2="795" y2="255" stroke="#1f5f99" stroke-width="4" stroke-dasharray="206" stroke-dashoffset="206"/><line id="e4" x1="605" y1="485" x2="795" y2="415" stroke="#1f5f99" stroke-width="4" stroke-dasharray="202" stroke-dashoffset="202"/><line id="e5" x1="605" y1="485" x2="795" y2="575" stroke="#1f5f99" stroke-width="4" stroke-dasharray="210" stroke-dashoffset="210"/></svg>
+        <div id="pl0" class="abs" style="left:295.0px;top:230.5px;width:80px;text-align:center;background:#fff;border-radius:8px;font:600 24px 'Open Sans';opacity:0">0.20</div>
+        <div id="pl1" class="abs" style="left:295.0px;top:385.5px;width:80px;text-align:center;background:#fff;border-radius:8px;font:600 24px 'Open Sans';opacity:0">0.80</div>
+        <div id="pl2" class="abs" style="left:660.0px;top:113.0px;width:80px;text-align:center;background:#fff;border-radius:8px;font:600 24px 'Open Sans';opacity:0">0.90</div>
+        <div id="pl3" class="abs" style="left:660.0px;top:193.0px;width:80px;text-align:center;background:#fff;border-radius:8px;font:600 24px 'Open Sans';opacity:0">0.10</div>
+        <div id="pl4" class="abs" style="left:660.0px;top:428.0px;width:80px;text-align:center;background:#fff;border-radius:8px;font:600 24px 'Open Sans';opacity:0">0.85</div>
+        <div id="pl5" class="abs" style="left:660.0px;top:508.0px;width:80px;text-align:center;background:#fff;border-radius:8px;font:600 24px 'Open Sans';opacity:0">0.15</div>
+        <div id="nO" class="abs" style="left:65.0px;top:298px;width:170px;height:64px;border-radius:14px;background:#c39a3d;color:#fff;font:700 24px Montserrat;text-align:center;line-height:64px;opacity:0">Student</div>
+        <div id="nF" class="abs" style="left:435.0px;top:143px;width:170px;height:64px;border-radius:14px;background:#003e67;color:#fff;font:700 24px Montserrat;text-align:center;line-height:64px;opacity:0">Female</div>
+        <div id="nM" class="abs" style="left:435.0px;top:453px;width:170px;height:64px;border-radius:14px;background:#003e67;color:#fff;font:700 24px Montserrat;text-align:center;line-height:64px;opacity:0">Male</div>
+        <div id="nFP" class="abs" style="left:795.0px;top:63px;width:170px;height:64px;border-radius:14px;background:#f5c400;color:#003e67;font:700 24px Montserrat;text-align:center;line-height:64px;opacity:0">Pass</div>
+        <div id="nFN" class="abs" style="left:795.0px;top:223px;width:170px;height:64px;border-radius:14px;background:#dce5ee;color:#003e67;font:700 24px Montserrat;text-align:center;line-height:64px;opacity:0">Fail</div>
+        <div id="nMP" class="abs" style="left:795.0px;top:383px;width:170px;height:64px;border-radius:14px;background:#f5c400;color:#003e67;font:700 24px Montserrat;text-align:center;line-height:64px;opacity:0">Pass</div>
+        <div id="nMN" class="abs" style="left:795.0px;top:543px;width:170px;height:64px;border-radius:14px;background:#dce5ee;color:#003e67;font:700 24px Montserrat;text-align:center;line-height:64px;opacity:0">Fail</div>
+        <div id="cnt" class="abs" style="left:60px;top:40px;font:600 22px 'Open Sans';color:#5f6368;opacity:0">50 students: 10 female, 40 male</div>
+        <div id="pr0" class="abs" style="left:985px;top:77px;font:600 25px 'Open Sans';color:#003e67;white-space:nowrap;opacity:0">0.20 &#215; 0.90 = 0.18</div>
+        <div id="pr1" class="abs" style="left:985px;top:237px;font:600 25px 'Open Sans';color:#5f6368;white-space:nowrap;opacity:0">0.20 &#215; 0.10 = 0.02</div>
+        <div id="pr2" class="abs" style="left:985px;top:397px;font:600 25px 'Open Sans';color:#003e67;white-space:nowrap;opacity:0">0.80 &#215; 0.85 = 0.68</div>
+        <div id="pr3" class="abs" style="left:985px;top:557px;font:600 25px 'Open Sans';color:#5f6368;white-space:nowrap;opacity:0">0.80 &#215; 0.15 = 0.12</div>
+        <div id="sum" class="abs" style="left:985px;top:660px;opacity:0"><span class="eq" style="font-size:28px">P(Pass) = 0.18 + 0.68 = 0.86</span></div>
+        <div id="bay" class="abs card" style="left:1290px;top:95px;width:330px;height:500px;padding:26px;border-left:6px solid #003e67;opacity:0">
+          <div class="lbl" style="color:#003e67;font-size:24px">Bayes: flip it</div>
+          <div class="sub" style="margin-top:10px;white-space:normal">The student passed. Is the student female?</div>
+          <div style="margin-top:22px;font:600 25px 'Open Sans';color:#003e67">P(F | Pass)</div>
+          <div style="margin-top:10px;font:600 25px 'Open Sans';color:#003e67">= 0.18 / 0.86</div>
+          <div style="margin-top:10px;font:700 30px Montserrat;color:#003e67">&#8776; 0.209</div>
+          <div class="note" style="margin-top:18px;font-size:20px">In counts: 9 of the 43 students who pass are female, and 9/43 &#8776; 0.209.</div>
+        </div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.to(["#nO", "#cnt"], { opacity: 1, duration: 0.4 }, 0.2);
+      tl.to("#e0", { attr: { "stroke-dashoffset": 0 }, duration: 0.7 }, 0.6);
+      tl.to("#pl0", { opacity: 1, duration: 0.3 }, 1.1);
+      tl.to("#e1", { attr: { "stroke-dashoffset": 0 }, duration: 0.7 }, 0.6);
+      tl.to("#pl1", { opacity: 1, duration: 0.3 }, 1.1);
+      tl.to(["#nF", "#nM"], { opacity: 1, duration: 0.4 }, 1.2);
+      tl.to("#e2", { attr: { "stroke-dashoffset": 0 }, duration: 0.7 }, 2.0);
+      tl.to("#pl2", { opacity: 1, duration: 0.3 }, 2.5);
+      tl.to("#e3", { attr: { "stroke-dashoffset": 0 }, duration: 0.7 }, 2.0);
+      tl.to("#pl3", { opacity: 1, duration: 0.3 }, 2.5);
+      tl.to("#e4", { attr: { "stroke-dashoffset": 0 }, duration: 0.7 }, 2.0);
+      tl.to("#pl4", { opacity: 1, duration: 0.3 }, 2.5);
+      tl.to("#e5", { attr: { "stroke-dashoffset": 0 }, duration: 0.7 }, 2.0);
+      tl.to("#pl5", { opacity: 1, duration: 0.3 }, 2.5);
+      tl.to(["#nFP", "#nFN", "#nMP", "#nMN"], { opacity: 1, duration: 0.4 }, 2.6);
+      tl.fromTo("#pr0", { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.4 }, 3.6);
+      tl.fromTo("#pr1", { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.4 }, 4.1);
+      tl.fromTo("#pr2", { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.4 }, 4.6);
+      tl.fromTo("#pr3", { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.4 }, 5.1);
+      tl.to(["#nFN", "#nMN", "#pr1", "#pr3", "#e3", "#e5", "#pl3", "#pl5"], { opacity: 0.3, duration: 0.5 }, 6.0);
+      tl.to(["#nFP", "#nMP"], { scale: 1.12, duration: 0.3, yoyo: true, repeat: 1 }, 6.1);
+      tl.fromTo("#sum", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.5 }, 6.7);
+      tl.to(["#e1", "#e4", "#nM", "#nMP", "#pr2", "#pl1", "#pl4"], { opacity: 0.35, duration: 0.5 }, 8.6);
+      tl.to(["#e0", "#e2"], { attr: { stroke: "#003e67", "stroke-width": 8 }, duration: 0.5 }, 8.6);
+      tl.fromTo("#bay", { opacity: 0, x: 20 }, { opacity: 1, x: 0, duration: 0.6 }, 9.0);
+
+      tl.to({}, { duration: 0.01 }, 13.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

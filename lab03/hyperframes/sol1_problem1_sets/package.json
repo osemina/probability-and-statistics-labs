@@ -1,0 +1,9 @@
+{
+  "name": "sol1_problem1_sets",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check": "npx --yes hyperframes@0.8.133 check",
+    "render": "npx --yes hyperframes@0.8.133 render"
+  }
+}

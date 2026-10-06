@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      .chip { border-radius: 18px; background: #f3f3f0; border: 3px solid #c9d6e3; font: 600 26px "Open Sans"; color: #202020; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="26.3" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="26.3" style="left:0;top:0;width:1640px;height:740px">
+        <div class="lbl abs" style="left:60px;top:40px;color:#003e67;font-size:28px">S = all seven elements</div>
+        <div id="c0" class="abs chip" style="left:60px;top:95px;width:200px;height:86px;line-height:86px;text-align:center">copper</div>
+        <div class="abs" style="left:60px;top:195px;width:200px;text-align:center;font:700 19px Montserrat"><span style="display:inline-block;margin:0 4px;padding:2px 12px;border-radius:8px;background:#dce5ee;color:#1f5f99">A</span></div>
+        <div id="c1" class="abs chip" style="left:278px;top:95px;width:200px;height:86px;line-height:86px;text-align:center">sodium</div>
+        <div class="abs" style="left:278px;top:195px;width:200px;text-align:center;font:700 19px Montserrat"><span style="display:inline-block;margin:0 4px;padding:2px 12px;border-radius:8px;background:#dce5ee;color:#1f5f99">A</span><span style="display:inline-block;margin:0 4px;padding:2px 12px;border-radius:8px;background:#f1e4c6;color:#8a6d1f">B</span></div>
+        <div id="c2" class="abs chip" style="left:496px;top:95px;width:200px;height:86px;line-height:86px;text-align:center">nitrogen</div>
+        <div class="abs" style="left:496px;top:195px;width:200px;text-align:center;font:700 19px Montserrat"><span style="display:inline-block;margin:0 4px;padding:2px 12px;border-radius:8px;background:#f1e4c6;color:#8a6d1f">B</span></div>
+        <div id="c3" class="abs chip" style="left:714px;top:95px;width:200px;height:86px;line-height:86px;text-align:center">potassium</div>
+        <div class="abs" style="left:714px;top:195px;width:200px;text-align:center;font:700 19px Montserrat"><span style="display:inline-block;margin:0 4px;padding:2px 12px;border-radius:8px;background:#f1e4c6;color:#8a6d1f">B</span></div>
+        <div id="c4" class="abs chip" style="left:932px;top:95px;width:200px;height:86px;line-height:86px;text-align:center">uranium</div>
+        <div class="abs" style="left:932px;top:195px;width:200px;text-align:center;font:700 19px Montserrat"><span style="color:#5f6368">none</span></div>
+        <div id="c5" class="abs chip" style="left:1150px;top:95px;width:200px;height:86px;line-height:86px;text-align:center">oxygen</div>
+        <div class="abs" style="left:1150px;top:195px;width:200px;text-align:center;font:700 19px Montserrat"><span style="display:inline-block;margin:0 4px;padding:2px 12px;border-radius:8px;background:#eef2f6;color:#003e67">C</span></div>
+        <div id="c6" class="abs chip" style="left:1368px;top:95px;width:200px;height:86px;line-height:86px;text-align:center">zinc</div>
+        <div class="abs" style="left:1368px;top:195px;width:200px;text-align:center;font:700 19px Montserrat"><span style="display:inline-block;margin:0 4px;padding:2px 12px;border-radius:8px;background:#dce5ee;color:#1f5f99">A</span></div>
+        <div id="s0" class="abs" style="left:60px;top:300px;width:1520px;opacity:0">
+          <div class="lbl" style="color:#c39a3d;font-size:22px;letter-spacing:2px">PART A</div>
+          <div class="eq" style="margin-top:8px;font-size:46px">A'</div>
+          <div class="rt" style="margin-top:22px;font-size:27px;color:#202020">Everything in S that is <b>not</b> in A = {copper, sodium, zinc}.</div>
+          <div class="eq" style="margin-top:26px;font-size:34px;color:#003e67">= {nitrogen, potassium, uranium, oxygen}</div>
+        </div>
+        <div id="s1" class="abs" style="left:60px;top:300px;width:1520px;opacity:0">
+          <div class="lbl" style="color:#c39a3d;font-size:22px;letter-spacing:2px">PART B</div>
+          <div class="eq" style="margin-top:8px;font-size:46px">A &#8746; C</div>
+          <div class="rt" style="margin-top:22px;font-size:27px;color:#202020">Everything in A, in C, or in both.</div>
+          <div class="eq" style="margin-top:26px;font-size:34px;color:#003e67">= {copper, sodium, zinc, oxygen}</div>
+        </div>
+        <div id="s2" class="abs" style="left:60px;top:300px;width:1520px;opacity:0">
+          <div class="lbl" style="color:#c39a3d;font-size:22px;letter-spacing:2px">PART C</div>
+          <div class="eq" style="margin-top:8px;font-size:46px">(A &#8745; B') &#8746; C'</div>
+          <div class="rt" style="margin-top:22px;font-size:27px;color:#202020">A &#8745; B' = {copper, zinc}.&#8195;C' = everything except oxygen.<br>The union is just C'.</div>
+          <div class="eq" style="margin-top:26px;font-size:34px;color:#003e67">= {copper, sodium, nitrogen, potassium, uranium, zinc}</div>
+        </div>
+        <div id="s3" class="abs" style="left:60px;top:300px;width:1520px;opacity:0">
+          <div class="lbl" style="color:#c39a3d;font-size:22px;letter-spacing:2px">PART D</div>
+          <div class="eq" style="margin-top:8px;font-size:46px">B' &#8745; C'</div>
+          <div class="rt" style="margin-top:22px;font-size:27px;color:#202020">B' = {copper, uranium, oxygen, zinc}.&#8195;Now remove oxygen (not in C').</div>
+          <div class="eq" style="margin-top:26px;font-size:34px;color:#003e67">= {copper, uranium, zinc}</div>
+        </div>
+        <div id="s4" class="abs" style="left:60px;top:300px;width:1520px;opacity:0">
+          <div class="lbl" style="color:#c39a3d;font-size:22px;letter-spacing:2px">PART E</div>
+          <div class="eq" style="margin-top:8px;font-size:46px">A &#8745; B &#8745; C</div>
+          <div class="rt" style="margin-top:22px;font-size:27px;color:#202020">A &#8745; B = {sodium}, but sodium is not in C.</div>
+          <div class="eq" style="margin-top:26px;font-size:34px;color:#003e67">= &#8709;&#8195;(the empty set)</div>
+        </div>
+        <div id="s5" class="abs" style="left:60px;top:300px;width:1520px;opacity:0">
+          <div class="lbl" style="color:#c39a3d;font-size:22px;letter-spacing:2px">PART F</div>
+          <div class="eq" style="margin-top:8px;font-size:46px">(A' &#8746; B') &#8745; (A' &#8745; C)</div>
+          <div class="rt" style="margin-top:22px;font-size:27px;color:#202020">A' &#8745; C = {oxygen}, and oxygen is also in A' &#8746; B'.</div>
+          <div class="eq" style="margin-top:26px;font-size:34px;color:#003e67">= {oxygen}</div>
+        </div>
+        <div id="s6" class="abs" style="left:60px;top:290px;width:1520px;opacity:0">
+          <div class="lbl" style="color:#c39a3d;font-size:22px;letter-spacing:2px">ALL ANSWERS</div>
+          <div class="rt" style="margin-top:6px;font-size:28px;color:#003e67"><div style="margin-top:12px"><span style="color:#c39a3d">a.</span>&#8195;A' = {nitrogen, potassium, uranium, oxygen}</div><div style="margin-top:12px"><span style="color:#c39a3d">b.</span>&#8195;A &#8746; C = {copper, sodium, zinc, oxygen}</div><div style="margin-top:12px"><span style="color:#c39a3d">c.</span>&#8195;(A &#8745; B') &#8746; C' = {copper, sodium, nitrogen, potassium, uranium, zinc}</div><div style="margin-top:12px"><span style="color:#c39a3d">d.</span>&#8195;B' &#8745; C' = {copper, uranium, zinc}</div><div style="margin-top:12px"><span style="color:#c39a3d">e.</span>&#8195;A &#8745; B &#8745; C = &#8709;&#8195;(the empty set)</div><div style="margin-top:12px"><span style="color:#c39a3d">f.</span>&#8195;(A' &#8746; B') &#8745; (A' &#8745; C) = {oxygen}</div></div>
+        </div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.from(".chip", { y: 20, opacity: 0, duration: 0.4, stagger: 0.08 }, 0.2);
+      tl.to("#s0", { opacity: 1, duration: 0.4 }, 1.4);
+      tl.to("#s0", { opacity: 0, duration: 0.3 }, 4.45);
+      tl.to("#s1", { opacity: 1, duration: 0.4 }, 4.8);
+      tl.to("#s1", { opacity: 0, duration: 0.3 }, 7.85);
+      tl.to("#s2", { opacity: 1, duration: 0.4 }, 8.2);
+      tl.to("#s2", { opacity: 0, duration: 0.3 }, 11.25);
+      tl.to("#s3", { opacity: 1, duration: 0.4 }, 11.6);
+      tl.to("#s3", { opacity: 0, duration: 0.3 }, 14.65);
+      tl.to("#s4", { opacity: 1, duration: 0.4 }, 15.0);
+      tl.to("#s4", { opacity: 0, duration: 0.3 }, 18.049999999999997);
+      tl.to("#s5", { opacity: 1, duration: 0.4 }, 18.4);
+      tl.to("#s5", { opacity: 0, duration: 0.3 }, 21.449999999999996);
+      tl.to("#s6", { opacity: 1, duration: 0.4 }, 21.799999999999997);
+      tl.to(".chip", { backgroundColor: "#f3f3f0", color: "#202020", borderColor: "#c9d6e3", opacity: 0.45, duration: 0.3 }, 2.3);
+      tl.to(["#c2", "#c3", "#c4", "#c5"], { backgroundColor: "#003e67", color: "#ffffff", borderColor: "#003e67", opacity: 1, duration: 0.35, stagger: 0.07 }, 2.65);
+      tl.to(".chip", { backgroundColor: "#f3f3f0", color: "#202020", borderColor: "#c9d6e3", opacity: 0.45, duration: 0.3 }, 5.7);
+      tl.to(["#c0", "#c1", "#c6", "#c5"], { backgroundColor: "#003e67", color: "#ffffff", borderColor: "#003e67", opacity: 1, duration: 0.35, stagger: 0.07 }, 6.05);
+      tl.to(".chip", { backgroundColor: "#f3f3f0", color: "#202020", borderColor: "#c9d6e3", opacity: 0.45, duration: 0.3 }, 9.1);
+      tl.to(["#c0", "#c1", "#c2", "#c3", "#c4", "#c6"], { backgroundColor: "#003e67", color: "#ffffff", borderColor: "#003e67", opacity: 1, duration: 0.35, stagger: 0.07 }, 9.45);
+      tl.to(".chip", { backgroundColor: "#f3f3f0", color: "#202020", borderColor: "#c9d6e3", opacity: 0.45, duration: 0.3 }, 12.5);
+      tl.to(["#c0", "#c4", "#c6"], { backgroundColor: "#003e67", color: "#ffffff", borderColor: "#003e67", opacity: 1, duration: 0.35, stagger: 0.07 }, 12.85);
+      tl.to(".chip", { backgroundColor: "#f3f3f0", color: "#202020", borderColor: "#c9d6e3", opacity: 0.45, duration: 0.3 }, 15.9);
+      tl.to(".chip", { backgroundColor: "#f3f3f0", color: "#202020", borderColor: "#c9d6e3", opacity: 0.45, duration: 0.3 }, 19.299999999999997);
+      tl.to(["#c5"], { backgroundColor: "#003e67", color: "#ffffff", borderColor: "#003e67", opacity: 1, duration: 0.35, stagger: 0.07 }, 19.65);
+      tl.to(".chip", { backgroundColor: "#f3f3f0", color: "#202020", borderColor: "#c9d6e3", opacity: 1, duration: 0.4 }, 21.799999999999997);
+
+      tl.to({}, { duration: 0.01 }, 26.29);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

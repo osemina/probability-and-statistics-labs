@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      .hd { background: #003e67; color: #fff; text-align: center; border-radius: 10px; font: 700 25px Montserrat; }.rl { background: #eef2f6; color: #003e67; text-align: center; border-radius: 10px; font: 700 25px Montserrat; }.v { background: #f3f3f0; color: #202020; text-align: center; border-radius: 10px; font: 600 31px "Open Sans"; }.tc { background: #f1e4c6; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="23.8" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="23.8" style="left:0;top:0;width:1640px;height:740px">
+        <div class="lbl abs" style="left:50px;top:60px;color:#003e67;font-size:28px">Accidents by shift and cause (% of 300)</div>
+        <div id="h0" class="abs hd" style="left:240px;top:140px;width:184px;height:92px;line-height:92px">Unsafe</div>
+        <div id="h1" class="abs hd" style="left:430px;top:140px;width:184px;height:92px;line-height:92px">Human error</div>
+        <div id="h2" class="abs hd tot" style="left:620px;top:140px;width:184px;height:92px;line-height:92px">Total</div>
+        <div id="r0" class="abs rl" style="left:50px;top:232px;width:184px;height:92px;line-height:92px">Day</div>
+        <div id="v0_0" class="abs v" style="left:240px;top:232px;width:184px;height:92px;line-height:92px">5%</div>
+        <div id="v0_1" class="abs v" style="left:430px;top:232px;width:184px;height:92px;line-height:92px">32%</div>
+        <div id="v0_2" class="abs v tot tc" style="left:620px;top:232px;width:184px;height:92px;line-height:92px">37%</div>
+        <div id="r1" class="abs rl" style="left:50px;top:324px;width:184px;height:92px;line-height:92px">Evening</div>
+        <div id="v1_0" class="abs v" style="left:240px;top:324px;width:184px;height:92px;line-height:92px">6%</div>
+        <div id="v1_1" class="abs v" style="left:430px;top:324px;width:184px;height:92px;line-height:92px">25%</div>
+        <div id="v1_2" class="abs v tot tc" style="left:620px;top:324px;width:184px;height:92px;line-height:92px">31%</div>
+        <div id="r2" class="abs rl" style="left:50px;top:416px;width:184px;height:92px;line-height:92px">Graveyard</div>
+        <div id="v2_0" class="abs v" style="left:240px;top:416px;width:184px;height:92px;line-height:92px">2%</div>
+        <div id="v2_1" class="abs v" style="left:430px;top:416px;width:184px;height:92px;line-height:92px">30%</div>
+        <div id="v2_2" class="abs v tot tc" style="left:620px;top:416px;width:184px;height:92px;line-height:92px">32%</div>
+        <div id="r3" class="abs rl tot" style="left:50px;top:508px;width:184px;height:92px;line-height:92px">Total</div>
+        <div id="v3_0" class="abs v tot tc" style="left:240px;top:508px;width:184px;height:92px;line-height:92px">13%</div>
+        <div id="v3_1" class="abs v tot tc" style="left:430px;top:508px;width:184px;height:92px;line-height:92px">87%</div>
+        <div id="v3_2" class="abs v tot tc" style="left:620px;top:508px;width:184px;height:92px;line-height:92px">100%</div>
+        <div id="s0" class="abs" style="left:850px;top:70px;width:750px;opacity:0">
+          <div class="lbl" style="color:#c39a3d;font-size:21px;letter-spacing:2px">STEP 1</div>
+          <div class="lbl" style="color:#003e67;font-size:31px;margin-top:10px;white-space:normal;line-height:1.25">Add a Total row and column</div>
+          <div class="rt" style="margin-top:20px;font-size:24px;line-height:1.45;color:#202020">Every accident sits in exactly one cell, so the cells add up to 100%.</div>
+          <div class="eq" style="margin-top:24px;font-size:33px;white-space:normal;line-height:1.35"></div>
+        </div>
+        <div id="s1" class="abs" style="left:850px;top:70px;width:750px;opacity:0">
+          <div class="lbl" style="color:#c39a3d;font-size:21px;letter-spacing:2px">PART A</div>
+          <div class="lbl" style="color:#003e67;font-size:31px;margin-top:10px;white-space:normal;line-height:1.25">Graveyard shift</div>
+          <div class="rt" style="margin-top:20px;font-size:24px;line-height:1.45;color:#202020">Read the Graveyard row total.</div>
+          <div class="eq" style="margin-top:24px;font-size:33px;white-space:normal;line-height:1.35">P(G) = 2% + 30% = 0.32</div>
+        </div>
+        <div id="s2" class="abs" style="left:850px;top:70px;width:750px;opacity:0">
+          <div class="lbl" style="color:#c39a3d;font-size:21px;letter-spacing:2px">PART B</div>
+          <div class="lbl" style="color:#003e67;font-size:31px;margin-top:10px;white-space:normal;line-height:1.25">Human error</div>
+          <div class="rt" style="margin-top:20px;font-size:24px;line-height:1.45;color:#202020">Read the Human error column total.</div>
+          <div class="eq" style="margin-top:24px;font-size:33px;white-space:normal;line-height:1.35">P(H) = 32% + 25% + 30% = 0.87</div>
+        </div>
+        <div id="s3" class="abs" style="left:850px;top:70px;width:750px;opacity:0">
+          <div class="lbl" style="color:#c39a3d;font-size:21px;letter-spacing:2px">PART C</div>
+          <div class="lbl" style="color:#003e67;font-size:31px;margin-top:10px;white-space:normal;line-height:1.25">Unsafe conditions</div>
+          <div class="rt" style="margin-top:20px;font-size:24px;line-height:1.45;color:#202020">The other cause. Check: 0.13 + 0.87 = 1.</div>
+          <div class="eq" style="margin-top:24px;font-size:33px;white-space:normal;line-height:1.35">P(U) = 1 &#8722; 0.87 = 0.13</div>
+        </div>
+        <div id="s4" class="abs" style="left:850px;top:70px;width:750px;opacity:0">
+          <div class="lbl" style="color:#c39a3d;font-size:21px;letter-spacing:2px">PART D</div>
+          <div class="lbl" style="color:#003e67;font-size:31px;margin-top:10px;white-space:normal;line-height:1.25">Evening or graveyard</div>
+          <div class="rt" style="margin-top:20px;font-size:24px;line-height:1.45;color:#202020">One accident cannot happen on two shifts, so just add the row totals.</div>
+          <div class="eq" style="margin-top:24px;font-size:33px;white-space:normal;line-height:1.35">P(E &#8746; G) = 0.31 + 0.32 = 0.63</div>
+        </div>
+        <div id="s5" class="abs" style="left:850px;top:70px;width:750px;opacity:0">
+          <div class="lbl" style="color:#c39a3d;font-size:21px;letter-spacing:2px">ANSWERS</div>
+          <div class="lbl" style="color:#003e67;font-size:31px;margin-top:10px;white-space:normal;line-height:1.25">Problem 3</div>
+          <div class="rt" style="margin-top:20px;font-size:24px;line-height:1.45;color:#202020"></div>
+          <div class="eq" style="margin-top:24px;font-size:33px;white-space:normal;line-height:1.35">(a) 0.32&#8195;(b) 0.87<br>(c) 0.13&#8195;(d) 0.63</div>
+        </div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.set(".tot", { opacity: 0 }, 0);
+      tl.from([".hd:not(.tot)", ".rl:not(.tot)", ".v:not(.tot)"], { opacity: 0, y: 12, duration: 0.35, stagger: 0.03 }, 0.2);
+      tl.to("#s0", { opacity: 1, duration: 0.4 }, 1.2);
+      tl.to("#s0", { opacity: 0, duration: 0.3 }, 4.45);
+      tl.to("#s1", { opacity: 1, duration: 0.4 }, 4.8);
+      tl.to("#s1", { opacity: 0, duration: 0.3 }, 8.05);
+      tl.to("#s2", { opacity: 1, duration: 0.4 }, 8.4);
+      tl.to("#s2", { opacity: 0, duration: 0.3 }, 11.65);
+      tl.to("#s3", { opacity: 1, duration: 0.4 }, 12.0);
+      tl.to("#s3", { opacity: 0, duration: 0.3 }, 15.25);
+      tl.to("#s4", { opacity: 1, duration: 0.4 }, 15.6);
+      tl.to("#s4", { opacity: 0, duration: 0.3 }, 18.849999999999998);
+      tl.to("#s5", { opacity: 1, duration: 0.4 }, 19.2);
+      tl.to(".tot", { opacity: 1, duration: 0.4, stagger: 0.05 }, 1.7999999999999998);
+      tl.to(".v", { scale: 1, boxShadow: "0 0 0 0 rgba(0,0,0,0)", opacity: 1, duration: 0.25 }, 1.7999999999999998);
+      tl.to(".v", { scale: 1, boxShadow: "0 0 0 0 rgba(0,0,0,0)", opacity: 1, duration: 0.25 }, 5.3999999999999995);
+      tl.to(".v", { opacity: 0.35, duration: 0.3 }, 5.699999999999999);
+      tl.to(["#v2_0", "#v2_1", "#v2_2"], { opacity: 1, boxShadow: "0 0 0 5px #003e67", scale: 1.04, duration: 0.35, stagger: 0.08 }, 5.8);
+      tl.to(".v", { scale: 1, boxShadow: "0 0 0 0 rgba(0,0,0,0)", opacity: 1, duration: 0.25 }, 9.0);
+      tl.to(".v", { opacity: 0.35, duration: 0.3 }, 9.3);
+      tl.to(["#v0_1", "#v1_1", "#v2_1", "#v3_1"], { opacity: 1, boxShadow: "0 0 0 5px #003e67", scale: 1.04, duration: 0.35, stagger: 0.08 }, 9.4);
+      tl.to(".v", { scale: 1, boxShadow: "0 0 0 0 rgba(0,0,0,0)", opacity: 1, duration: 0.25 }, 12.6);
+      tl.to(".v", { opacity: 0.35, duration: 0.3 }, 12.9);
+      tl.to(["#v0_0", "#v1_0", "#v2_0", "#v3_0"], { opacity: 1, boxShadow: "0 0 0 5px #003e67", scale: 1.04, duration: 0.35, stagger: 0.08 }, 13.0);
+      tl.to(".v", { scale: 1, boxShadow: "0 0 0 0 rgba(0,0,0,0)", opacity: 1, duration: 0.25 }, 16.2);
+      tl.to(".v", { opacity: 0.35, duration: 0.3 }, 16.5);
+      tl.to(["#v1_2", "#v2_2"], { opacity: 1, boxShadow: "0 0 0 5px #003e67", scale: 1.04, duration: 0.35, stagger: 0.08 }, 16.599999999999998);
+      tl.to(".v", { scale: 1, boxShadow: "0 0 0 0 rgba(0,0,0,0)", opacity: 1, duration: 0.25 }, 19.8);
+
+      tl.to({}, { duration: 0.01 }, 23.79);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
