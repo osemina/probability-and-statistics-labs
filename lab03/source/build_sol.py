@@ -130,7 +130,7 @@ table_fig('sol2_problem3_accidents', 'Accidents by shift and cause (% of 300)',
            (('PART B', 'Human error'), 'Read the Human error column total.', 'P(H) = 32% + 25% + 30% = 0.87', [(0, 1), (1, 1), (2, 1), (3, 1)], True),
            (('PART C', 'Unsafe conditions'), 'The other cause. Check: 0.13 + 0.87 = 1.', 'P(U) = 1 &#8722; 0.87 = 0.13', [(0, 0), (1, 0), (2, 0), (3, 0)], True),
            (('PART D', 'Evening or graveyard'), 'One accident cannot happen on two shifts, so just add the row totals.', 'P(E &#8746; G) = 0.31 + 0.32 = 0.63', [(1, 2), (2, 2)], True),
-           (('ANSWERS', 'Problem 3'), '(a) 0.32&#8195;(b) 0.87<br>(c) 0.13&#8195;(d) 0.63', '', [], True, 4.2)],
+           (('ANSWERS', 'Task 3'), '(a) 0.32&#8195;(b) 0.87<br>(c) 0.13&#8195;(d) 0.63', '', [], True, 4.2)],
           colw=190)
 
 # ---------------------------------------------------------------- S3: Problem 4, smoking and hypertension
@@ -140,7 +140,7 @@ table_fig('sol3_problem4_given', 'Hypertension and smoking (180 people)',
           [(('STEP 1', 'Find the group totals'), 'Add each row and each column. The totals are the sizes of the groups we may condition on.', '', [], True),
            (('PART A', 'H, given heavy smoker'), '"Given heavy smoker" means: only look at the Heavy column (49 people).', 'P(H | Heavy) = 30/49 &#8776; 0.612', [(0, 2), (2, 2)], True, 4.2),
            (('PART B', 'Nonsmoker, given NH'), '"Given no hypertension" means: only look at the NH row (93 people).', 'P(Non | NH) = 48/93 &#8776; 0.516', [(1, 0), (1, 3)], True, 4.2),
-           (('ANSWERS', 'Problem 4'), '(a) 30/49 &#8776; 0.612<br>(b) 48/93 &#8776; 0.516<br><span style="color:#b34739">Divide by the group total, not by 180.</span>', '', [], True, 4.4)],
+           (('ANSWERS', 'Task 4'), '(a) 30/49 &#8776; 0.612<br>(b) 48/93 &#8776; 0.516<br><span style="color:#b34739">Divide by the group total, not by 180.</span>', '', [], True, 4.4)],
           colw=165, labw=120)
 
 # ---------------------------------------------------------------- S4: Problems 5 and 6, handoffs
@@ -154,7 +154,7 @@ table_fig('sol4_problems5_6_calls', 'Call types: probabilities',
            (('6A', 'No handoffs, given brief'), 'Stay inside the Brief row (total 0.6).', 'P(H<sub>0</sub> | B) = 0.4 / 0.6 &#8776; 0.667', [(1, 0), (1, 3)], True),
            (('6B', 'Long, given one handoff'), 'Stay inside the H<sub>1</sub> column (total 0.2).', 'P(L | H<sub>1</sub>) = 0.1 / 0.2 = 0.5', [(0, 1), (2, 1)], True),
            (('6C', 'One or more handoffs, given long'), 'Stay inside the Long row (total 0.4).', 'P(H<sub>1</sub> &#8746; H<sub>2</sub> | L) = 0.3 / 0.4 = 0.75', [(0, 1), (0, 2), (0, 3)], True),
-           (('ANSWERS', 'Problems 5 and 6'), '5: (a) 0.5&#8195;(b) 0.6&#8195;(c) 0.5<br>6: (a) 0.667&#8195;(b) 0.5&#8195;(c) 0.75', '', [], True, 4.4)],
+           (('ANSWERS', 'Tasks 5 and 6'), '5: (a) 0.5&#8195;(b) 0.6&#8195;(c) 0.5<br>6: (a) 0.667&#8195;(b) 0.5&#8195;(c) 0.75', '', [], True, 4.4)],
           colw=150, labw=170)
 
 # ---------------------------------------------------------------- S5: Problem 7, tree + Bayes
