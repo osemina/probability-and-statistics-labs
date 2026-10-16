@@ -133,6 +133,18 @@ table_fig('sol2_problem3_accidents', 'Accidents by shift and cause (% of 300)',
            (('ANSWERS', 'Task 3'), '(a) 0.32&#8195;(b) 0.87<br>(c) 0.13&#8195;(d) 0.63', '', [], True, 4.2)],
           colw=190)
 
+# ---------------------------------------------------------------- S2 (new scenario): Problem 3, online game crashes
+table_fig('sol2_problem3_game_crashes', 'Crashes by time and cause (% of 300)',
+          ['Server', 'Player side'], ['Day', 'Evening', 'Night'],
+          [['5%', '32%'], ['6%', '25%'], ['2%', '30%']], ['13%', '87%'], ['37%', '31%', '32%'], '100%',
+          [(('STEP 1', 'Add a Total row and column'), 'Every crash report sits in exactly one cell, so the cells add up to 100%.', '', [], True),
+           (('PART A', 'Night'), 'Read the Night row total.', 'P(N) = 2% + 30% = 0.32', [(2, 0), (2, 1), (2, 2)], True),
+           (('PART B', 'Player-side problem'), 'Read the Player side column total.', 'P(P) = 32% + 25% + 30% = 0.87', [(0, 1), (1, 1), (2, 1), (3, 1)], True),
+           (('PART C', 'Server problem'), 'The other cause. Check: 0.13 + 0.87 = 1.', 'P(S) = 1 &#8722; 0.87 = 0.13', [(0, 0), (1, 0), (2, 0), (3, 0)], True),
+           (('PART D', 'Evening or night'), 'One crash cannot happen at two times of day, so just add the row totals.', 'P(E &#8746; N) = 0.31 + 0.32 = 0.63', [(1, 2), (2, 2)], True),
+           (('ANSWERS', 'Task 3'), '(a) 0.32&#8195;(b) 0.87<br>(c) 0.13&#8195;(d) 0.63', '', [], True, 4.2)],
+          colw=190)
+
 # ---------------------------------------------------------------- S3: Problem 4, smoking and hypertension
 table_fig('sol3_problem4_given', 'Hypertension and smoking (180 people)',
           ['Non', 'Moderate', 'Heavy'], ['H', 'NH'],
