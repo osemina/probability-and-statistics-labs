@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="12" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="12" style="left:0;top:0;width:1640px;height:740px">
+        <div class="abs card" style="left:40px;top:40px;width:1140px;height:660px"></div>
+        <svg class="abs" style="left:0;top:0" width="1640" height="740"><defs></defs><line x1="120" y1="550.0" x2="1120" y2="550.0" stroke="#5f6368" stroke-width="3"/><line x1="225.26315789473682" y1="550.0" x2="225.26315789473682" y2="560.0" stroke="#5f6368" stroke-width="2"/><text x="225.26315789473682" y="586.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">70</text><line x1="356.8421052631579" y1="550.0" x2="356.8421052631579" y2="560.0" stroke="#5f6368" stroke-width="2"/><text x="356.8421052631579" y="586.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">80</text><line x1="488.4210526315789" y1="550.0" x2="488.4210526315789" y2="560.0" stroke="#5f6368" stroke-width="2"/><text x="488.4210526315789" y="586.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">90</text><line x1="620.0" y1="550.0" x2="620.0" y2="560.0" stroke="#5f6368" stroke-width="2"/><text x="620.0" y="586.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">100</text><line x1="751.578947368421" y1="550.0" x2="751.578947368421" y2="560.0" stroke="#5f6368" stroke-width="2"/><text x="751.578947368421" y="586.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">110</text><line x1="883.1578947368422" y1="550.0" x2="883.1578947368422" y2="560.0" stroke="#5f6368" stroke-width="2"/><text x="883.1578947368422" y="586.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">120</text><line x1="1014.7368421052631" y1="550.0" x2="1014.7368421052631" y2="560.0" stroke="#5f6368" stroke-width="2"/><text x="1014.7368421052631" y="586.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">130</text><path id="nc" d="M120.0,549.7 L126.3,549.7 L132.5,549.6 L138.7,549.5 L145.0,549.5 L151.2,549.4 L157.5,549.2 L163.8,549.1 L170.0,549.0 L176.3,548.8 L182.5,548.6 L188.7,548.3 L195.0,548.0 L201.2,547.7 L207.5,547.3 L213.8,546.9 L220.0,546.4 L226.3,545.9 L232.5,545.3 L238.8,544.5 L245.0,543.8 L251.2,542.9 L257.5,541.8 L263.8,540.7 L270.0,539.5 L276.2,538.0 L282.5,536.5 L288.8,534.7 L295.0,532.8 L301.3,530.7 L307.5,528.4 L313.7,525.8 L320.0,523.0 L326.2,520.0 L332.5,516.7 L338.8,513.1 L345.0,509.2 L351.2,505.0 L357.5,500.4 L363.8,495.6 L370.0,490.3 L376.2,484.8 L382.5,478.9 L388.8,472.6 L395.0,465.9 L401.2,458.9 L407.5,451.6 L413.8,443.8 L420.0,435.8 L426.3,427.3 L432.5,418.6 L438.7,409.6 L445.0,400.2 L451.2,390.6 L457.5,380.8 L463.8,370.8 L470.0,360.6 L476.2,350.3 L482.5,339.9 L488.8,329.5 L495.0,319.0 L501.2,308.6 L507.5,298.4 L513.8,288.2 L520.0,278.3 L526.2,268.6 L532.5,259.3 L538.8,250.3 L545.0,241.7 L551.2,233.6 L557.5,226.0 L563.8,219.0 L570.0,212.6 L576.2,206.8 L582.5,201.8 L588.8,197.4 L595.0,193.8 L601.2,191.0 L607.5,189.0 L613.8,187.7 L620.0,187.3 L626.2,187.7 L632.5,189.0 L638.7,191.0 L645.0,193.8 L651.2,197.4 L657.5,201.8 L663.8,206.8 L670.0,212.6 L676.2,219.0 L682.5,226.0 L688.8,233.6 L695.0,241.7 L701.2,250.3 L707.5,259.3 L713.8,268.6 L720.0,278.3 L726.3,288.2 L732.5,298.4 L738.8,308.6 L745.0,319.0 L751.2,329.5 L757.5,339.9 L763.7,350.3 L770.0,360.6 L776.2,370.8 L782.5,380.8 L788.8,390.6 L795.0,400.2 L801.2,409.6 L807.5,418.6 L813.8,427.3 L820.0,435.8 L826.2,443.8 L832.5,451.6 L838.8,458.9 L845.0,465.9 L851.3,472.6 L857.5,478.9 L863.8,484.8 L870.0,490.3 L876.2,495.6 L882.5,500.4 L888.7,505.0 L895.0,509.2 L901.2,513.1 L907.5,516.7 L913.8,520.0 L920.0,523.0 L926.2,525.8 L932.5,528.4 L938.8,530.7 L945.0,532.8 L951.2,534.7 L957.5,536.5 L963.8,538.0 L970.0,539.5 L976.3,540.7 L982.5,541.8 L988.8,542.9 L995.0,543.8 L1001.2,544.5 L1007.5,545.3 L1013.8,545.9 L1020.0,546.4 L1026.2,546.9 L1032.5,547.3 L1038.8,547.7 L1045.0,548.0 L1051.2,548.3 L1057.5,548.6 L1063.8,548.8 L1070.0,549.0 L1076.2,549.1 L1082.5,549.2 L1088.8,549.4 L1095.0,549.5 L1101.2,549.5 L1107.5,549.6 L1113.8,549.7 L1120.0,549.7" fill="none" stroke="#003e67" stroke-width="5" stroke-dasharray="3000" stroke-dashoffset="3000"/><line id="mu" x1="620.0" y1="168.1818181818182" x2="620.0" y2="550.0" stroke="#202020" stroke-width="2.5" stroke-dasharray="8 6" opacity="0"/><line id="xl" x1="817.3684210526316" y1="432.2567312128257" x2="817.3684210526316" y2="550.0" stroke="#c39a3d" stroke-width="5" opacity="0"/><g id="s0" opacity="0"><line x1="620.0" y1="620.0" x2="751.578947368421" y2="620.0" stroke="#1f5f99" stroke-width="8" stroke-linecap="round"/><text x="685.7894736842105" y="654.0" font-family="Open Sans" font-weight="600" font-size="20" fill="#202020" text-anchor="middle">1σ = 10</text></g><g id="s1" opacity="0"><line x1="751.578947368421" y1="620.0" x2="817.3684210526316" y2="620.0" stroke="#c39a3d" stroke-width="8" stroke-linecap="round"/><text x="784.4736842105262" y="654.0" font-family="Open Sans" font-weight="600" font-size="20" fill="#202020" text-anchor="middle">0.5σ = 5</text></g></svg>
+        <div class="lbl abs" style="left:80px;top:66px;color:#003e67;font-size:28px">μ = 100,  σ = 10,  x = 115</div>
+        <div id="mut" class="rt abs" style="left:632.0px;top:160px;opacity:0;font-size:22px">μ = 100</div>
+        <div id="xt" class="rt abs" style="left:829.3684210526316px;top:300px;opacity:0;font-size:22px;color:#c39a3d">x = 115</div>
+        <div id="z1" class="step abs" style="left:1220px;top:150px;opacity:0;">How many σ is x away from μ?</div>
+        <div id="z2" class="eq abs" style="left:1220px;top:220px;opacity:0;">z = (x − μ) / σ</div>
+        <div id="z3" class="eq abs" style="left:1220px;top:285px;opacity:0;font-size:26px">z = (115 − 100) / 10</div>
+        <div id="z4" class="eq abs" style="left:1220px;top:345px;opacity:0;font-size:40px;color:#c39a3d">z = 1.5</div>
+        <div id="z5" class="note abs" style="left:1220px;top:430px;opacity:0;width:360px">115 is 1.5 standard deviations above the mean. A negative z would mean below the mean.</div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#nc", { attr: { "stroke-dashoffset": 3000 } }, { attr: { "stroke-dashoffset": 0 }, duration: 1.4, ease: "power1.inOut" }, 0.3);
+      tl.to(["#mu", "#mut"], { opacity: 1, duration: 0.4 }, 1.4);
+      tl.to(["#xl", "#xt"], { opacity: 1, duration: 0.4 }, 2.2);
+      tl.to(["#z1"], { opacity: 1, duration: 0.4 }, 2.6);
+      tl.to(["#s0"], { opacity: 1, duration: 0.4 }, 3.4);
+      tl.to(["#s1"], { opacity: 1, duration: 0.4 }, 4.4);
+      tl.fromTo(["#z2"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 5.2);
+      tl.fromTo(["#z3"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 6.0);
+      tl.fromTo(["#z4"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 6.8);
+      tl.to(["#z5"], { opacity: 1, duration: 0.4 }, 8.0);
+
+      tl.to({}, { duration: 0.01 }, 11.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

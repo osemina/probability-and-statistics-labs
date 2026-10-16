@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="12" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="12" style="left:0;top:0;width:1640px;height:740px">
+        <div class="abs card" style="left:40px;top:40px;width:840px;height:660px"></div>
+        <div class="lbl abs" style="left:80px;top:66px;color:#003e67;font-size:28px">Z-table: P(Z &lt; z)</div>
+        <div class="sub abs" style="left:80px;top:110px">part of the table</div>
+        <div class="abs" style="left:90px;top:170px;width:110px;height:62px;background:#003e67;color:#fff;font:700 24px Montserrat;text-align:center;line-height:62px">z</div>
+        <div id="ch0" class="abs" style="left:200px;top:170px;width:128px;height:62px;background:#003e67;color:#fff;font:700 24px Montserrat;text-align:center;line-height:62px">.00</div>
+        <div id="ch1" class="abs" style="left:328px;top:170px;width:128px;height:62px;background:#003e67;color:#fff;font:700 24px Montserrat;text-align:center;line-height:62px">.01</div>
+        <div id="ch2" class="abs" style="left:456px;top:170px;width:128px;height:62px;background:#003e67;color:#fff;font:700 24px Montserrat;text-align:center;line-height:62px">.02</div>
+        <div id="ch3" class="abs" style="left:584px;top:170px;width:128px;height:62px;background:#003e67;color:#fff;font:700 24px Montserrat;text-align:center;line-height:62px">.03</div>
+        <div id="ch4" class="abs" style="left:712px;top:170px;width:128px;height:62px;background:#003e67;color:#fff;font:700 24px Montserrat;text-align:center;line-height:62px">.04</div>
+        <div id="rh0" class="abs" style="left:90px;top:232px;width:110px;height:62px;background:#eef2f6;border:1px solid #c9d6e3;font:700 24px Montserrat;color:#003e67;text-align:center;line-height:62px">1.3</div>
+        <div id="c00" class="abs" style="left:200px;top:232px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9032</div>
+        <div id="c01" class="abs" style="left:328px;top:232px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9049</div>
+        <div id="c02" class="abs" style="left:456px;top:232px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9066</div>
+        <div id="c03" class="abs" style="left:584px;top:232px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9082</div>
+        <div id="c04" class="abs" style="left:712px;top:232px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9099</div>
+        <div id="rh1" class="abs" style="left:90px;top:294px;width:110px;height:62px;background:#eef2f6;border:1px solid #c9d6e3;font:700 24px Montserrat;color:#003e67;text-align:center;line-height:62px">1.4</div>
+        <div id="c10" class="abs" style="left:200px;top:294px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9192</div>
+        <div id="c11" class="abs" style="left:328px;top:294px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9207</div>
+        <div id="c12" class="abs" style="left:456px;top:294px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9222</div>
+        <div id="c13" class="abs" style="left:584px;top:294px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9236</div>
+        <div id="c14" class="abs" style="left:712px;top:294px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9251</div>
+        <div id="rh2" class="abs" style="left:90px;top:356px;width:110px;height:62px;background:#eef2f6;border:1px solid #c9d6e3;font:700 24px Montserrat;color:#003e67;text-align:center;line-height:62px">1.5</div>
+        <div id="c20" class="abs" style="left:200px;top:356px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9332</div>
+        <div id="c21" class="abs" style="left:328px;top:356px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9345</div>
+        <div id="c22" class="abs" style="left:456px;top:356px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9357</div>
+        <div id="c23" class="abs" style="left:584px;top:356px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9370</div>
+        <div id="c24" class="abs" style="left:712px;top:356px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9382</div>
+        <div id="rh3" class="abs" style="left:90px;top:418px;width:110px;height:62px;background:#eef2f6;border:1px solid #c9d6e3;font:700 24px Montserrat;color:#003e67;text-align:center;line-height:62px">1.6</div>
+        <div id="c30" class="abs" style="left:200px;top:418px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9452</div>
+        <div id="c31" class="abs" style="left:328px;top:418px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9463</div>
+        <div id="c32" class="abs" style="left:456px;top:418px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9474</div>
+        <div id="c33" class="abs" style="left:584px;top:418px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9484</div>
+        <div id="c34" class="abs" style="left:712px;top:418px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9495</div>
+        <div id="rh4" class="abs" style="left:90px;top:480px;width:110px;height:62px;background:#eef2f6;border:1px solid #c9d6e3;font:700 24px Montserrat;color:#003e67;text-align:center;line-height:62px">1.7</div>
+        <div id="c40" class="abs" style="left:200px;top:480px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9554</div>
+        <div id="c41" class="abs" style="left:328px;top:480px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9564</div>
+        <div id="c42" class="abs" style="left:456px;top:480px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9573</div>
+        <div id="c43" class="abs" style="left:584px;top:480px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9582</div>
+        <div id="c44" class="abs" style="left:712px;top:480px;width:128px;height:62px;background:#fff;border:1px solid #c9d6e3;font:600 23px 'Open Sans';color:#202020;text-align:center;line-height:60px">0.9591</div>
+        <div id="rowhl" class="abs" style="left:86px;top:352px;width:758px;height:70px;border:4px solid #1f5f99;border-radius:8px;opacity:0"></div>
+        <div id="colhl" class="abs" style="left:196px;top:166px;width:136px;height:380px;border:4px solid #c39a3d;border-radius:8px;opacity:0"></div>
+        <div id="st1" class="rt abs" style="left:90px;top:570px;opacity:0;color:#1f5f99">1. Row 1.5 (first decimal)</div>
+        <div id="st2" class="rt abs" style="left:90px;top:610px;opacity:0;color:#c39a3d">2. Column .00 (second decimal)</div>
+        <div id="st3" class="rt abs" style="left:90px;top:650px;opacity:0;color:#003e67">3. Read the value: 0.9332</div>
+        <div class="abs card" style="left:920px;top:40px;width:680px;height:660px"></div>
+        <svg class="abs" style="left:0;top:0" width="1640" height="740"><defs><clipPath id="c4"><rect id="c4r" x="960.0" y="200.0" width="0" height="305"/></clipPath></defs><line x1="960" y1="500.0" x2="1560" y2="500.0" stroke="#5f6368" stroke-width="3"/><line x1="995.2941176470588" y1="500.0" x2="995.2941176470588" y2="510.0" stroke="#5f6368" stroke-width="2"/><text x="995.2941176470588" y="536.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">-3</text><line x1="1083.5294117647059" y1="500.0" x2="1083.5294117647059" y2="510.0" stroke="#5f6368" stroke-width="2"/><text x="1083.5294117647059" y="536.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">-2</text><line x1="1171.764705882353" y1="500.0" x2="1171.764705882353" y2="510.0" stroke="#5f6368" stroke-width="2"/><text x="1171.764705882353" y="536.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">-1</text><line x1="1260.0" y1="500.0" x2="1260.0" y2="510.0" stroke="#5f6368" stroke-width="2"/><text x="1260.0" y="536.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">0</text><line x1="1348.235294117647" y1="500.0" x2="1348.235294117647" y2="510.0" stroke="#5f6368" stroke-width="2"/><text x="1348.235294117647" y="536.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">1</text><line x1="1436.4705882352941" y1="500.0" x2="1436.4705882352941" y2="510.0" stroke="#5f6368" stroke-width="2"/><text x="1436.4705882352941" y="536.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">2</text><line x1="1524.7058823529412" y1="500.0" x2="1524.7058823529412" y2="510.0" stroke="#5f6368" stroke-width="2"/><text x="1524.7058823529412" y="536.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">3</text><path d="M960.0,500.0 L960.0,499.2 L963.6,499.0 L967.2,498.9 L970.8,498.7 L974.4,498.6 L978.0,498.4 L981.6,498.1 L985.2,497.9 L988.8,497.6 L992.4,497.3 L996.0,496.9 L999.6,496.5 L1003.2,496.1 L1006.8,495.6 L1010.4,495.0 L1014.0,494.4 L1017.6,493.7 L1021.2,493.0 L1024.9,492.2 L1028.5,491.3 L1032.1,490.3 L1035.7,489.3 L1039.3,488.1 L1042.9,486.8 L1046.5,485.4 L1050.1,484.0 L1053.7,482.3 L1057.3,480.6 L1060.9,478.7 L1064.5,476.6 L1068.1,474.5 L1071.7,472.1 L1075.3,469.6 L1078.9,466.9 L1082.5,464.0 L1086.1,461.0 L1089.7,457.8 L1093.3,454.3 L1096.9,450.7 L1100.5,446.9 L1104.1,442.9 L1107.7,438.7 L1111.3,434.2 L1114.9,429.6 L1118.5,424.8 L1122.1,419.8 L1125.7,414.5 L1129.3,409.1 L1132.9,403.6 L1136.5,397.8 L1140.1,391.9 L1143.8,385.8 L1147.4,379.6 L1151.0,373.3 L1154.6,366.8 L1158.2,360.3 L1161.8,353.6 L1165.4,347.0 L1169.0,340.2 L1172.6,333.5 L1176.2,326.8 L1179.8,320.1 L1183.4,313.4 L1187.0,306.9 L1190.6,300.4 L1194.2,294.0 L1197.8,287.8 L1201.4,281.8 L1205.0,276.0 L1208.6,270.4 L1212.2,265.1 L1215.8,260.1 L1219.4,255.3 L1223.0,250.9 L1226.6,246.8 L1230.2,243.1 L1233.8,239.7 L1237.4,236.8 L1241.0,234.2 L1244.6,232.1 L1248.2,230.4 L1251.8,229.2 L1255.4,228.4 L1259.0,228.0 L1262.6,228.1 L1266.2,228.7 L1269.9,229.7 L1273.5,231.1 L1277.1,233.0 L1280.7,235.4 L1284.3,238.1 L1287.9,241.2 L1291.5,244.8 L1295.1,248.7 L1298.7,252.9 L1302.3,257.5 L1305.9,262.4 L1309.5,267.6 L1313.1,273.0 L1316.7,278.7 L1320.3,284.6 L1323.9,290.7 L1327.5,297.0 L1331.1,303.4 L1334.7,309.9 L1338.3,316.5 L1341.9,323.2 L1345.5,329.9 L1349.1,336.7 L1352.7,343.4 L1356.3,350.1 L1359.9,356.8 L1363.5,363.3 L1367.1,369.8 L1370.7,376.2 L1374.3,382.5 L1377.9,388.7 L1381.5,394.7 L1385.1,400.5 L1388.8,406.2 L1392.4,411.7 L1392.4,500.0 Z" fill="#1f5f99" opacity="0.55" clip-path="url(#c4)"/><path id="nc" d="M960.0,499.2 L963.8,499.0 L967.5,498.9 L971.2,498.7 L975.0,498.5 L978.8,498.3 L982.5,498.1 L986.2,497.8 L990.0,497.5 L993.8,497.1 L997.5,496.7 L1001.2,496.3 L1005.0,495.8 L1008.8,495.3 L1012.5,494.7 L1016.2,494.0 L1020.0,493.3 L1023.8,492.5 L1027.5,491.5 L1031.2,490.6 L1035.0,489.5 L1038.8,488.3 L1042.5,487.0 L1046.2,485.5 L1050.0,484.0 L1053.8,482.3 L1057.5,480.5 L1061.2,478.5 L1065.0,476.3 L1068.8,474.0 L1072.5,471.6 L1076.2,468.9 L1080.0,466.0 L1083.8,463.0 L1087.5,459.8 L1091.2,456.3 L1095.0,452.7 L1098.8,448.8 L1102.5,444.7 L1106.2,440.4 L1110.0,435.9 L1113.8,431.1 L1117.5,426.2 L1121.2,421.0 L1125.0,415.6 L1128.8,410.0 L1132.5,404.2 L1136.2,398.3 L1140.0,392.1 L1143.8,385.8 L1147.5,379.3 L1151.2,372.7 L1155.0,366.0 L1158.8,359.2 L1162.5,352.3 L1166.2,345.3 L1170.0,338.3 L1173.8,331.3 L1177.5,324.3 L1181.2,317.4 L1185.0,310.5 L1188.8,303.7 L1192.5,297.0 L1196.2,290.5 L1200.0,284.1 L1203.8,278.0 L1207.5,272.1 L1211.2,266.5 L1215.0,261.2 L1218.8,256.2 L1222.5,251.5 L1226.2,247.2 L1230.0,243.3 L1233.8,239.8 L1237.5,236.7 L1241.2,234.1 L1245.0,231.9 L1248.8,230.2 L1252.5,229.0 L1256.2,228.2 L1260.0,228.0 L1263.8,228.2 L1267.5,229.0 L1271.2,230.2 L1275.0,231.9 L1278.8,234.1 L1282.5,236.7 L1286.2,239.8 L1290.0,243.3 L1293.8,247.2 L1297.5,251.5 L1301.2,256.2 L1305.0,261.2 L1308.8,266.5 L1312.5,272.1 L1316.2,278.0 L1320.0,284.1 L1323.8,290.5 L1327.5,297.0 L1331.2,303.7 L1335.0,310.5 L1338.8,317.4 L1342.5,324.3 L1346.2,331.3 L1350.0,338.3 L1353.8,345.3 L1357.5,352.3 L1361.2,359.2 L1365.0,366.0 L1368.8,372.7 L1372.5,379.3 L1376.2,385.8 L1380.0,392.1 L1383.8,398.3 L1387.5,404.2 L1391.2,410.0 L1395.0,415.6 L1398.8,421.0 L1402.5,426.2 L1406.2,431.1 L1410.0,435.9 L1413.8,440.4 L1417.5,444.7 L1421.2,448.8 L1425.0,452.7 L1428.8,456.3 L1432.5,459.8 L1436.2,463.0 L1440.0,466.0 L1443.8,468.9 L1447.5,471.6 L1451.2,474.0 L1455.0,476.3 L1458.8,478.5 L1462.5,480.5 L1466.2,482.3 L1470.0,484.0 L1473.8,485.5 L1477.5,487.0 L1481.2,488.3 L1485.0,489.5 L1488.8,490.6 L1492.5,491.5 L1496.2,492.5 L1500.0,493.3 L1503.8,494.0 L1507.5,494.7 L1511.2,495.3 L1515.0,495.8 L1518.8,496.3 L1522.5,496.7 L1526.2,497.1 L1530.0,497.5 L1533.8,497.8 L1537.5,498.1 L1541.2,498.3 L1545.0,498.5 L1548.8,498.7 L1552.5,498.9 L1556.2,499.0 L1560.0,499.2" fill="none" stroke="#003e67" stroke-width="4" stroke-dasharray="3000" stroke-dashoffset="3000"/><line id="zl" x1="1392.3529411764707" y1="254.54545454545456" x2="1392.3529411764707" y2="500.0" stroke="#c39a3d" stroke-width="4" opacity="0"/></svg>
+        <div class="lbl abs" style="left:960px;top:66px;color:#003e67;font-size:26px">The table gives the area to the LEFT</div>
+        <div id="zt" class="rt abs" style="left:1352.3529411764707px;top:150px;opacity:0;color:#c39a3d;font-size:22px">z = 1.5</div>
+        <div id="pa" class="eq abs" style="left:960px;top:580px;opacity:0;">P(Z &lt; 1.5) = 0.9332</div>
+        <div id="pb" class="rt abs" style="left:960px;top:635px;opacity:0;color:#5f6368">P(Z &gt; 1.5) = 1 − 0.9332 = 0.0668</div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.to(["#st1"], { opacity: 1, duration: 0.4 }, 0.6);
+      tl.to("#rowhl", { opacity: 1, duration: 0.4 }, 0.8);
+      tl.to(["#rh2"], { backgroundColor: "#1f5f99", color: "#fff", duration: 0.4 }, 0.8);
+      tl.to(["#st2"], { opacity: 1, duration: 0.4 }, 2.2);
+      tl.to("#colhl", { opacity: 1, duration: 0.4 }, 2.4);
+      tl.to(["#ch0"], { backgroundColor: "#c39a3d", duration: 0.4 }, 2.4);
+      tl.to(["#st3"], { opacity: 1, duration: 0.4 }, 3.8);
+      tl.to("#c20", { backgroundColor: "#f5c400", scale: 1.15, duration: 0.4 }, 4.0);
+      tl.fromTo("#nc", { attr: { "stroke-dashoffset": 3000 } }, { attr: { "stroke-dashoffset": 0 }, duration: 1.0, ease: "power1.inOut" }, 4.6);
+      tl.to(["#zl", "#zt"], { opacity: 1, duration: 0.4 }, 5.4);
+      tl.to("#c4r", { attr: { width: 432.3529411764707 }, duration: 1.4, ease: "power1.inOut" }, 5.8);
+      tl.fromTo(["#pa"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 7.0);
+      tl.fromTo(["#pb"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 8.4);
+
+      tl.to({}, { duration: 0.01 }, 11.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="12" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="12" style="left:0;top:0;width:1640px;height:740px">
+        <div class="abs card" style="left:40px;top:40px;width:900px;height:660px"></div>
+        <svg class="abs" style="left:0;top:0" width="1640" height="740"><defs><clipPath id="c1"><rect id="c1r" x="302.72727272727275" y="150.0" width="0" height="435"/></clipPath></defs><line x1="130" y1="580.0" x2="890" y2="580.0" stroke="#5f6368" stroke-width="3"/><line x1="164.54545454545456" y1="580.0" x2="164.54545454545456" y2="590.0" stroke="#5f6368" stroke-width="2"/><text x="164.54545454545456" y="616.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">0.0</text><line x1="302.72727272727275" y1="580.0" x2="302.72727272727275" y2="590.0" stroke="#5f6368" stroke-width="2"/><text x="302.72727272727275" y="616.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">0.2</text><line x1="440.9090909090909" y1="580.0" x2="440.9090909090909" y2="590.0" stroke="#5f6368" stroke-width="2"/><text x="440.9090909090909" y="616.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">0.4</text><line x1="579.090909090909" y1="580.0" x2="579.090909090909" y2="590.0" stroke="#5f6368" stroke-width="2"/><text x="579.090909090909" y="616.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">0.6</text><line x1="717.2727272727273" y1="580.0" x2="717.2727272727273" y2="590.0" stroke="#5f6368" stroke-width="2"/><text x="717.2727272727273" y="616.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">0.8</text><line x1="855.4545454545454" y1="580.0" x2="855.4545454545454" y2="590.0" stroke="#5f6368" stroke-width="2"/><text x="855.4545454545454" y="616.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">1.0</text><line x1="130" y1="457.1428571428571" x2="890" y2="457.1428571428571" stroke="#c9d6e3" stroke-width="1.5" stroke-dasharray="6 6"/><text x="116" y="464.1428571428571" font-family="Open Sans" font-size="19" fill="#5f6368" text-anchor="end">0.4</text><line x1="130" y1="334.2857142857142" x2="890" y2="334.2857142857142" stroke="#c9d6e3" stroke-width="1.5" stroke-dasharray="6 6"/><text x="116" y="341.2857142857142" font-family="Open Sans" font-size="19" fill="#5f6368" text-anchor="end">0.8</text><line x1="130" y1="211.4285714285714" x2="890" y2="211.4285714285714" stroke="#c9d6e3" stroke-width="1.5" stroke-dasharray="6 6"/><text x="116" y="218.4285714285714" font-family="Open Sans" font-size="19" fill="#5f6368" text-anchor="end">1.2</text><path id="tot" d="M164.5,580.0 L164.5,334.3 L170.3,333.3 L176.1,332.2 L181.8,331.2 L187.6,330.2 L193.3,329.2 L199.1,328.1 L204.8,327.1 L210.6,326.1 L216.4,325.1 L222.1,324.0 L227.9,323.0 L233.6,322.0 L239.4,321.0 L245.2,320.0 L250.9,318.9 L256.7,317.9 L262.4,316.9 L268.2,315.9 L273.9,314.8 L279.7,313.8 L285.5,312.8 L291.2,311.8 L297.0,310.7 L302.7,309.7 L308.5,308.7 L314.2,307.7 L320.0,306.6 L325.8,305.6 L331.5,304.6 L337.3,303.6 L343.0,302.5 L348.8,301.5 L354.5,300.5 L360.3,299.5 L366.1,298.5 L371.8,297.4 L377.6,296.4 L383.3,295.4 L389.1,294.4 L394.8,293.3 L400.6,292.3 L406.4,291.3 L412.1,290.3 L417.9,289.2 L423.6,288.2 L429.4,287.2 L435.2,286.2 L440.9,285.1 L446.7,284.1 L452.4,283.1 L458.2,282.1 L463.9,281.0 L469.7,280.0 L475.5,279.0 L481.2,278.0 L487.0,277.0 L492.7,275.9 L498.5,274.9 L504.2,273.9 L510.0,272.9 L515.8,271.8 L521.5,270.8 L527.3,269.8 L533.0,268.8 L538.8,267.7 L544.5,266.7 L550.3,265.7 L556.1,264.7 L561.8,263.6 L567.6,262.6 L573.3,261.6 L579.1,260.6 L584.8,259.5 L590.6,258.5 L596.4,257.5 L602.1,256.5 L607.9,255.5 L613.6,254.4 L619.4,253.4 L625.2,252.4 L630.9,251.4 L636.7,250.3 L642.4,249.3 L648.2,248.3 L653.9,247.3 L659.7,246.2 L665.5,245.2 L671.2,244.2 L677.0,243.2 L682.7,242.1 L688.5,241.1 L694.2,240.1 L700.0,239.1 L705.8,238.0 L711.5,237.0 L717.3,236.0 L723.0,235.0 L728.8,234.0 L734.5,232.9 L740.3,231.9 L746.1,230.9 L751.8,229.9 L757.6,228.8 L763.3,227.8 L769.1,226.8 L774.8,225.8 L780.6,224.7 L786.4,223.7 L792.1,222.7 L797.9,221.7 L803.6,220.6 L809.4,219.6 L815.2,218.6 L820.9,217.6 L826.7,216.5 L832.4,215.5 L838.2,214.5 L843.9,213.5 L849.7,212.5 L855.5,211.4 L855.5,580.0 Z" fill="#eef2f6" opacity="0"/><path d="M302.7,580.0 L302.7,309.7 L305.0,309.3 L307.3,308.9 L309.6,308.5 L311.9,308.1 L314.2,307.7 L316.5,307.3 L318.8,306.8 L321.2,306.4 L323.5,306.0 L325.8,305.6 L328.1,305.2 L330.4,304.8 L332.7,304.4 L335.0,304.0 L337.3,303.6 L339.6,303.2 L341.9,302.8 L344.2,302.3 L346.5,301.9 L348.8,301.5 L351.1,301.1 L353.4,300.7 L355.7,300.3 L358.0,299.9 L360.3,299.5 L362.6,299.1 L364.9,298.7 L367.2,298.2 L369.5,297.8 L371.8,297.4 L374.1,297.0 L376.4,296.6 L378.7,296.2 L381.0,295.8 L383.3,295.4 L385.6,295.0 L387.9,294.6 L390.2,294.2 L392.5,293.7 L394.8,293.3 L397.2,292.9 L399.5,292.5 L401.8,292.1 L404.1,291.7 L406.4,291.3 L408.7,290.9 L411.0,290.5 L413.3,290.1 L415.6,289.6 L417.9,289.2 L420.2,288.8 L422.5,288.4 L424.8,288.0 L427.1,287.6 L429.4,287.2 L431.7,286.8 L434.0,286.4 L436.3,286.0 L438.6,285.6 L440.9,285.1 L443.2,284.7 L445.5,284.3 L447.8,283.9 L450.1,283.5 L452.4,283.1 L454.7,282.7 L457.0,282.3 L459.3,281.9 L461.6,281.5 L463.9,281.0 L466.2,280.6 L468.5,280.2 L470.8,279.8 L473.2,279.4 L475.5,279.0 L477.8,278.6 L480.1,278.2 L482.4,277.8 L484.7,277.4 L487.0,277.0 L489.3,276.5 L491.6,276.1 L493.9,275.7 L496.2,275.3 L498.5,274.9 L500.8,274.5 L503.1,274.1 L505.4,273.7 L507.7,273.3 L510.0,272.9 L512.3,272.4 L514.6,272.0 L516.9,271.6 L519.2,271.2 L521.5,270.8 L523.8,270.4 L526.1,270.0 L528.4,269.6 L530.7,269.2 L533.0,268.8 L535.3,268.4 L537.6,267.9 L539.9,267.5 L542.2,267.1 L544.5,266.7 L546.8,266.3 L549.2,265.9 L551.5,265.5 L553.8,265.1 L556.1,264.7 L558.4,264.3 L560.7,263.8 L563.0,263.4 L565.3,263.0 L567.6,262.6 L569.9,262.2 L572.2,261.8 L574.5,261.4 L576.8,261.0 L579.1,260.6 L579.1,580.0 Z" fill="#1f5f99" opacity="0.55" clip-path="url(#c1)"/><path id="pdf" d="M164.5,334.3 L168.9,333.5 L173.2,332.8 L177.5,332.0 L181.8,331.2 L186.1,330.4 L190.5,329.7 L194.8,328.9 L199.1,328.1 L203.4,327.4 L207.7,326.6 L212.0,325.8 L216.4,325.1 L220.7,324.3 L225.0,323.5 L229.3,322.8 L233.6,322.0 L238.0,321.2 L242.3,320.5 L246.6,319.7 L250.9,318.9 L255.2,318.2 L259.5,317.4 L263.9,316.6 L268.2,315.9 L272.5,315.1 L276.8,314.3 L281.1,313.6 L285.5,312.8 L289.8,312.0 L294.1,311.2 L298.4,310.5 L302.7,309.7 L307.0,308.9 L311.4,308.2 L315.7,307.4 L320.0,306.6 L324.3,305.9 L328.6,305.1 L333.0,304.3 L337.3,303.6 L341.6,302.8 L345.9,302.0 L350.2,301.3 L354.5,300.5 L358.9,299.7 L363.2,299.0 L367.5,298.2 L371.8,297.4 L376.1,296.7 L380.5,295.9 L384.8,295.1 L389.1,294.4 L393.4,293.6 L397.7,292.8 L402.0,292.1 L406.4,291.3 L410.7,290.5 L415.0,289.8 L419.3,289.0 L423.6,288.2 L428.0,287.4 L432.3,286.7 L436.6,285.9 L440.9,285.1 L445.2,284.4 L449.5,283.6 L453.9,282.8 L458.2,282.1 L462.5,281.3 L466.8,280.5 L471.1,279.8 L475.5,279.0 L479.8,278.2 L484.1,277.5 L488.4,276.7 L492.7,275.9 L497.0,275.2 L501.4,274.4 L505.7,273.6 L510.0,272.9 L514.3,272.1 L518.6,271.3 L523.0,270.6 L527.3,269.8 L531.6,269.0 L535.9,268.2 L540.2,267.5 L544.5,266.7 L548.9,265.9 L553.2,265.2 L557.5,264.4 L561.8,263.6 L566.1,262.9 L570.5,262.1 L574.8,261.3 L579.1,260.6 L583.4,259.8 L587.7,259.0 L592.0,258.3 L596.4,257.5 L600.7,256.7 L605.0,256.0 L609.3,255.2 L613.6,254.4 L618.0,253.7 L622.3,252.9 L626.6,252.1 L630.9,251.4 L635.2,250.6 L639.5,249.8 L643.9,249.1 L648.2,248.3 L652.5,247.5 L656.8,246.8 L661.1,246.0 L665.5,245.2 L669.8,244.4 L674.1,243.7 L678.4,242.9 L682.7,242.1 L687.0,241.4 L691.4,240.6 L695.7,239.8 L700.0,239.1 L704.3,238.3 L708.6,237.5 L713.0,236.8 L717.3,236.0 L721.6,235.2 L725.9,234.5 L730.2,233.7 L734.5,232.9 L738.9,232.2 L743.2,231.4 L747.5,230.6 L751.8,229.9 L756.1,229.1 L760.5,228.3 L764.8,227.6 L769.1,226.8 L773.4,226.0 L777.7,225.2 L782.0,224.5 L786.4,223.7 L790.7,222.9 L795.0,222.2 L799.3,221.4 L803.6,220.6 L808.0,219.9 L812.3,219.1 L816.6,218.3 L820.9,217.6 L825.2,216.8 L829.5,216.0 L833.9,215.3 L838.2,214.5 L842.5,213.7 L846.8,213.0 L851.1,212.2 L855.5,211.4" fill="none" stroke="#003e67" stroke-width="5" stroke-dasharray="3000" stroke-dashoffset="3000"/><line id="pt" x1="751.8181818181818" y1="580.0" x2="751.8181818181818" y2="229.85714285714283" stroke="#b34739" stroke-width="4" opacity="0"/></svg>
+        <div class="lbl abs" style="left:80px;top:66px;color:#003e67;font-size:28px">f(x) = 2(x + 2)/5,  0 &lt; x &lt; 1</div>
+        <div id="lx" class="sub abs" style="left:860px;top:610px;opacity:0;font-size:22px">x</div>
+        <div id="ar" class="rt abs" style="left:330.9090909090909px;top:411.07142857142856px;opacity:0;width:220px;text-align:center;color:#fff;font-size:22px">P(0.2 &lt; X &lt; 0.6)</div>
+        <div id="r1" class="step abs" style="left:1000px;top:90px;opacity:0;">Probability = area under the curve</div>
+        <div id="r2" class="note abs" style="left:1000px;top:140px;opacity:0;width:580px">P(0.2 &lt; X &lt; 0.6) is the blue area between 0.2 and 0.6. Here it equals 0.384.</div>
+        <div id="r3" class="eq abs" style="left:1000px;top:290px;opacity:0;">Rule 1:  f(x) ≥ 0</div>
+        <div id="r4" class="sub abs" style="left:1000px;top:345px;opacity:0;">The curve never goes below the x-axis.</div>
+        <div id="r5" class="eq abs" style="left:1000px;top:410px;opacity:0;">Rule 2:  total area = 1</div>
+        <div id="r6" class="sub abs" style="left:1000px;top:465px;opacity:0;white-space:normal;width:580px">The whole shaded region below the line has area 1 (100%).</div>
+        <div id="r7" class="eq abs" style="left:1000px;top:545px;opacity:0;color:#b34739">P(X = 0.85) = 0</div>
+        <div id="r8" class="sub abs" style="left:1000px;top:600px;opacity:0;">A single line has no width, so it has no area.</div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#pdf", { attr: { "stroke-dashoffset": 3000 } }, { attr: { "stroke-dashoffset": 0 }, duration: 1.4, ease: "power1.inOut" }, 0.4);
+      tl.to(["#lx"], { opacity: 1, duration: 0.4 }, 0.6);
+      tl.to("#c1r", { attr: { width: 276.36363636363626 }, duration: 1.4, ease: "power1.inOut" }, 2.0);
+      tl.to(["#ar"], { opacity: 1, duration: 0.4 }, 3.2);
+      tl.fromTo(["#r1", "#r2"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 2.4);
+      tl.fromTo(["#r3", "#r4"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 4.8);
+      tl.to("#tot", { opacity: 1, duration: 0.8 }, 6.4);
+      tl.fromTo(["#r5", "#r6"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 6.4);
+      tl.to("#pt", { opacity: 1, duration: 0.3, repeat: 3, yoyo: true }, 8.4);
+      tl.to("#pt", { opacity: 1, duration: 0.2 }, 9.6);
+      tl.fromTo(["#r7", "#r8"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 8.4);
+
+      tl.to({}, { duration: 0.01 }, 11.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
