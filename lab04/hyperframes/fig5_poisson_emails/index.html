@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="12" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="12" style="left:0;top:0;width:1640px;height:740px">
+        <div class="abs card" style="left:40px;top:40px;width:520px;height:660px;"></div>
+        <div class="abs card" style="left:600px;top:40px;width:1000px;height:660px;"></div>
+        <div class="lbl abs" style="left:80px;top:70px;color:#003e67;font-size:28px">Emails in one hour</div>
+        <div class="sub abs" style="left:80px;top:114px">on average &#955; = 4 emails per hour</div>
+        <div class="abs" style="left:90px;top:300px;width:420px;height:8px;border-radius:4px;background:#c9d6e3"></div>
+        <div class="sub abs" style="left:80px;top:320px;font-size:18px">0 min</div><div class="sub abs" style="left:450px;top:320px;font-size:18px">60 min</div>
+        <div id="e0_0" class="abs" style="left:128px;top:232px;width:36px;height:26px;border-radius:4px;background:#c39a3d;opacity:0"><div style="position:absolute;left:4px;top:3px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:12px solid #fff"></div></div>
+        <div id="e0_1" class="abs" style="left:261px;top:232px;width:36px;height:26px;border-radius:4px;background:#c39a3d;opacity:0"><div style="position:absolute;left:4px;top:3px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:12px solid #fff"></div></div>
+        <div id="e0_2" class="abs" style="left:359px;top:232px;width:36px;height:26px;border-radius:4px;background:#c39a3d;opacity:0"><div style="position:absolute;left:4px;top:3px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:12px solid #fff"></div></div>
+        <div id="e0_3" class="abs" style="left:436px;top:232px;width:36px;height:26px;border-radius:4px;background:#c39a3d;opacity:0"><div style="position:absolute;left:4px;top:3px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:12px solid #fff"></div></div>
+        <div id="hl0" class="rt abs" style="left:90px;top:370px;opacity:0;color:#003e67">hour 1: 4 emails</div>
+        <div id="e1_0" class="abs" style="left:177px;top:232px;width:36px;height:26px;border-radius:4px;background:#c39a3d;opacity:0"><div style="position:absolute;left:4px;top:3px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:12px solid #fff"></div></div>
+        <div id="e1_1" class="abs" style="left:422px;top:232px;width:36px;height:26px;border-radius:4px;background:#c39a3d;opacity:0"><div style="position:absolute;left:4px;top:3px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:12px solid #fff"></div></div>
+        <div id="hl1" class="rt abs" style="left:90px;top:370px;opacity:0;color:#003e67">hour 2: 2 emails</div>
+        <div id="e2_0" class="abs" style="left:107px;top:232px;width:36px;height:26px;border-radius:4px;background:#c39a3d;opacity:0"><div style="position:absolute;left:4px;top:3px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:12px solid #fff"></div></div>
+        <div id="e2_1" class="abs" style="left:205px;top:232px;width:36px;height:26px;border-radius:4px;background:#c39a3d;opacity:0"><div style="position:absolute;left:4px;top:3px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:12px solid #fff"></div></div>
+        <div id="e2_2" class="abs" style="left:282px;top:232px;width:36px;height:26px;border-radius:4px;background:#c39a3d;opacity:0"><div style="position:absolute;left:4px;top:3px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:12px solid #fff"></div></div>
+        <div id="e2_3" class="abs" style="left:338px;top:232px;width:36px;height:26px;border-radius:4px;background:#c39a3d;opacity:0"><div style="position:absolute;left:4px;top:3px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:12px solid #fff"></div></div>
+        <div id="e2_4" class="abs" style="left:394px;top:232px;width:36px;height:26px;border-radius:4px;background:#c39a3d;opacity:0"><div style="position:absolute;left:4px;top:3px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:12px solid #fff"></div></div>
+        <div id="e2_5" class="abs" style="left:471px;top:232px;width:36px;height:26px;border-radius:4px;background:#c39a3d;opacity:0"><div style="position:absolute;left:4px;top:3px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:12px solid #fff"></div></div>
+        <div id="hl2" class="rt abs" style="left:90px;top:370px;opacity:0;color:#003e67">hour 3: 6 emails</div>
+        <div id="e3_0" class="abs" style="left:303px;top:232px;width:36px;height:26px;border-radius:4px;background:#c39a3d;opacity:0"><div style="position:absolute;left:4px;top:3px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:12px solid #fff"></div></div>
+        <div id="e3_1" class="abs" style="left:380px;top:232px;width:36px;height:26px;border-radius:4px;background:#c39a3d;opacity:0"><div style="position:absolute;left:4px;top:3px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:12px solid #fff"></div></div>
+        <div id="e3_2" class="abs" style="left:457px;top:232px;width:36px;height:26px;border-radius:4px;background:#c39a3d;opacity:0"><div style="position:absolute;left:4px;top:3px;width:0;height:0;border-left:14px solid transparent;border-right:14px solid transparent;border-top:12px solid #fff"></div></div>
+        <div id="hl3" class="rt abs" style="left:90px;top:370px;opacity:0;color:#003e67">hour 4: 3 emails</div>
+        <div id="rnd" class="note abs" style="left:80px;top:430px;opacity:0;width:450px;font-size:21px">The count changes from hour to hour. The Poisson distribution gives the probability of each count.</div>
+        <div class="lbl abs" style="left:640px;top:70px;color:#003e67;font-size:28px">P(X = k) for &#955; = 4</div>
+        <div class="abs" style="left:690px;top:590px;width:922px;height:3px;background:#5f6368"></div>
+        <div id="qb0" class="abs" style="left:700px;top:560.6949777780253px;width:62px;height:29.305022221974685px;border-radius:8px 8px 0 0;background:#c9d6e3;transform-origin:50% 100%;transform:scaleY(0)"></div>
+        <div class="abs" style="left:680px;top:600px;width:102px;text-align:center;font:600 22px 'Open Sans';color:#202020">0</div>
+        <div id="qv0" class="abs" style="left:670px;top:528.6949777780253px;width:122px;text-align:center;font:600 19px 'Open Sans';color:#5f6368;opacity:0">.018</div>
+        <div id="qb1" class="abs" style="left:784px;top:472.7799111121013px;width:62px;height:117.22008888789874px;border-radius:8px 8px 0 0;background:#c9d6e3;transform-origin:50% 100%;transform:scaleY(0)"></div>
+        <div class="abs" style="left:764px;top:600px;width:102px;text-align:center;font:600 22px 'Open Sans';color:#202020">1</div>
+        <div id="qv1" class="abs" style="left:754px;top:440.7799111121013px;width:122px;text-align:center;font:600 19px 'Open Sans';color:#5f6368;opacity:0">.073</div>
+        <div id="qb2" class="abs" style="left:868px;top:355.55982222420255px;width:62px;height:234.44017777579748px;border-radius:8px 8px 0 0;background:#c9d6e3;transform-origin:50% 100%;transform:scaleY(0)"></div>
+        <div class="abs" style="left:848px;top:600px;width:102px;text-align:center;font:600 22px 'Open Sans';color:#202020">2</div>
+        <div id="qv2" class="abs" style="left:838px;top:323.55982222420255px;width:122px;text-align:center;font:600 19px 'Open Sans';color:#5f6368;opacity:0">.147</div>
+        <div id="qb3" class="abs" style="left:952px;top:277.4130962989367px;width:62px;height:312.5869037010633px;border-radius:8px 8px 0 0;background:#c9d6e3;transform-origin:50% 100%;transform:scaleY(0)"></div>
+        <div class="abs" style="left:932px;top:600px;width:102px;text-align:center;font:600 22px 'Open Sans';color:#202020">3</div>
+        <div id="qv3" class="abs" style="left:922px;top:245.4130962989367px;width:122px;text-align:center;font:600 19px 'Open Sans';color:#5f6368;opacity:0">.195</div>
+        <div id="qb4" class="abs" style="left:1036px;top:277.4130962989367px;width:62px;height:312.5869037010633px;border-radius:8px 8px 0 0;background:#c9d6e3;transform-origin:50% 100%;transform:scaleY(0)"></div>
+        <div class="abs" style="left:1016px;top:600px;width:102px;text-align:center;font:600 22px 'Open Sans';color:#202020">4</div>
+        <div id="qv4" class="abs" style="left:1006px;top:245.4130962989367px;width:122px;text-align:center;font:600 19px 'Open Sans';color:#5f6368;opacity:0">.195</div>
+        <div id="qb5" class="abs" style="left:1120px;top:339.93047703914937px;width:62px;height:250.06952296085063px;border-radius:8px 8px 0 0;background:#c9d6e3;transform-origin:50% 100%;transform:scaleY(0)"></div>
+        <div class="abs" style="left:1100px;top:600px;width:102px;text-align:center;font:600 22px 'Open Sans';color:#202020">5</div>
+        <div id="qv5" class="abs" style="left:1090px;top:307.93047703914937px;width:122px;text-align:center;font:600 19px 'Open Sans';color:#5f6368;opacity:0">.156</div>
+        <div id="qb6" class="abs" style="left:1204px;top:423.2869846927662px;width:62px;height:166.71301530723377px;border-radius:8px 8px 0 0;background:#c9d6e3;transform-origin:50% 100%;transform:scaleY(0)"></div>
+        <div class="abs" style="left:1184px;top:600px;width:102px;text-align:center;font:600 22px 'Open Sans';color:#202020">6</div>
+        <div id="qv6" class="abs" style="left:1174px;top:391.2869846927662px;width:122px;text-align:center;font:600 19px 'Open Sans';color:#5f6368;opacity:0">.104</div>
+        <div id="qb7" class="abs" style="left:1288px;top:494.7354198244378px;width:62px;height:95.26458017556216px;border-radius:8px 8px 0 0;background:#c9d6e3;transform-origin:50% 100%;transform:scaleY(0)"></div>
+        <div class="abs" style="left:1268px;top:600px;width:102px;text-align:center;font:600 22px 'Open Sans';color:#202020">7</div>
+        <div id="qv7" class="abs" style="left:1258px;top:462.7354198244378px;width:122px;text-align:center;font:600 19px 'Open Sans';color:#5f6368;opacity:0">.060</div>
+        <div id="qb8" class="abs" style="left:1372px;top:542.367709912219px;width:62px;height:47.63229008778108px;border-radius:8px 8px 0 0;background:#c9d6e3;transform-origin:50% 100%;transform:scaleY(0)"></div>
+        <div class="abs" style="left:1352px;top:600px;width:102px;text-align:center;font:600 22px 'Open Sans';color:#202020">8</div>
+        <div id="qv8" class="abs" style="left:1342px;top:510.36770991221897px;width:122px;text-align:center;font:600 19px 'Open Sans';color:#5f6368;opacity:0">.030</div>
+        <div id="qb9" class="abs" style="left:1456px;top:568.8300932943196px;width:62px;height:21.16990670568048px;border-radius:8px 8px 0 0;background:#c9d6e3;transform-origin:50% 100%;transform:scaleY(0)"></div>
+        <div class="abs" style="left:1436px;top:600px;width:102px;text-align:center;font:600 22px 'Open Sans';color:#202020">9</div>
+        <div id="qv9" class="abs" style="left:1426px;top:536.8300932943196px;width:122px;text-align:center;font:600 19px 'Open Sans';color:#5f6368;opacity:0">.013</div>
+        <div id="qb10" class="abs" style="left:1540px;top:581.5320373177278px;width:62px;height:8.46796268227219px;border-radius:8px 8px 0 0;background:#c9d6e3;transform-origin:50% 100%;transform:scaleY(0)"></div>
+        <div class="abs" style="left:1520px;top:600px;width:102px;text-align:center;font:600 22px 'Open Sans';color:#202020">10</div>
+        <div id="qv10" class="abs" style="left:1510px;top:549.5320373177278px;width:122px;text-align:center;font:600 19px 'Open Sans';color:#5f6368;opacity:0">.005</div>
+        <div id="mk" class="rt abs" style="left:1006px;top:116px;opacity:0;color:#c39a3d;width:150px;text-align:center">mean &#955; = 4</div>
+        <div id="fq" class="rt abs" style="left:1150px;top:116px;opacity:0;color:#003e67">P(X = 2) = e&#8315;&#8308;&#183;4&#178;/2! &#8776; 0.1465</div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#e0_0", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 0.30);
+      tl.fromTo("#e0_1", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 0.45);
+      tl.fromTo("#e0_2", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 0.60);
+      tl.fromTo("#e0_3", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 0.75);
+      tl.to(["#hl0"], { opacity: 1, duration: 0.3 }, 0.6);
+      tl.to(["#e0_0", "#e0_1", "#e0_2", "#e0_3", "#hl0"], { opacity: 0, duration: 0.3 }, 1.60);
+      tl.fromTo("#e1_0", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 1.90);
+      tl.fromTo("#e1_1", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 2.05);
+      tl.to(["#hl1"], { opacity: 1, duration: 0.3 }, 2.2);
+      tl.to(["#e1_0", "#e1_1", "#hl1"], { opacity: 0, duration: 0.3 }, 3.20);
+      tl.fromTo("#e2_0", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 3.50);
+      tl.fromTo("#e2_1", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 3.65);
+      tl.fromTo("#e2_2", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 3.80);
+      tl.fromTo("#e2_3", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 3.95);
+      tl.fromTo("#e2_4", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 4.10);
+      tl.fromTo("#e2_5", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 4.25);
+      tl.to(["#hl2"], { opacity: 1, duration: 0.3 }, 3.8);
+      tl.to(["#e2_0", "#e2_1", "#e2_2", "#e2_3", "#e2_4", "#e2_5", "#hl2"], { opacity: 0, duration: 0.3 }, 4.80);
+      tl.fromTo("#e3_0", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 5.10);
+      tl.fromTo("#e3_1", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 5.25);
+      tl.fromTo("#e3_2", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.25, ease: "back.out(2)" }, 5.40);
+      tl.to(["#hl3"], { opacity: 1, duration: 0.3 }, 5.3999999999999995);
+      tl.to(["#rnd"], { opacity: 1, duration: 0.4 }, 3.4);
+      tl.to("#qb0", { scaleY: 1, duration: 0.45, ease: "power2.out" }, 1.00);
+      tl.to("#qv0", { opacity: 1, duration: 0.3 }, 1.25);
+      tl.to("#qb1", { scaleY: 1, duration: 0.45, ease: "power2.out" }, 1.18);
+      tl.to("#qv1", { opacity: 1, duration: 0.3 }, 1.43);
+      tl.to("#qb2", { scaleY: 1, duration: 0.45, ease: "power2.out" }, 1.36);
+      tl.to("#qv2", { opacity: 1, duration: 0.3 }, 1.61);
+      tl.to("#qb3", { scaleY: 1, duration: 0.45, ease: "power2.out" }, 1.54);
+      tl.to("#qv3", { opacity: 1, duration: 0.3 }, 1.79);
+      tl.to("#qb4", { scaleY: 1, duration: 0.45, ease: "power2.out" }, 1.72);
+      tl.to("#qv4", { opacity: 1, duration: 0.3 }, 1.97);
+      tl.to("#qb5", { scaleY: 1, duration: 0.45, ease: "power2.out" }, 1.90);
+      tl.to("#qv5", { opacity: 1, duration: 0.3 }, 2.15);
+      tl.to("#qb6", { scaleY: 1, duration: 0.45, ease: "power2.out" }, 2.08);
+      tl.to("#qv6", { opacity: 1, duration: 0.3 }, 2.33);
+      tl.to("#qb7", { scaleY: 1, duration: 0.45, ease: "power2.out" }, 2.26);
+      tl.to("#qv7", { opacity: 1, duration: 0.3 }, 2.51);
+      tl.to("#qb8", { scaleY: 1, duration: 0.45, ease: "power2.out" }, 2.44);
+      tl.to("#qv8", { opacity: 1, duration: 0.3 }, 2.69);
+      tl.to("#qb9", { scaleY: 1, duration: 0.45, ease: "power2.out" }, 2.62);
+      tl.to("#qv9", { opacity: 1, duration: 0.3 }, 2.87);
+      tl.to("#qb10", { scaleY: 1, duration: 0.45, ease: "power2.out" }, 2.80);
+      tl.to("#qv10", { opacity: 1, duration: 0.3 }, 3.05);
+      tl.to("#qb4", { backgroundColor: "#c39a3d", duration: 0.4 }, 4.0);
+      tl.to(["#mk"], { opacity: 1, duration: 0.4 }, 4.0);
+      tl.to("#qb2", { backgroundColor: "#003e67", duration: 0.5 }, 6.6);
+      tl.to("#qv2", { color: "#003e67", duration: 0.5 }, 6.6);
+      tl.to("#mk", { opacity: 0, duration: 0.3 }, 6.4);
+      tl.fromTo(["#fq"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 6.8);
+
+      tl.to({}, { duration: 0.01 }, 11.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="12" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="12" style="left:0;top:0;width:1640px;height:740px">
+        <div class="abs card" style="left:40px;top:40px;width:960px;height:660px;"></div>
+        <div class="lbl abs" style="left:80px;top:70px;color:#003e67;font-size:30px">E(X) is the balance point</div>
+        <div class="sub abs" style="left:80px;top:116px">each face of a fair die has the same weight, 1/6</div>
+        <div id="beam" class="abs" style="left:90px;top:430px;width:700px;height:14px;border-radius:7px;background:#003e67;transform-origin:50px 7px"></div>
+        <div id="w1" class="abs" style="left:105px;top:356px;width:70px;height:70px;border-radius:16px;background:#f1e4c6;border:4px solid #c39a3d;text-align:center;font:700 30px Montserrat;line-height:62px;color:#003e67;opacity:0">1</div>
+        <div class="sub abs" style="left:105px;top:456px;width:70px;text-align:center;font-size:19px">1/6</div>
+        <div id="w2" class="abs" style="left:225px;top:356px;width:70px;height:70px;border-radius:16px;background:#f1e4c6;border:4px solid #c39a3d;text-align:center;font:700 30px Montserrat;line-height:62px;color:#003e67;opacity:0">2</div>
+        <div class="sub abs" style="left:225px;top:456px;width:70px;text-align:center;font-size:19px">1/6</div>
+        <div id="w3" class="abs" style="left:345px;top:356px;width:70px;height:70px;border-radius:16px;background:#f1e4c6;border:4px solid #c39a3d;text-align:center;font:700 30px Montserrat;line-height:62px;color:#003e67;opacity:0">3</div>
+        <div class="sub abs" style="left:345px;top:456px;width:70px;text-align:center;font-size:19px">1/6</div>
+        <div id="w4" class="abs" style="left:465px;top:356px;width:70px;height:70px;border-radius:16px;background:#f1e4c6;border:4px solid #c39a3d;text-align:center;font:700 30px Montserrat;line-height:62px;color:#003e67;opacity:0">4</div>
+        <div class="sub abs" style="left:465px;top:456px;width:70px;text-align:center;font-size:19px">1/6</div>
+        <div id="w5" class="abs" style="left:585px;top:356px;width:70px;height:70px;border-radius:16px;background:#f1e4c6;border:4px solid #c39a3d;text-align:center;font:700 30px Montserrat;line-height:62px;color:#003e67;opacity:0">5</div>
+        <div class="sub abs" style="left:585px;top:456px;width:70px;text-align:center;font-size:19px">1/6</div>
+        <div id="w6" class="abs" style="left:705px;top:356px;width:70px;height:70px;border-radius:16px;background:#f1e4c6;border:4px solid #c39a3d;text-align:center;font:700 30px Montserrat;line-height:62px;color:#003e67;opacity:0">6</div>
+        <div class="sub abs" style="left:705px;top:456px;width:70px;text-align:center;font-size:19px">1/6</div>
+        <div id="ful" class="abs" style="left:100px;top:444px;width:0;height:0;border-left:40px solid transparent;border-right:40px solid transparent;border-bottom:80px solid #c39a3d"></div>
+        <div class="abs" style="left:60px;top:524px;width:760px;height:6px;border-radius:3px;background:#c9d6e3"></div>
+        <div id="mu" class="eq abs" style="left:350.0px;top:550px;opacity:0;width:180px;text-align:center;color:#c39a3d">E(X) = 3.5</div>
+        <div id="s1" class="step abs" style="left:1060px;top:110px;opacity:0;">Multiply each value by its probability</div>
+        <div id="s2" class="rt abs" style="left:1060px;top:165px;opacity:0;">1&#183;&#8537; + 2&#183;&#8537; + 3&#183;&#8537; + 4&#183;&#8537; + 5&#183;&#8537; + 6&#183;&#8537;</div>
+        <div id="s3" class="eq abs" style="left:1060px;top:225px;opacity:0;">and add: 21/6 = 3.5</div>
+        <div id="s4" class="rt abs" style="left:1060px;top:330px;opacity:0;color:#003e67">3.5 is not a face of the die.</div>
+        <div id="s5" class="note abs" style="left:1060px;top:380px;opacity:0;width:520px">It is the long-run average: roll the die many times and the average of the results gets close to 3.5.</div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#w1", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 0.5);
+      tl.fromTo("#w2", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 0.7);
+      tl.fromTo("#w3", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 0.9);
+      tl.fromTo("#w4", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 1.1);
+      tl.fromTo("#w5", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 1.3);
+      tl.fromTo("#w6", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.4, ease: "bounce.out" }, 1.5);
+      tl.to("#beam", { rotation: 8, duration: 0.8, ease: "power2.inOut" }, 2.0);
+      tl.to("#w1", { y: 0.0, duration: 0.8, ease: "power2.inOut" }, 2.0);
+      tl.to("#w2", { y: 16.7, duration: 0.8, ease: "power2.inOut" }, 2.0);
+      tl.to("#w3", { y: 33.4, duration: 0.8, ease: "power2.inOut" }, 2.0);
+      tl.to("#w4", { y: 50.0, duration: 0.8, ease: "power2.inOut" }, 2.0);
+      tl.to("#w5", { y: 66.7, duration: 0.8, ease: "power2.inOut" }, 2.0);
+      tl.to("#w6", { y: 83.4, duration: 0.8, ease: "power2.inOut" }, 2.0);
+      tl.to(["#s1"], { opacity: 1, duration: 0.4 }, 2.2);
+      tl.fromTo(["#s2"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 3.0);
+      tl.to("#ful", { x: 300.0, duration: 2.0, ease: "power2.inOut" }, 3.4);
+      tl.to("#beam", { x: 0, rotation: 0, duration: 1.2, ease: "back.out(1.6)" }, 5.0);
+      tl.to("#w1", { y: 0, duration: 1.2, ease: "back.out(1.6)" }, 5.0);
+      tl.to("#w2", { y: 0, duration: 1.2, ease: "back.out(1.6)" }, 5.0);
+      tl.to("#w3", { y: 0, duration: 1.2, ease: "back.out(1.6)" }, 5.0);
+      tl.to("#w4", { y: 0, duration: 1.2, ease: "back.out(1.6)" }, 5.0);
+      tl.to("#w5", { y: 0, duration: 1.2, ease: "back.out(1.6)" }, 5.0);
+      tl.to("#w6", { y: 0, duration: 1.2, ease: "back.out(1.6)" }, 5.0);
+      tl.fromTo(["#s3"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 5.2);
+      tl.fromTo(["#mu"], { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4 }, 6.0);
+      tl.to(["#s4"], { opacity: 1, duration: 0.4 }, 7.6);
+      tl.to(["#s5"], { opacity: 1, duration: 0.4 }, 8.4);
+
+      tl.to({}, { duration: 0.01 }, 11.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
