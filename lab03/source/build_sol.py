@@ -155,6 +155,16 @@ table_fig('sol3_problem4_given', 'Hypertension and smoking (180 people)',
            (('ANSWERS', 'Task 4'), '(a) 30/49 &#8776; 0.612<br>(b) 48/93 &#8776; 0.516<br><span style="color:#b34739">Divide by the group total, not by 180.</span>', '', [], True, 4.4)],
           colw=165, labw=120)
 
+# ---------------------------------------------------------------- S3 (new scenario): Problem 4, energy drinks and sleep
+table_fig('sol3_problem4_energy_sleep', 'Energy drinks and sleep (180 students)',
+          ['None', 'One', 'Two+'], ['T', 'NT'],
+          [['21', '36', '30'], ['48', '26', '19']], ['69', '62', '49'], ['87', '93'], '180',
+          [(('STEP 1', 'Find the group totals'), 'Add each row and each column. The totals are the sizes of the groups we may condition on.', '', [], True),
+           (('PART A', 'T, given two or more'), '"Given two or more" means: only look at the Two+ column (49 students).', 'P(T | Two+) = 30/49 &#8776; 0.612', [(0, 2), (2, 2)], True, 4.2),
+           (('PART B', 'None, given NT'), '"Given no trouble sleeping" means: only look at the NT row (93 students).', 'P(None | NT) = 48/93 &#8776; 0.516', [(1, 0), (1, 3)], True, 4.2),
+           (('ANSWERS', 'Task 4'), '(a) 30/49 &#8776; 0.612<br>(b) 48/93 &#8776; 0.516<br><span style="color:#b34739">Divide by the group total, not by 180.</span>', '', [], True, 4.4)],
+          colw=165, labw=120)
+
 # ---------------------------------------------------------------- S4: Problems 5 and 6, handoffs
 table_fig('sol4_problems5_6_calls', 'Call types: probabilities',
           ['H<sub>0</sub>', 'H<sub>1</sub>', 'H<sub>2</sub>'], ['Long (L)', 'Brief (B)'],
