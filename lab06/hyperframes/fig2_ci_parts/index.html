@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="10" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="10" style="left:0;top:0;width:1640px;height:740px">
+        <div class="abs card" style="left:40px;top:40px;width:1560px;height:660px"></div>
+        <svg class="abs" style="left:0;top:0" width="1640" height="740"><defs><marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#003e67"/></marker></defs><line x1="140" y1="450" x2="1500" y2="450" stroke="#5f6368" stroke-width="3"/><line x1="140.0" y1="450" x2="140.0" y2="462" stroke="#5f6368" stroke-width="2"/><text x="140.0" y="490" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">166</text><line x1="253.33333333333331" y1="450" x2="253.33333333333331" y2="462" stroke="#5f6368" stroke-width="2"/><text x="253.33333333333331" y="490" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">167</text><line x1="366.66666666666663" y1="450" x2="366.66666666666663" y2="462" stroke="#5f6368" stroke-width="2"/><text x="366.66666666666663" y="490" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">168</text><line x1="480.0" y1="450" x2="480.0" y2="462" stroke="#5f6368" stroke-width="2"/><text x="480.0" y="490" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">169</text><line x1="593.3333333333333" y1="450" x2="593.3333333333333" y2="462" stroke="#5f6368" stroke-width="2"/><text x="593.3333333333333" y="490" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">170</text><line x1="706.6666666666667" y1="450" x2="706.6666666666667" y2="462" stroke="#5f6368" stroke-width="2"/><text x="706.6666666666667" y="490" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">171</text><line x1="820.0" y1="450" x2="820.0" y2="462" stroke="#5f6368" stroke-width="2"/><text x="820.0" y="490" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">172</text><line x1="933.3333333333334" y1="450" x2="933.3333333333334" y2="462" stroke="#5f6368" stroke-width="2"/><text x="933.3333333333334" y="490" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">173</text><line x1="1046.6666666666665" y1="450" x2="1046.6666666666665" y2="462" stroke="#5f6368" stroke-width="2"/><text x="1046.6666666666665" y="490" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">174</text><line x1="1160.0" y1="450" x2="1160.0" y2="462" stroke="#5f6368" stroke-width="2"/><text x="1160.0" y="490" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">175</text><line x1="1273.3333333333335" y1="450" x2="1273.3333333333335" y2="462" stroke="#5f6368" stroke-width="2"/><text x="1273.3333333333335" y="490" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">176</text><line x1="1386.6666666666665" y1="450" x2="1386.6666666666665" y2="462" stroke="#5f6368" stroke-width="2"/><text x="1386.6666666666665" y="490" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">177</text><line x1="1500.0" y1="450" x2="1500.0" y2="462" stroke="#5f6368" stroke-width="2"/><text x="1500.0" y="490" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">178</text><line id="bar" x1="593.3333333333333" y1="330" x2="1046.6666666666665" y2="330" stroke="#1f5f99" stroke-width="12" stroke-linecap="round" stroke-dasharray="3000" stroke-dashoffset="3000"/><line id="lo" x1="593.3333333333333" y1="290" x2="593.3333333333333" y2="450" stroke="#003e67" stroke-width="4" opacity="0"/><line id="hi" x1="1046.6666666666665" y1="290" x2="1046.6666666666665" y2="450" stroke="#003e67" stroke-width="4" opacity="0"/><polygon id="pe" points="820.0,308 842.0,330 820.0,352 798.0,330" fill="#c39a3d" stroke="#fff" stroke-width="3" opacity="0"/><g id="me1" opacity="0"><line x1="597.3333333333333" y1="390" x2="816.0" y2="390" stroke="#c39a3d" stroke-width="3"/><line x1="597.3333333333333" y1="380" x2="597.3333333333333" y2="400" stroke="#c39a3d" stroke-width="3"/><line x1="816.0" y1="380" x2="816.0" y2="400" stroke="#c39a3d" stroke-width="3"/><text x="706.6666666666666" y="422" font-family="Open Sans" font-weight="600" font-size="20" fill="#8a6d1f" text-anchor="middle">margin of error = 2</text></g><g id="me2" opacity="0"><line x1="824.0" y1="390" x2="1042.6666666666665" y2="390" stroke="#c39a3d" stroke-width="3"/><line x1="824.0" y1="380" x2="824.0" y2="400" stroke="#c39a3d" stroke-width="3"/><line x1="1042.6666666666665" y1="380" x2="1042.6666666666665" y2="400" stroke="#c39a3d" stroke-width="3"/><text x="933.3333333333333" y="422" font-family="Open Sans" font-weight="600" font-size="20" fill="#8a6d1f" text-anchor="middle">margin of error = 2</text></g><g id="wd" opacity="0"><line x1="593.3333333333333" y1="540" x2="1046.6666666666665" y2="540" stroke="#003e67" stroke-width="3" marker-start="url(#ar)" marker-end="url(#ar)"/><text x="820.0" y="575" font-family="Montserrat" font-weight="700" font-size="24" fill="#003e67" text-anchor="middle">width = 4 cm</text></g></svg>
+        <div class="lbl abs" style="left:80px;top:66px;color:#003e67;font-size:28px">95% confidence interval for the mean height of students</div>
+        <div id="t0" class="sub abs" style="left:80px;top:112px;opacity:0;font-size:22px">sample mean x̄ = 172 cm,  interval from 170 cm to 174 cm</div>
+        <div id="tpe" class="rt abs" style="left:670.0px;top:244px;opacity:0;font-size:22px;color:#8a6d1f;width:300px;text-align:center">point estimate x̄ = 172</div>
+        <div id="tlo" class="rt abs" style="left:343.33333333333326px;top:260px;opacity:0;font-size:22px;color:#003e67;text-align:right;width:230px;white-space:normal">lower confidence<br>limit = 170</div>
+        <div id="thi" class="rt abs" style="left:1066.6666666666665px;top:260px;opacity:0;font-size:22px;color:#003e67;width:230px;white-space:normal">upper confidence<br>limit = 174</div>
+        <div id="msg" class="rt abs" style="left:80px;top:640px;opacity:0;font-size:23px;color:#003e67">“We are 95% confident that the true mean height μ is between 170 and 174 cm.”</div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.to(["#pe", "#tpe"], { opacity: 1, duration: 0.4 }, 0.5);
+      tl.fromTo("#bar", { attr: { "stroke-dashoffset": 3000 } }, { attr: { "stroke-dashoffset": 0 }, duration: 1.0, ease: "power1.inOut" }, 1.4);
+      tl.to(["#lo", "#tlo"], { opacity: 1, duration: 0.4 }, 2.6);
+      tl.to(["#hi", "#thi"], { opacity: 1, duration: 0.4 }, 3.2);
+      tl.to(["#me1"], { opacity: 1, duration: 0.4 }, 4.2);
+      tl.to(["#me2"], { opacity: 1, duration: 0.4 }, 4.8);
+      tl.to(["#wd"], { opacity: 1, duration: 0.4 }, 5.8);
+      tl.to(["#t0"], { opacity: 1, duration: 0.4 }, 6.6);
+      tl.fromTo(["#msg"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 7.4);
+
+      tl.to({}, { duration: 0.01 }, 9.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
