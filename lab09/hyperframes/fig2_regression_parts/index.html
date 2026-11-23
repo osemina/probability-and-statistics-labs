@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="10" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="10" style="left:0;top:0;width:1640px;height:740px">
+        <div class="abs card" style="left:40px;top:30px;width:1120px;height:680px"></div>
+        <div class="abs card" style="left:1190px;top:30px;width:410px;height:680px"></div>
+        <svg class="abs" style="left:0;top:0" width="1640" height="740"><defs></defs><line x1="120.0" y1="640.0" x2="1100.0" y2="640.0" stroke="#5f6368" stroke-width="3"/><line x1="120.0" y1="640.0" x2="120.0" y2="80.0" stroke="#5f6368" stroke-width="3"/><text x="1100.0" y="680.0" font-family="Montserrat" font-weight="700" font-size="26" fill="#202020" text-anchor="end">X</text><text x="96.0" y="80.0" font-family="Montserrat" font-weight="700" font-size="26" fill="#202020" text-anchor="end">Y</text><g id="pts" opacity="0"><circle cx="198.4" cy="496.3" r="9" fill="#1f5f99" opacity="0.55"/><circle cx="276.8" cy="411.2" r="9" fill="#1f5f99" opacity="0.55"/><circle cx="365.0" cy="490.9" r="9" fill="#1f5f99" opacity="0.55"/><circle cx="423.8" cy="373.8" r="9" fill="#1f5f99" opacity="0.55"/><circle cx="512.0" cy="406.7" r="9" fill="#1f5f99" opacity="0.55"/><circle cx="590.4" cy="379.9" r="9" fill="#1f5f99" opacity="0.55"/><circle cx="668.8" cy="244.1" r="9" fill="#1f5f99" opacity="0.55"/><circle cx="845.2" cy="271.4" r="9" fill="#1f5f99" opacity="0.55"/><circle cx="923.6" cy="254.6" r="9" fill="#1f5f99" opacity="0.55"/><circle cx="1002.0" cy="188.8" r="9" fill="#1f5f99" opacity="0.55"/><circle cx="1060.8" cy="148.6" r="9" fill="#1f5f99" opacity="0.55"/></g><line id="ln" x1="120.0" y1="528.0" x2="1100.0" y2="192.0" stroke="#b34739" stroke-width="5" stroke-dasharray="3000" stroke-dashoffset="3000"/><text id="lnl" opacity="0" x="992.2" y="274.96000000000004" font-family="Open Sans" font-weight="600" font-size="24" fill="#b34739" text-anchor="middle">Y = β₀ + β₁X</text><g id="b0" opacity="0"><circle cx="120.0" cy="528.0" r="11" fill="#c39a3d"/><text x="142.0" y="562.0" font-family="Montserrat" font-weight="700" font-size="24" fill="#8a6d1f">intercept β₀</text></g><g id="b1" opacity="0"><path d="M316.0,460.79999999999995 L472.8,460.79999999999995 L472.8,407.03999999999996" fill="none" stroke="#c39a3d" stroke-width="3.5" stroke-dasharray="9 6"/><text x="394.4" y="490.79999999999995" font-family="Open Sans" font-weight="600" font-size="21" fill="#8a6d1f" text-anchor="middle">+1 unit of X</text><text x="486.8" y="441.91999999999996" font-family="Montserrat" font-weight="700" font-size="23" fill="#8a6d1f">slope β₁</text></g><line id="xi" opacity="0" x1="757.0" y1="640.0" x2="757.0" y2="309.59999999999997" stroke="#5f6368" stroke-width="2" stroke-dasharray="6 6"/><text id="xil" opacity="0" x="757.0" y="674.0" font-family="Montserrat" font-weight="700" font-size="24" fill="#202020" text-anchor="middle">xᵢ</text><circle id="pred" opacity="0" cx="757.0" cy="309.59999999999997" r="12" fill="#b34739"/><circle id="obs" opacity="0" cx="757.0" cy="158.40000000000003" r="12" fill="#003e67"/><g id="err" opacity="0"><line x1="757.0" y1="170.40000000000003" x2="757.0" y2="297.59999999999997" stroke="#c39a3d" stroke-width="5"/><text x="739.0" y="242.0" font-family="Montserrat" font-weight="700" font-size="26" fill="#8a6d1f" text-anchor="end">εᵢ</text></g></svg>
+        <div id="k0" class="step abs" style="left:1220px;top:60px;opacity:0;width:350px;white-space:normal">The parts of the model</div>
+        <div id="k1" class="note abs" style="left:1220px;top:120px;opacity:0;width:350px;white-space:normal"><span style="color:#1f5f99">●</span> observed data points (xᵢ, yᵢ)</div>
+        <div id="k2" class="note abs" style="left:1220px;top:190px;opacity:0;width:350px;white-space:normal"><span style="color:#b34739">━</span> the regression line: the value of Y we expect for each X</div>
+        <div id="k3" class="note abs" style="left:1220px;top:280px;opacity:0;width:350px;white-space:normal"><span style="color:#c39a3d">●</span> β₀: the value of Y on the line when X = 0</div>
+        <div id="k4" class="note abs" style="left:1220px;top:365px;opacity:0;width:350px;white-space:normal"><span style="color:#c39a3d">◢</span> β₁: how much Y changes when X increases by 1 unit</div>
+        <div id="k5" class="note abs" style="left:1220px;top:455px;opacity:0;width:350px;white-space:normal"><span style="color:#b34739">●</span> predicted value on the line<br><span style="color:#003e67">●</span> observed value yᵢ</div>
+        <div id="k6" class="note abs" style="left:1220px;top:560px;opacity:0;width:350px;white-space:normal"><span style="color:#c39a3d">┃</span> εᵢ = observed − predicted: the random error</div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.to(["#pts"], { opacity: 1, duration: 0.6 }, 0.2);
+      tl.fromTo(["#k0", "#k1"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 0.4);
+      tl.fromTo("#ln", { attr: { "stroke-dashoffset": 3000 } }, { attr: { "stroke-dashoffset": 0 }, duration: 1.2, ease: "power1.inOut" }, 1.2);
+      tl.fromTo(["#lnl", "#k2"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 2.0);
+      tl.fromTo(["#b0", "#k3"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 3.2);
+      tl.fromTo(["#b1", "#k4"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 4.4);
+      tl.to(["#xi", "#xil"], { opacity: 1, duration: 0.4 }, 5.6);
+      tl.fromTo(["#pred"], { opacity: 0, y: -8 }, { opacity: 1, y: 0, duration: 0.4 }, 6.0);
+      tl.fromTo(["#obs", "#k5"], { opacity: 0, y: -8 }, { opacity: 1, y: 0, duration: 0.4 }, 6.6);
+      tl.fromTo(["#err", "#k6"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 7.6);
+
+      tl.to({}, { duration: 0.01 }, 9.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>

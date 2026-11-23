@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="8" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="8" style="left:0;top:0;width:1640px;height:740px">
+        <svg style="z-index:1" class="abs" style="left:0;top:0" width="1640" height="740"><defs></defs><line x1="80.0" y1="530.0" x2="510.0" y2="530.0" stroke="#5f6368" stroke-width="3"/><line x1="80.0" y1="530.0" x2="80.0" y2="130.0" stroke="#5f6368" stroke-width="3"/><text x="295.0" y="570.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">X: hours studied</text><text x="66.0" y="116.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="start">Y: exam score</text><g id="ppos" opacity="0"><circle cx="102.0" cy="466.7" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="120.6" cy="438.6" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="153.6" cy="387.7" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="163.4" cy="393.5" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="195.6" cy="350.6" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="214.2" cy="379.5" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="229.8" cy="334.3" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="261.8" cy="309.0" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="273.9" cy="338.5" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="304.7" cy="231.4" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="319.1" cy="263.1" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="341.8" cy="224.2" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="371.3" cy="269.1" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="402.2" cy="251.8" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="409.3" cy="232.6" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="433.7" cy="207.0" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="464.7" cy="158.9" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="493.8" cy="152.3" r="9" fill="#1f5f99" opacity="0.85"/></g><line id="lpos" x1="92.9" y1="445.9" x2="497.1" y2="148.4" stroke="#b34739" stroke-width="5" stroke-dasharray="3000" stroke-dashoffset="3000"/><line x1="615.0" y1="530.0" x2="1045.0" y2="530.0" stroke="#5f6368" stroke-width="3"/><line x1="615.0" y1="530.0" x2="615.0" y2="130.0" stroke="#5f6368" stroke-width="3"/><text x="830.0" y="570.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">X: screen time</text><text x="601.0" y="116.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="start">Y: GPA</text><g id="pneg" opacity="0"><circle cx="644.7" cy="162.6" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="661.5" cy="162.4" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="681.3" cy="155.6" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="709.4" cy="217.0" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="728.8" cy="239.4" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="747.8" cy="308.4" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="780.7" cy="253.3" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="800.9" cy="315.5" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="813.4" cy="317.3" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="842.7" cy="368.9" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="863.9" cy="370.8" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="893.7" cy="372.7" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="912.8" cy="312.4" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="925.6" cy="453.5" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="962.7" cy="454.7" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="966.5" cy="389.3" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="995.2" cy="359.8" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1024.7" cy="413.7" r="9" fill="#1f5f99" opacity="0.85"/></g><line id="lneg" x1="627.9" y1="166.0" x2="1032.1" y2="457.9" stroke="#b34739" stroke-width="5" stroke-dasharray="3000" stroke-dashoffset="3000"/><line x1="1150.0" y1="530.0" x2="1580.0" y2="530.0" stroke="#5f6368" stroke-width="3"/><line x1="1150.0" y1="530.0" x2="1150.0" y2="130.0" stroke="#5f6368" stroke-width="3"/><text x="1365.0" y="570.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">X: shoe size</text><text x="1136.0" y="116.0" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="start">Y: exam score</text><g id="pnon" opacity="0"><circle cx="1179.0" cy="412.1" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1208.7" cy="447.6" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1227.2" cy="228.7" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1237.9" cy="270.3" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1262.4" cy="212.2" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1290.7" cy="405.0" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1299.1" cy="329.9" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1330.8" cy="421.2" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1346.7" cy="268.7" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1367.9" cy="202.8" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1388.9" cy="401.2" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1426.4" cy="205.2" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1434.9" cy="251.0" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1459.7" cy="344.2" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1485.1" cy="487.8" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1517.7" cy="217.5" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1522.9" cy="337.7" r="9" fill="#1f5f99" opacity="0.85"/><circle cx="1553.1" cy="378.2" r="9" fill="#1f5f99" opacity="0.85"/></g><line id="lnon" x1="1162.9" y1="328.8" x2="1567.1" y2="317.9" stroke="#b34739" stroke-width="5" stroke-dasharray="3000" stroke-dashoffset="3000"/></svg>
+        <div class="abs card" style="left:30px;top:30px;width:515px;height:640px"></div>
+        <div id="tpos" class="lbl abs" style="left:60px;top:58px;opacity:0;color:#003e67">Positive relationship</div>
+        <div id="rpos" class="eq abs" style="left:60px;top:600px;opacity:0;color:#b34739">r = 0.96</div>
+        <div class="abs card" style="left:565px;top:30px;width:515px;height:640px"></div>
+        <div id="tneg" class="lbl abs" style="left:595px;top:58px;opacity:0;color:#003e67">Negative relationship</div>
+        <div id="rneg" class="eq abs" style="left:595px;top:600px;opacity:0;color:#b34739">r = -0.90</div>
+        <div class="abs card" style="left:1100px;top:30px;width:515px;height:640px"></div>
+        <div id="tnon" class="lbl abs" style="left:1130px;top:58px;opacity:0;color:#003e67">No relationship</div>
+        <div id="rnon" class="eq abs" style="left:1130px;top:600px;opacity:0;color:#b34739">r = 0.03</div>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(["#tpos"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 0.2);
+      tl.to(["#ppos"], { opacity: 1, duration: 0.8 }, 0.8);
+      tl.fromTo("#lpos", { attr: { "stroke-dashoffset": 3000 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.9, ease: "power1.inOut" }, 1.6);
+      tl.fromTo(["#rpos"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 2.3);
+      tl.fromTo(["#tneg"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 0.5);
+      tl.to(["#pneg"], { opacity: 1, duration: 0.8 }, 2.4000000000000004);
+      tl.fromTo("#lneg", { attr: { "stroke-dashoffset": 3000 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.9, ease: "power1.inOut" }, 3.2);
+      tl.fromTo(["#rneg"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 3.9);
+      tl.fromTo(["#tnon"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 0.8);
+      tl.to(["#pnon"], { opacity: 1, duration: 0.8 }, 4.0);
+      tl.fromTo("#lnon", { attr: { "stroke-dashoffset": 3000 } }, { attr: { "stroke-dashoffset": 0 }, duration: 0.9, ease: "power1.inOut" }, 4.800000000000001);
+      tl.fromTo(["#rnon"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 5.5);
+
+      tl.to({}, { duration: 0.01 }, 7.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
