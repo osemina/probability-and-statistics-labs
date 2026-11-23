@@ -77,6 +77,7 @@ def build(blocks, at, first_page_break=True, leading_newline=True):
         pos = e
     end = pos
     R.append({"updateParagraphStyle": {"range": {"startIndex": start, "endIndex": end}, "paragraphStyle": {"namedStyleType": "NORMAL_TEXT"}, "fields": "namedStyleType"}})
+    R.append({"deleteParagraphBullets": {"range": {"startIndex": start, "endIndex": end}}})   # text appended after a list inherits its bullets
     for s, e, t, k, ex, sp in ranges:
         if k in ('h1', 'h2'):
             R.append({"updateParagraphStyle": {"range": {"startIndex": s, "endIndex": e}, "paragraphStyle": {"namedStyleType": 'HEADING_1' if k == 'h1' else 'HEADING_2'}, "fields": "namedStyleType"}})
