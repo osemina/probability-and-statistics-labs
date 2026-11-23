@@ -132,3 +132,46 @@ for i, (sid, _, _) in enumerate(STATES):
         js += f'      tl.to("#{sid}", {{ opacity: 0, duration: 0.5 }}, {t0 + 1.8});\n'
 js += show('mean', 8.2, 0.4) + show('fin', 8.4, dy=8)
 write('fig3_least_squares', 11, body, js)
+
+
+# ---------------------------------------------------------------- Fig 4: SST = SSR + SSE
+A = Axes(120, 70, 960, 580, 0, 6, 40, 86)
+inner = A.axis([0, 1, 2, 3, 4, 5, 6], lambda t: f'{t:d}', size=20)
+inner += f'<line x1="{A.X(0)}" y1="{A.Y(40)}" x2="{A.X(0)}" y2="{A.Y(86)}" stroke="{MUTED}" stroke-width="3"/>'
+for v in (50, 60, 70, 80):
+    inner += f'<text x="{A.X(0) - 12}" y="{A.Y(v) + 7}" font-family="Open Sans" font-weight="600" font-size="20" fill="{TEXT}" text-anchor="end">{v}</text>'
+inner += f'<text x="{A.X(6)}" y="{A.Y(40) + 62}" font-family="Open Sans" font-weight="600" font-size="22" fill="{TEXT}" text-anchor="end">x: hours studied</text>'
+inner += f'<text x="{A.X(0) + 12}" y="{A.Y(86) + 6}" font-family="Open Sans" font-weight="600" font-size="22" fill="{TEXT}">y: exam score</text>'
+inner += (f'<g id="mline" opacity="0"><line x1="{A.X(0.2)}" y1="{A.Y(63)}" x2="{A.X(5.8)}" y2="{A.Y(63)}" stroke="#9aa7b4" stroke-width="3" stroke-dasharray="10 8"/>'
+          f'<text x="{A.X(5.8)}" y="{A.Y(63) + 30}" font-family="Open Sans" font-weight="700" font-size="22" fill="#6b7a89" text-anchor="end">ȳ = 63</text></g>')
+inner += (f'<g id="rline" opacity="0"><line x1="{A.X(0.2)}" y1="{A.Y(46.2 + 5.6 * 0.2)}" x2="{A.X(5.8)}" y2="{A.Y(46.2 + 5.6 * 5.8)}" stroke="{RED}" stroke-width="5"/>'
+          f'<text x="{A.X(5.75)}" y="{A.Y(46.2 + 5.6 * 5.8) - 14}" font-family="Open Sans" font-weight="700" font-size="22" fill="{RED}" text-anchor="end">ŷ = 46.2 + 5.6x</text></g>')
+xt = 4
+def seg(id_, x, y1, y2, col, lab, side):
+    tx = A.X(x) + (-14 if side == 'l' else 14)
+    anc = 'end' if side == 'l' else 'start'
+    return (f'<g id="{id_}" opacity="0"><line x1="{A.X(x)}" y1="{A.Y(y1)}" x2="{A.X(x)}" y2="{A.Y(y2)}" stroke="{col}" stroke-width="9"/>'
+            '</g>')
+inner += '<g id="pts">' + ''.join(f'<circle cx="{A.X(x)}" cy="{A.Y(y)}" r="11" fill="{NAVY}"/>' for x, y in zip(XS, YS)) + '</g>'
+inner += seg('tot', xt - 0.16, 63, 70, NAVY, 'y − ȳ = 7', 'l')
+inner += seg('exp', xt, 63, 68.6, GOLD, 'ŷ − ȳ = 5.6', 'r')
+inner += seg('une', xt, 68.6, 70, RED, 'y − ŷ = 1.4', 'r')
+# R² bar in the side card
+bx, by, bw = 1220, 520, 350
+inner += (f'<g id="bar" opacity="0"><rect x="{bx}" y="{by}" width="{bw}" height="36" fill="{RED}"/>'
+          f'<rect x="{bx}" y="{by}" width="{bw * 0.98:.1f}" height="36" fill="{GOLD}"/>'
+          f'<text x="{bx + 12}" y="{by + 25}" font-family="Open Sans" font-weight="700" font-size="20" fill="#ffffff">explained 98%</text></g>')
+body = card(40, 30, 1120, 680) + card(1190, 30, 410, 680) + svg(inner)
+body += text('h0', 1220, 60, 'One point: x = 4, y = 70', 'step')
+body += text('t1', 1220, 115, f'<span style="color:{NAVY}">Total:</span> y − ȳ = 7', 'rt', 'font-size:24px')
+body += text('t2', 1220, 165, f'<span style="color:{GOLD}">Explained by the line:</span> ŷ − ȳ = 5.6', 'rt', 'font-size:24px;width:360px;white-space:normal')
+body += text('t3', 1220, 245, f'<span style="color:{RED}">Unexplained (residual):</span> y − ŷ = 1.4', 'rt', 'font-size:24px;width:360px;white-space:normal')
+body += text('h1', 1220, 335, 'Square and add over all points:', 'note', 'width:350px;white-space:normal;font-weight:600')
+body += text('t4', 1220, 410, 'SST = SSR + SSE<br>320 = 313.6 + 6.4', 'rt', f'font-size:26px;color:{NAVY}')
+body += text('fin', 1220, 580, 'R² = 313.6 / 320 = 0.98', 'rt', f'font-size:28px;color:{RED}')
+js = show('mline', 0.3) + show('rline', 0.9) + show('h0', 1.4, dy=8)
+js += show('tot', 2.0) + show('t1', 2.2, dy=8)
+js += show('exp', 3.2) + show('t2', 3.4, dy=8)
+js += show('une', 4.4) + show('t3', 4.6, dy=8)
+js += show(['h1', 't4'], 5.8, dy=8) + show('bar', 7.0, 0.6) + show('fin', 7.4, dy=8)
+write('fig4_sst_split', 10, body, js)
