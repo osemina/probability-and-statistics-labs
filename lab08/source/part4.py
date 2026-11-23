@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+BLOCKS = [
+ ('h1', 'Part 4. Two Proportions'),
+ ('h2', 'Comparing Two Proportions'),
+ ('p', 'Here we compare **proportions from two different populations**. Examples:'),
+ ('ul', ['the proportion of people who prefer coffee in city A vs. city B;',
+         'the proportion of students who passed an exam in two different schools;',
+         'the proportion of customers who clicked on ad version A vs. version B.']),
+ ('p', 'We want to test whether the difference between the two population proportions is **statistically significant**.'),
+ ('h2', 'What Is a Proportion?'),
+ ('p', 'A proportion is simply **a part of a whole**. For example, if 30 out of 50 students passed a test:'),
+ ('eq', r'$$p = \frac{30}{50} = 0.60$$'),
+ ('p', '**Assumptions:** to perform this test, both samples must be large enough: n·p ≥ 5 and n·(1 − p) ≥ 5 in **both** groups.'),
+ ('h2', 'The Test Statistic'),
+ ('p', 'We calculate a **z statistic**, which tells us how many standard errors the difference between the sample proportions is from the hypothesized difference (usually 0). The general formula is:'),
+ ('eq', r'$$z = \frac{(p_X - p_Y) - (\pi_X - \pi_Y)}{\sqrt{\frac{\pi_X(1-\pi_X)}{n_X} + \frac{\pi_Y(1-\pi_Y)}{n_Y}}}$$'),
+ ('p', 'In real problems we usually test H₀: π_{X} − π_{Y} = 0 (the two proportions are equal). Then the test statistic becomes:'),
+ ('eq', r'$$z = \frac{p_X - p_Y}{\sqrt{p_0(1-p_0)\left(\frac{1}{n_X} + \frac{1}{n_Y}\right)}}$$'),
+ ('p', 'where p₀ is the **pooled proportion**, which combines the data of both groups into one common estimate of the true proportion:'),
+ ('eq', r'$$p_0 = \frac{x_X + x_Y}{n_X + n_Y}$$'),
+ ('p', 'To apply the formulas, you need to know:'),
+ ('ul', ['p_{X} = x_{X} / n_{X}: the proportion in sample X;',
+         'p_{Y} = x_{Y} / n_{Y}: the proportion in sample Y;',
+         'p₀: the combined (pooled) proportion;',
+         'n_{X} and n_{Y}: the sample sizes, and x_{X} and x_{Y}: the numbers of “successes”.']),
+ ('p', 'The z statistic tells us how many standard errors the difference is away from 0. We compare it with the critical values from the Z-table (Table 6).'),
+ ('cap', 'Table 6. Decision rules for two proportions.'),
+ ('table', 'T6'),
+ ('box', 'tip', '**Tip:** p₀ combines the two groups: add up all the “successes” and divide by all the observations. It is used only in the denominator, because under H₀ both groups have the same proportion.'),
+ ('box', 'mistake', '**Common mistake:** Averaging the two sample proportions to get p₀. This is correct only when n_{X} = n_{Y}. Always use p₀ = (x_{X} + x_{Y}) / (n_{X} + n_{Y}).'),
+]
+TABLES = {
+ 'T6': [['Test type', 'H₀', 'H₁', 'Reject H₀ if'],
+        ['Left-tailed', 'π_{X} − π_{Y} ≥ 0', 'π_{X} − π_{Y} < 0', 'z < −z_{α}'],
+        ['Right-tailed', 'π_{X} − π_{Y} ≤ 0', 'π_{X} − π_{Y} > 0', 'z > z_{α}'],
+        ['Two-tailed', 'π_{X} − π_{Y} = 0', 'π_{X} − π_{Y} ≠ 0', 'z < −z_{α/2} or z > z_{α/2}']],
+}
+TABLES = {k: {'rows': v, 'widths': [90, 110, 110, 158], 'center': (1, 2, 3), 'boldcol0': True} for k, v in TABLES.items()}
