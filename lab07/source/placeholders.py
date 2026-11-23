@@ -1,7 +1,7 @@
 """Replace [[T#]] / [[F#]] placeholder paragraphs with styled tables and inline images.
 usage: python placeholders.py DOC.json content_module out.json"""
 import json, sys, importlib, re
-from docbuild import u16, col, pt, GREY
+from docbuild import u16, col, pt, GREY, parse
 
 RAW = 'https://raw.githubusercontent.com/osemina/probability-and-statistics-labs/{commit}/lab07/images/{name}'
 
@@ -16,6 +16,13 @@ def paragraphs(doc):
 
 def table_requests(i, rows, widths, center_cols=(), boldcol0=False):
     """Insert table after the paragraph ending at i+1 (i = caption endIndex - 1)."""
+    subs = {}
+    rows = [list(r) for r in rows]
+    for r in range(len(rows)):
+        for c in range(len(rows[r])):
+            t, sp = parse(rows[r][c])
+            rows[r][c] = t
+            subs[(r, c)] = [x for x in sp if x[0] == 'sub']
     R, C = len(rows), len(rows[0])
     reqs = [{"insertTable": {"location": {"index": i}, "rows": R, "columns": C}}]
     base = lambda r, c: i + 4 + r * (2 * C + 1) + 2 * c
@@ -55,6 +62,10 @@ def table_requests(i, rows, widths, center_cols=(), boldcol0=False):
     hs, he = pos[(0, 0)][0], pos[(0, C - 1)][1]
     reqs.append({"updateTextStyle": {"range": {"startIndex": hs, "endIndex": he},
                  "textStyle": {"bold": True}, "fields": "bold"}})
+    for (r, c), sl in subs.items():
+        for _, a, b in sl:
+            p0 = pos[(r, c)][0]
+            reqs.append({"updateTextStyle": {"range": {"startIndex": p0 + a, "endIndex": p0 + b}, "textStyle": {"baselineOffset": "SUBSCRIPT"}, "fields": "baselineOffset"}})
     after = pos[(R - 1, C - 1)][1] + 2
     reqs.append({"updateParagraphStyle": {"range": {"startIndex": after, "endIndex": after + 1},
                  "paragraphStyle": {"spaceAbove": pt(0), "spaceBelow": pt(6), "lineSpacing": 100, "keepWithNext": False, "alignment": "START"},

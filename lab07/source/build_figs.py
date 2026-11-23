@@ -119,3 +119,41 @@ js += f'      tl.to("#al", {{ opacity: 0.35, duration: 0.5 }}, 5.2);\n' + show('
 js += show(['b0', 'b1'], 6.0, dy=8) + show('b2', 6.8, dy=8)
 js += f'      tl.to("#al", {{ opacity: 1, duration: 0.5 }}, 7.8);\n' + show('c0', 8.4, dy=8)
 write('fig3_two_methods', 11, body, js)
+
+
+# ---------------------------------------------------------------- Fig 4: which test should I use?
+def node(id_, x, y, w, h, html, bg, fg, size=24):
+    return (f'        <div id="{id_}" class="abs" style="left:{x}px;top:{y}px;width:{w}px;height:{h}px;opacity:0;border-radius:18px;'
+            f'background:{bg};color:{fg};display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;'
+            f'font:700 {size}px Montserrat;line-height:1.3;padding:0 14px">{html}</div>\n')
+
+
+def edge(id_, x1, y1, x2, y2, label='', lx=0, ly=0):
+    s = f'<g id="{id_}" opacity="0"><path d="M{x1},{y1} L{x1},{(y1 + y2) / 2} L{x2},{(y1 + y2) / 2} L{x2},{y2}" fill="none" stroke="{MUTED}" stroke-width="3"/>'
+    s += f'<path d="M{x2 - 9},{y2 - 14} L{x2},{y2} L{x2 + 9},{y2 - 14}" fill="none" stroke="{MUTED}" stroke-width="3"/>'
+    if label:
+        s += f'<text x="{lx}" y="{ly}" font-family="Open Sans" font-weight="600" font-size="22" fill="{TEXT}" text-anchor="middle">{label}</text>'
+    return s + '</g>'
+
+
+PALEN, GOLDP = '#eef2f6', '#f1e4c6'
+body = card(40, 40, 1560, 660)
+body += node('q1', 620, 80, 400, 90, 'What is the claim about?', NAVY, '#fff')
+body += node('pr', 180, 290, 380, 80, 'a proportion π', PALEN, NAVY)
+body += node('mu', 1080, 290, 380, 80, 'a mean μ', PALEN, NAVY)
+body += node('q2', 1080, 430, 380, 80, 'Is σ known?', NAVY, '#fff')
+body += node('zp', 180, 560, 380, 100, 'z-test for a proportion<span style="font:600 19px Open Sans;margin-top:4px">z = (p − π₀) / σ<sub>p</sub></span>', GOLDP, '#5a4513', 24)
+body += node('zm', 820, 580, 330, 100, 'z-test for a mean<span style="font:600 19px Open Sans;margin-top:4px">σ known</span>', GOLDP, '#5a4513', 24)
+body += node('tm', 1240, 580, 330, 100, 't-test for a mean<span style="font:600 19px Open Sans;margin-top:4px">σ unknown, df = n − 1</span>', GOLDP, '#5a4513', 24)
+inner = edge('e1', 820, 170, 370, 290, 'proportion', 560, 222)
+inner += edge('e2', 820, 170, 1270, 290, 'mean', 1080, 222)
+inner += edge('e3', 1270, 370, 1270, 430)
+inner += edge('e4', 1270, 510, 985, 580, 'yes', 1110, 538)
+inner += edge('e5', 1270, 510, 1405, 580, 'no', 1360, 538)
+inner += edge('e6', 370, 370, 370, 560)
+body = body + svg(inner).replace('<svg ', '<svg style="z-index:0" ', 1)
+js = show('q1', 0.3, dy=8)
+js += show('e1', 1.0, 0.4) + show('pr', 1.3, dy=8) + show('e6', 1.9, 0.4) + show('zp', 2.2, dy=8)
+js += show('e2', 3.2, 0.4) + show('mu', 3.5, dy=8) + show('e3', 4.1, 0.3) + show('q2', 4.3, dy=8)
+js += show('e4', 5.2, 0.4) + show('zm', 5.5, dy=8) + show('e5', 6.3, 0.4) + show('tm', 6.6, dy=8)
+write('fig4_which_test', 10, body, js)

@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1640, height=740" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face { font-family: "Montserrat"; font-weight: 700; src: url("assets/Montserrat-700.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 400; src: url("assets/OpenSans-400.ttf"); }
+      @font-face { font-family: "Open Sans"; font-weight: 600; src: url("assets/OpenSans-600.ttf"); }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1640px; height: 740px; overflow: hidden; background: #ffffff; }
+      #root { position: relative; width: 1640px; height: 740px; font-family: "Open Sans", sans-serif; color: #202020; }
+      .abs { position: absolute; }
+      .lbl { font: 700 26px "Montserrat"; white-space: nowrap; }
+      .step { font: 700 22px "Montserrat"; color: #003e67; white-space: nowrap; }
+      .sub { font: 400 21px "Open Sans"; color: #5f6368; white-space: nowrap; }
+      .rt { font: 600 24px "Open Sans"; color: #202020; }
+      .note { font: 400 23px "Open Sans"; color: #5f6368; line-height: 1.45; }
+      .eq { font: 600 30px "Open Sans"; color: #003e67; white-space: nowrap; }
+      .card { border-radius: 22px; background: #f3f3f0; }
+      
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="10" data-width="1640" data-height="740">
+      <div id="scene" class="clip abs" data-start="0" data-duration="10" style="left:0;top:0;width:1640px;height:740px">
+        <div class="abs card" style="left:40px;top:40px;width:1560px;height:660px"></div>
+        <div id="q1" class="abs" style="left:620px;top:80px;width:400px;height:90px;opacity:0;border-radius:18px;background:#003e67;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:700 24px Montserrat;line-height:1.3;padding:0 14px">What is the claim about?</div>
+        <div id="pr" class="abs" style="left:180px;top:290px;width:380px;height:80px;opacity:0;border-radius:18px;background:#eef2f6;color:#003e67;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:700 24px Montserrat;line-height:1.3;padding:0 14px">a proportion π</div>
+        <div id="mu" class="abs" style="left:1080px;top:290px;width:380px;height:80px;opacity:0;border-radius:18px;background:#eef2f6;color:#003e67;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:700 24px Montserrat;line-height:1.3;padding:0 14px">a mean μ</div>
+        <div id="q2" class="abs" style="left:1080px;top:430px;width:380px;height:80px;opacity:0;border-radius:18px;background:#003e67;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:700 24px Montserrat;line-height:1.3;padding:0 14px">Is σ known?</div>
+        <div id="zp" class="abs" style="left:180px;top:560px;width:380px;height:100px;opacity:0;border-radius:18px;background:#f1e4c6;color:#5a4513;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:700 24px Montserrat;line-height:1.3;padding:0 14px">z-test for a proportion<span style="font:600 19px Open Sans;margin-top:4px">z = (p − π₀) / σ<sub>p</sub></span></div>
+        <div id="zm" class="abs" style="left:820px;top:580px;width:330px;height:100px;opacity:0;border-radius:18px;background:#f1e4c6;color:#5a4513;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:700 24px Montserrat;line-height:1.3;padding:0 14px">z-test for a mean<span style="font:600 19px Open Sans;margin-top:4px">σ known</span></div>
+        <div id="tm" class="abs" style="left:1240px;top:580px;width:330px;height:100px;opacity:0;border-radius:18px;background:#f1e4c6;color:#5a4513;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:700 24px Montserrat;line-height:1.3;padding:0 14px">t-test for a mean<span style="font:600 19px Open Sans;margin-top:4px">σ unknown, df = n − 1</span></div>
+        <svg style="z-index:0" class="abs" style="left:0;top:0" width="1640" height="740"><defs></defs><g id="e1" opacity="0"><path d="M820,170 L820,230.0 L370,230.0 L370,290" fill="none" stroke="#5f6368" stroke-width="3"/><path d="M361,276 L370,290 L379,276" fill="none" stroke="#5f6368" stroke-width="3"/><text x="560" y="222" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">proportion</text></g><g id="e2" opacity="0"><path d="M820,170 L820,230.0 L1270,230.0 L1270,290" fill="none" stroke="#5f6368" stroke-width="3"/><path d="M1261,276 L1270,290 L1279,276" fill="none" stroke="#5f6368" stroke-width="3"/><text x="1080" y="222" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">mean</text></g><g id="e3" opacity="0"><path d="M1270,370 L1270,400.0 L1270,400.0 L1270,430" fill="none" stroke="#5f6368" stroke-width="3"/><path d="M1261,416 L1270,430 L1279,416" fill="none" stroke="#5f6368" stroke-width="3"/></g><g id="e4" opacity="0"><path d="M1270,510 L1270,545.0 L985,545.0 L985,580" fill="none" stroke="#5f6368" stroke-width="3"/><path d="M976,566 L985,580 L994,566" fill="none" stroke="#5f6368" stroke-width="3"/><text x="1110" y="538" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">yes</text></g><g id="e5" opacity="0"><path d="M1270,510 L1270,545.0 L1405,545.0 L1405,580" fill="none" stroke="#5f6368" stroke-width="3"/><path d="M1396,566 L1405,580 L1414,566" fill="none" stroke="#5f6368" stroke-width="3"/><text x="1360" y="538" font-family="Open Sans" font-weight="600" font-size="22" fill="#202020" text-anchor="middle">no</text></g><g id="e6" opacity="0"><path d="M370,370 L370,465.0 L370,465.0 L370,560" fill="none" stroke="#5f6368" stroke-width="3"/><path d="M361,546 L370,560 L379,546" fill="none" stroke="#5f6368" stroke-width="3"/></g></svg>
+
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(["#q1"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 0.3);
+      tl.to(["#e1"], { opacity: 1, duration: 0.4 }, 1.0);
+      tl.fromTo(["#pr"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 1.3);
+      tl.to(["#e6"], { opacity: 1, duration: 0.4 }, 1.9);
+      tl.fromTo(["#zp"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 2.2);
+      tl.to(["#e2"], { opacity: 1, duration: 0.4 }, 3.2);
+      tl.fromTo(["#mu"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 3.5);
+      tl.to(["#e3"], { opacity: 1, duration: 0.3 }, 4.1);
+      tl.fromTo(["#q2"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 4.3);
+      tl.to(["#e4"], { opacity: 1, duration: 0.4 }, 5.2);
+      tl.fromTo(["#zm"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 5.5);
+      tl.to(["#e5"], { opacity: 1, duration: 0.4 }, 6.3);
+      tl.fromTo(["#tm"], { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4 }, 6.6);
+
+      tl.to({}, { duration: 0.01 }, 9.99);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
