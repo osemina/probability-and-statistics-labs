@@ -75,3 +75,47 @@ js += draw('c1', 1.6, 1.2) + show('l1', 2.4)
 js += show('ga', 3.0, 0.6) + show('r0', 3.0, dy=8) + show('ra', 3.4, dy=8) + show('rb', 4.0, dy=8) + show('rp', 4.6, dy=8)
 js += f'      tl.to("#ga", {{ opacity: 0, duration: 0.6 }}, 7.0);\n' + show('gb', 7.2, 0.6) + show('rs', 7.4, dy=8)
 write('fig2_errors_and_power', 11, body, js)
+
+
+# ---------------------------------------------------------------- Fig 3: critical value vs p-value (two-tailed, z = 2.10)
+Z0, ZC = 2.10, 1.96
+A = Axes(90, 150, 1020, 420, -3.6, 3.6, 0, 0.44)
+inner = A.axis([-3, -2, -1, 0, 1, 2, 3], lambda t: f'{t:d}', size=20)
+inner += f'<path id="mid" d="{A.area(phi, -ZC, ZC)}" fill="{MID}" opacity="0"/>'
+g = '<g id="al" opacity="0">'
+for a, b in ((-3.6, -ZC), (ZC, 3.6)):
+    g += f'<path d="{A.area(phi, a, b)}" fill="{GOLD}" opacity="0.95"/>'
+for s in (-1, 1):
+    g += f'<line x1="{A.X(s * ZC)}" y1="{A.Y(0.33)}" x2="{A.X(s * ZC)}" y2="{A.Y(0)}" stroke="{NAVY}" stroke-width="3" stroke-dasharray="8 6"/>'
+    g += f'<text x="{A.X(s * ZC) - s * 8}" y="{A.Y(0.30)}" font-family="Montserrat" font-weight="700" font-size="21" fill="{NAVY}" text-anchor="{"start" if s < 0 else "end"}">{"−" if s < 0 else "+"}1.96</text>'
+g += f'<text x="{A.X(-3.0)}" y="{A.Y(0.07)}" font-family="Open Sans" font-weight="600" font-size="20" fill="#8a6d1f" text-anchor="middle">α/2 = 0.025</text>'
+g += f'<text x="{A.X(3.0)}" y="{A.Y(0.07)}" font-family="Open Sans" font-weight="600" font-size="20" fill="#8a6d1f" text-anchor="middle">α/2 = 0.025</text>'
+g += '</g>'
+inner += g
+g = '<g id="pv" opacity="0">'
+for a, b in ((-3.6, -Z0), (Z0, 3.6)):
+    g += f'<path d="{A.area(phi, a, b)}" fill="{RED}" opacity="0.9"/>'
+g += f'<text x="{A.X(-2.75)}" y="{A.Y(0.13)}" font-family="Open Sans" font-weight="600" font-size="20" fill="{RED}" text-anchor="middle">0.0179</text>'
+g += f'<text x="{A.X(2.75)}" y="{A.Y(0.13)}" font-family="Open Sans" font-weight="600" font-size="20" fill="{RED}" text-anchor="middle">0.0179</text>'
+g += '</g>'
+inner += g
+inner += f'<g id="zl" opacity="0"><line x1="{A.X(Z0)}" y1="{A.Y(0.40)}" x2="{A.X(Z0)}" y2="{A.Y(0)}" stroke="{RED}" stroke-width="4"/>'
+inner += f'<text x="{A.X(Z0) + 10}" y="{A.Y(0.38)}" font-family="Montserrat" font-weight="700" font-size="23" fill="{RED}" text-anchor="start">z = 2.10</text></g>'
+inner += f'<path id="nc" d="{A.curve(phi, -3.6, 3.6)}" fill="none" stroke="{NAVY}" stroke-width="4.5" stroke-dasharray="3000" stroke-dashoffset="3000"/>'
+body = card(40, 40, 1120, 660) + card(1190, 40, 410, 660) + svg(inner)
+body += '        <div class="lbl abs" style="left:80px;top:66px;color:#003e67;font-size:28px">Two-tailed test, α = 0.05, z = 2.10</div>\n'
+body += text('lab', 590, 640, 'z', 'sub', 'font-size:22px')
+body += text('a0', 1220, 70, 'A: Critical value', 'step')
+body += text('a1', 1220, 115, '|z| = 2.10 &gt; 1.96<br>z is in the rejection region', 'note', 'width:350px;white-space:normal')
+body += text('a2', 1220, 200, '→ reject H₀', 'rt', f'color:{RED}')
+body += text('b0', 1220, 290, 'B: p-value', 'step')
+body += text('b1', 1220, 335, 'p = 2 · 0.0179 = 0.0357<br>0.0357 &lt; α = 0.05', 'note', 'width:350px;white-space:normal')
+body += text('b2', 1220, 420, '→ reject H₀', 'rt', f'color:{RED}')
+body += text('c0', 1220, 520, 'Both methods always give the same decision.', 'note', f'width:350px;white-space:normal;color:{NAVY};font-weight:600')
+js = draw('nc', 0.3, 1.2) + show('lab', 1.0) + show('mid', 1.2, 0.5, op=0.55)
+js += show('al', 1.8, 0.5) + show('zl', 2.6, 0.4, dy=-10)
+js += show(['a0', 'a1'], 3.2, dy=8) + show('a2', 4.0, dy=8)
+js += f'      tl.to("#al", {{ opacity: 0.35, duration: 0.5 }}, 5.2);\n' + show('pv', 5.4, 0.6)
+js += show(['b0', 'b1'], 6.0, dy=8) + show('b2', 6.8, dy=8)
+js += f'      tl.to("#al", {{ opacity: 1, duration: 0.5 }}, 7.8);\n' + show('c0', 8.4, dy=8)
+write('fig3_two_methods', 11, body, js)

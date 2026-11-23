@@ -1,7 +1,7 @@
 """Replace [[T#]] / [[F#]] placeholder paragraphs with styled tables and inline images.
 usage: python placeholders.py DOC.json content_module out.json"""
 import json, sys, importlib, re
-from docbuild import u16, col, pt, NAVY, TEXT
+from docbuild import u16, col, pt, GREY
 
 RAW = 'https://raw.githubusercontent.com/osemina/probability-and-statistics-labs/{commit}/lab07/images/{name}'
 
@@ -14,7 +14,7 @@ def paragraphs(doc):
             yield el['startIndex'], el['endIndex'], t
 
 
-def table_requests(i, rows, widths, center_cols=()):
+def table_requests(i, rows, widths, center_cols=(), boldcol0=False):
     """Insert table after the paragraph ending at i+1 (i = caption endIndex - 1)."""
     R, C = len(rows), len(rows[0])
     reqs = [{"insertTable": {"location": {"index": i}, "rows": R, "columns": C}}]
@@ -32,13 +32,13 @@ def table_requests(i, rows, widths, center_cols=()):
     tstart = i + 1
     tend = pos[(R - 1, C - 1)][1] + 2
     loc = {"tableStartLocation": {"index": tstart}}
-    border = {"color": col('#c9d6e3'), "width": pt(0.75), "dashStyle": "SOLID"}
+    border = {"color": col(GREY), "width": pt(0.75), "dashStyle": "SOLID"}
     reqs.append({"updateTableCellStyle": {"tableRange": {"tableCellLocation": {**loc, "rowIndex": 0, "columnIndex": 0}, "rowSpan": R, "columnSpan": C},
                  "tableCellStyle": {"borderTop": border, "borderBottom": border, "borderLeft": border, "borderRight": border,
                                     "paddingTop": pt(4), "paddingBottom": pt(4), "paddingLeft": pt(6), "paddingRight": pt(6), "contentAlignment": "MIDDLE"},
                  "fields": "borderTop,borderBottom,borderLeft,borderRight,paddingTop,paddingBottom,paddingLeft,paddingRight,contentAlignment"}})
     reqs.append({"updateTableCellStyle": {"tableRange": {"tableCellLocation": {**loc, "rowIndex": 0, "columnIndex": 0}, "rowSpan": 1, "columnSpan": C},
-                 "tableCellStyle": {"backgroundColor": col(NAVY)}, "fields": "backgroundColor"}})
+                 "tableCellStyle": {"backgroundColor": col(GREY)}, "fields": "backgroundColor"}})
     for c, w in enumerate(widths):
         reqs.append({"updateTableColumnProperties": {"tableStartLocation": {"index": tstart}, "columnIndices": [c],
                      "tableColumnProperties": {"widthType": "FIXED_WIDTH", "width": pt(w)}, "fields": "widthType,width"}})
@@ -50,12 +50,20 @@ def table_requests(i, rows, widths, center_cols=()):
                                     "indentStart": pt(0), "indentFirstLine": pt(0)},
                  "fields": "spaceAbove,spaceBelow,lineSpacing,alignment,keepWithNext,indentStart,indentFirstLine"}})
     reqs.append({"updateTextStyle": {"range": {"startIndex": first, "endIndex": last},
-                 "textStyle": {"weightedFontFamily": {"fontFamily": "Georgia", "weight": 400}, "fontSize": pt(10), "foregroundColor": col(TEXT), "bold": False},
+                 "textStyle": {"weightedFontFamily": {"fontFamily": "Arial", "weight": 400}, "fontSize": pt(9.5), "bold": False},
                  "fields": "weightedFontFamily,fontSize,foregroundColor,bold"}})
     hs, he = pos[(0, 0)][0], pos[(0, C - 1)][1]
     reqs.append({"updateTextStyle": {"range": {"startIndex": hs, "endIndex": he},
-                 "textStyle": {"weightedFontFamily": {"fontFamily": "Montserrat", "weight": 600}, "fontSize": pt(9.5), "foregroundColor": col('#ffffff'), "bold": True},
-                 "fields": "weightedFontFamily,fontSize,foregroundColor,bold"}})
+                 "textStyle": {"bold": True}, "fields": "bold"}})
+    after = pos[(R - 1, C - 1)][1] + 2
+    reqs.append({"updateParagraphStyle": {"range": {"startIndex": after, "endIndex": after + 1},
+                 "paragraphStyle": {"spaceAbove": pt(0), "spaceBelow": pt(6), "lineSpacing": 100, "keepWithNext": False, "alignment": "START"},
+                 "fields": "spaceAbove,spaceBelow,lineSpacing,keepWithNext,alignment"}})
+    if boldcol0:
+        for r in range(1, R):
+            a, b = pos[(r, 0)]
+            if b > a:
+                reqs.append({"updateTextStyle": {"range": {"startIndex": a, "endIndex": b}, "textStyle": {"bold": True}, "fields": "bold"}})
     for r in range(R):
         for c in center_cols:
             a, b = pos[(r, c)]
@@ -82,7 +90,7 @@ def build(docpath, modname, commit):
             spec = mod.TABLES[key]
             rows, widths, cc = spec['rows'], spec['widths'], spec.get('center', ())
             reqs.append({"deleteContentRange": {"range": {"startIndex": s, "endIndex": e}}})
-            reqs.extend(table_requests(s - 1, rows, widths, cc))
+            reqs.extend(table_requests(s - 1, rows, widths, cc, spec.get('boldcol0', False)))
     return reqs, doc['content']['revisionId'] if 'content' in doc else doc['revisionId']
 
 

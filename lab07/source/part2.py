@@ -28,7 +28,7 @@ BLOCKS = [
          'We usually try to keep β low.']),
  ('h2', 'The Power of a Test'),
  ('p', 'The **power** of a test is the chance that the test correctly rejects a false H₀; in other words, that we detect a real effect when there is one. A powerful test can spot the truth when something really is different:'),
- ('eq', 'Power = 1 − β'),
+ ('eq', r'$$\text{Power} = 1 - \beta$$'),
  ('p', 'Figure 2 shows how α, β and the power are connected. The two errors pull in opposite directions: if we make the test stricter (a smaller α), it becomes harder to reject H₀, so we miss more real effects (a larger β).'),
  ('figure', 'F2'),
  ('cap', 'Figure 2. α, β and the power of a test. The left curve shows the test statistic if H₀ is true, and the right curve if H₁ is true. The gold area is α (Type I error), the dark blue area is β (Type II error) and the rest of the right curve is the power 1 − β. A smaller α moves the critical value to the right and makes β larger.'),
@@ -43,6 +43,6 @@ TABLES = {
  'T4': {'rows': [['', 'Reality: H₀ is true', 'Reality: H₀ is false'],
                  ['You do not reject H₀', 'Correct decision: they are innocent and you let them go (1 − α)', 'Type II error: you let a guilty person go (β)'],
                  ['You reject H₀', 'Type I error: you punish someone who is innocent (α)', 'Correct decision: they are guilty and you punish them (1 − β)']],
-        'widths': [110, 179, 179], 'center': ()},
+        'widths': [110, 179, 179], 'center': (), 'boldcol0': True},
 }
 FIGURES = {'F2': ('fig2_errors_and_power.gif', 468, 211)}

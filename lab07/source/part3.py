@@ -1,0 +1,60 @@
+# -*- coding: utf-8 -*-
+BLOCKS = [
+ ('h1', 'Part 3. The Test Statistic and the Decision'),
+ ('h2', 'The Test Statistic'),
+ ('p', 'The **test statistic** measures how far the sample result is from the claim in H₀, in terms of standard errors. In general:'),
+ ('eq', r'$$\text{test statistic} = \frac{\text{sample statistic} - \text{claimed value}}{\text{standard error}}$$'),
+ ('p', 'Why do we calculate it? The test statistic tells us how many standard errors our sample result is from what H₀ claims:'),
+ ('ul', ['if it is **close to 0**, the sample result matches the claim;',
+         'if it is **large** (positive or negative), our result would be unusual if H₀ were true.']),
+ ('p', 'We use two kinds of test statistics:'),
+ ('ul', ['**z-statistic:** when the population standard deviation σ is known, and when we test a population proportion;',
+         '**t-statistic:** when σ is unknown and we estimate it with the sample standard deviation s (especially for small samples).']),
+ ('p', 'The exact formula for each test is given in Part 4. Once we have the test statistic, there are two ways to make a decision: the critical value approach and the p-value approach.'),
+
+ ('h2', 'Method A: The Critical Value Approach'),
+ ('p', 'In this method, we find a **critical value** from the Z-table (or the t-table). The critical value is the border of the rejection region, and it depends on α and on the type of test. **Decision rule:** reject H₀ if the test statistic falls in the rejection region, that is, if it is more extreme than the critical value:'),
+ ('ul', ['two-tailed test: reject H₀ if z < −z_{α/2} or z > z_{α/2};',
+         'right-tailed test: reject H₀ if z > z_{α};',
+         'left-tailed test: reject H₀ if z < −z_{α}.']),
+ ('p', '**Example:** For α = 0.05 in a right-tailed test, the critical value is z_{0.05} = 1.645, because the area to its right is 0.05. If the test statistic is z = 2.3, it is greater than 1.645, so it falls in the rejection region and we reject H₀. Table 5 lists the critical values you will need most often.'),
+ ('cap', 'Table 5. Critical values of z for the most common significance levels.'),
+ ('table', 'T5'),
+ ('box', 'tip', '**Tip:** For the t-test, the critical values come from the t-table and also depend on the degrees of freedom df = n − 1. As n grows, the t critical values get closer and closer to the z critical values in Table 5.'),
+
+ ('h2', 'Method B: The p-Value Approach'),
+ ('p', 'The **p-value** is the probability of getting a result as extreme as yours (or even more extreme), if H₀ is true. A small p-value means that our result would be very surprising if H₀ were true. **Decision rule:**'),
+ ('ul', ['if **p < α**, reject H₀;',
+         'if **p ≥ α**, fail to reject H₀.']),
+ ('p', 'How we calculate the p-value from the test statistic z depends on the type of test:'),
+ ('ul', ['left-tailed test: p = P(Z < z);',
+         'right-tailed test: p = P(Z > z) = 1 − P(Z < z);',
+         'two-tailed test: p = 2 · P(Z > |z|).']),
+ ('p', 'Why use the p-value? It gives the exact probability of your result, which makes it easy to compare with different α levels: one p-value answers the question for α = 0.10, 0.05 and 0.01 at the same time.'),
+
+ ('h2', 'Both Methods Give the Same Decision'),
+ ('p', '**Example:** A coffee machine should fill cups with 250 ml of coffee on average. A two-tailed test (H₀: μ = 250, H₁: μ ≠ 250) with α = 0.05 gives the test statistic z = 2.10.'),
+ ('ul', ['**Critical value approach:** the critical values are ±1.96. Because 2.10 > 1.96, z falls in the rejection region, so we reject H₀.',
+         '**p-value approach:** p = 2 · P(Z > 2.10) = 2 · 0.0179 = 0.0357. Because 0.0357 < 0.05, we reject H₀.']),
+ ('p', 'Both methods lead to the same decision: the machine does not fill 250 ml on average. Figure 3 shows both methods on the same curve.'),
+ ('figure', 'F3'),
+ ('cap', 'Figure 3. Two ways to decide in a two-tailed test with α = 0.05 and z = 2.10. Critical value approach: z lies beyond the critical value 1.96. p-value approach: the p-value (0.036, red) is smaller than α (0.05, gold).'),
+ ('box', 'mistake', '**Common mistake:** Reading the p-value as “the probability that H₀ is true”. The p-value is calculated **assuming** that H₀ is true: it tells us how surprising our data would be in that case.'),
+
+ ('h2', 'The Five Steps of a Hypothesis Test'),
+ ('p', 'Every task in this lab follows the same five steps:'),
+ ('ol', ['**State the hypotheses.** Write H₀ (with =, ≤ or ≥) and H₁ (with ≠, > or <), and decide whether the test is two-tailed, right-tailed or left-tailed.',
+         '**Choose the significance level α.** Usually α = 0.05, unless the task says otherwise.',
+         '**Calculate the test statistic.** Use z or t, depending on what is known (see Part 4).',
+         '**Find the critical value or the p-value.** Use the Z-table, the t-table or Excel.',
+         '**Make a decision and write a conclusion.** Reject or fail to reject H₀, and explain what this means in the words of the problem.']),
+]
+
+TABLES = {
+ 'T5': {'rows': [['α', 'Two-tailed', 'Right-tailed', 'Left-tailed'],
+                 ['0.10', '±1.645', '1.282', '−1.282'],
+                 ['0.05', '±1.96', '1.645', '−1.645'],
+                 ['0.01', '±2.576', '2.326', '−2.326']],
+        'widths': [78, 130, 130, 130], 'center': (0, 1, 2, 3)},
+}
+FIGURES = {'F3': ('fig3_two_methods.gif', 468, 211)}
