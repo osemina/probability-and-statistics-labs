@@ -11,7 +11,7 @@ def rgb(h):
     return {"red": round(int(h[0:2], 16) / 255, 4), "green": round(int(h[2:4], 16) / 255, 4), "blue": round(int(h[4:6], 16) / 255, 4)}
 
 
-GOLD, RED, GREY, SHADE, GREEN = '#c3a45d', '#b3473a', '#e6e6e6', '#f7f7f5', '#1e7b34'
+GOLD, RED, GREY, SHADE, GREEN = '#c3a45d', '#b3473a', '#e6e6e6', '#f7f7f5', '#1c7d3b'
 def u16(s): return len(s.encode('utf-16-le')) // 2
 def col(h): return {"color": {"rgbColor": rgb(h)}}
 def pt(x): return {"magnitude": x, "unit": "PT"}
@@ -48,7 +48,7 @@ def build(blocks, at, first_page_break=True, leading_newline=True):
     paras = []
     for b in blocks:
         k = b[0]
-        if k in ('h1', 'h2', 'p', 'cap', 'box', 'eq'):
+        if k in ('h1', 'h2', 'p', 'cap', 'box', 'eq', 'ans'):
             t, sp = parse(b[-1])
             ex = b[1] if k == 'box' else None
             if k == 'p' and b[-1].startswith('**Example:**'):
@@ -117,6 +117,8 @@ def build(blocks, at, first_page_break=True, leading_newline=True):
             ps.update(spaceBelow=pt(4), alignment="START", indentStart=pt(72), indentFirstLine=pt(54))
         elif k == 'eq':
             ps.update(alignment="CENTER", spaceAbove=pt(4), spaceBelow=pt(8))
+        elif k == 'ans':   # green bold answer line (Solutions)
+            TS.append({"updateTextStyle": {"range": {"startIndex": s, "endIndex": e - 1}, "textStyle": {"bold": True, "foregroundColor": col(GREEN)}, "fields": "bold,foregroundColor"}})
         elif k == 'ph':
             ps.update(alignment="CENTER", spaceAbove=pt(6), spaceBelow=pt(0), keepWithNext=(ex == 'figure'))
         f = ','.join(list(ps.keys()) + [x for x in RESET if x not in ps and not (k in ('ul', 'ol') and x.startswith('indent'))])
