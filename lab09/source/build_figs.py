@@ -88,3 +88,47 @@ js += show(['b0', 'k3'], 3.2, dy=8) + show(['b1', 'k4'], 4.4, dy=8)
 js += show(['xi', 'xil'], 5.6, 0.4) + show('pred', 6.0, dy=-8) + show(['obs', 'k5'], 6.6, dy=-8)
 js += show(['err', 'k6'], 7.6, dy=8)
 write('fig2_regression_parts', 10, body, js)
+
+
+# ---------------------------------------------------------------- Fig 3: least squares - the line with the smallest SSE
+XS, YS = [1, 2, 3, 4, 5], [52, 58, 61, 70, 74]
+A = Axes(120, 70, 960, 580, 0, 6, 40, 86)
+pxu = 580 / (86 - 40)          # pixels per point on the Y axis
+inner = A.axis([0, 1, 2, 3, 4, 5, 6], lambda t: f'{t:d}', size=20)
+inner += f'<line x1="{A.X(0)}" y1="{A.Y(40)}" x2="{A.X(0)}" y2="{A.Y(86)}" stroke="{MUTED}" stroke-width="3"/>'
+for v in (50, 60, 70, 80):
+    inner += f'<text x="{A.X(0) - 12}" y="{A.Y(v) + 7}" font-family="Open Sans" font-weight="600" font-size="20" fill="{TEXT}" text-anchor="end">{v}</text>'
+inner += f'<text x="{A.X(6)}" y="{A.Y(40) + 62}" font-family="Open Sans" font-weight="600" font-size="22" fill="{TEXT}" text-anchor="end">x: hours studied</text>'
+inner += f'<text x="{A.X(0) + 12}" y="{A.Y(86) + 6}" font-family="Open Sans" font-weight="600" font-size="22" fill="{TEXT}">y: exam score</text>'
+STATES = [('s0', 0.0, '#9aa7b4'), ('s1', 3.0, '#9aa7b4'), ('s2', 8.0, '#9aa7b4'), ('s3', 5.6, RED)]
+for sid, b1, colr in STATES:
+    b0 = 63 - b1 * 3
+    g = f'<g id="{sid}" opacity="0">'
+    for x, y in zip(XS, YS):
+        yh = b0 + b1 * x
+        e = y - yh
+        side = abs(e) * pxu
+        top = A.Y(max(y, yh))
+        g += f'<rect x="{A.X(x)}" y="{top:.1f}" width="{side:.1f}" height="{side:.1f}" fill="{GOLD}" opacity="0.30" stroke="{GOLD}" stroke-width="2"/>'
+        g += f'<line x1="{A.X(x)}" y1="{A.Y(y)}" x2="{A.X(x)}" y2="{A.Y(yh)}" stroke="{GOLD}" stroke-width="3.5"/>'
+    g += f'<line x1="{A.X(0.2)}" y1="{A.Y(b0 + b1 * 0.2)}" x2="{A.X(5.8)}" y2="{A.Y(b0 + b1 * 5.8)}" stroke="{colr}" stroke-width="5"/>'
+    g += '</g>'
+    inner += g
+inner += '<g id="pts">' + ''.join(f'<circle cx="{A.X(x)}" cy="{A.Y(y)}" r="11" fill="{NAVY}"/>' for x, y in zip(XS, YS)) + '</g>'
+inner += f'<circle id="mean" opacity="0" cx="{A.X(3)}" cy="{A.Y(63)}" r="12" fill="#ffffff" stroke="{RED}" stroke-width="4"/>'
+body = card(40, 30, 1120, 680) + card(1190, 30, 410, 680) + svg(inner)
+body += text('h0', 1220, 60, 'Try different lines', 'step')
+body += text('h1', 1220, 105, 'Each gold square has area e² (residual²).<br>SSE = the total area of the squares.', 'note', 'width:350px;white-space:normal')
+for i, (sid, b1, _) in enumerate(STATES):
+    sse = sum((y - (63 - b1 * 3) - b1 * x) ** 2 for x, y in zip(XS, YS))
+    col = RED if i == 3 else NAVY
+    body += text(f'v{i}', 1220, 275 + i * 75, f'b₁ = {b1:g}: &nbsp; SSE = {sse:.1f}', 'rt', f'color:{col};font-size:26px')
+body += text('fin', 1220, 590, 'The smallest SSE: the least squares line ŷ = 46.2 + 5.6x. It passes through (x̄, ȳ) = (3, 63).', 'note', f'width:350px;white-space:normal;color:{RED};font-weight:600')
+js = show(['h0', 'h1'], 0.2, dy=8)
+for i, (sid, _, _) in enumerate(STATES):
+    t0 = 0.9 + i * 2.2
+    js += show(sid, t0, 0.5) + show(f'v{i}', t0 + 0.3, dy=8)
+    if i < 3:
+        js += f'      tl.to("#{sid}", {{ opacity: 0, duration: 0.5 }}, {t0 + 1.8});\n'
+js += show('mean', 8.2, 0.4) + show('fin', 8.4, dy=8)
+write('fig3_least_squares', 11, body, js)
