@@ -100,7 +100,8 @@ def build(docpath, modname, commit):
         else:
             spec = mod.TABLES[key]
             rows, widths, cc = spec['rows'], spec['widths'], spec.get('center', ())
-            reqs.append({"deleteContentRange": {"range": {"startIndex": s, "endIndex": e}}})
+            last = (k == len(paras) - 1)   # the body's last paragraph cannot be deleted: remove its text only
+            reqs.append({"deleteContentRange": {"range": {"startIndex": s, "endIndex": e - 1 if last else e}}})
             reqs.extend(table_requests(s - 1, rows, widths, cc, spec.get('boldcol0', False)))
     return reqs, doc['content']['revisionId'] if 'content' in doc else doc['revisionId']
 

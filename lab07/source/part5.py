@@ -1,0 +1,71 @@
+# -*- coding: utf-8 -*-
+BLOCKS = [
+ ('h1', 'Part 5. Tasks'),
+ ('p', 'Solve each task by hand, following the five steps from Part 3 and using the Z- or t-table, and then check your answers in Excel with the functions given under the task (see also Table 7). Tasks 6–8 are extra practice for students who finish early. The tasks you do not finish in class can be completed at home.'),
+
+ ('h2', 'Task 1. Do Students Really Sleep 7 Hours?'),
+ ('p', 'A university mental health advisor claims that students in Sarajevo sleep on average **7 hours** per night. A research team wants to test this claim in order to introduce new measures to improve student life. They randomly select **40 students** and ask them how many hours they sleep on average during a night. The sample mean is x̄ = 6.6 hours, and the population standard deviation is known: σ = 1.2 hours. Using α = 0.05, test the claim that students sleep a different amount than 7 hours per night.'),
+ ('al', ['Write H₀ and H₁. Which type of test is this, and why do we use z?',
+         'Calculate the test statistic and find the critical value.',
+         'Find the p-value, make a decision and write a conclusion in words.']),
+ ('p', '**Excel:** =NORM.S.INV(0.975) gives the critical value, and =2*NORM.S.DIST(z, TRUE) gives the p-value (here z is negative).'),
+
+ ('h2', 'Task 2. Have Phone Bills Really Gone Up?'),
+ ('p', 'A phone company manager thinks that customers’ monthly cell phone bills have increased and now average **more than $52** per month. The company wants to test this claim. A random sample of **64 customers** gives a sample mean of x̄ = $53.10. Assume that the population standard deviation is known, σ = $10, and use α = 0.10.'),
+ ('al', ['Write H₀ and H₁. Which type of test is this?',
+         'Calculate the test statistic and find the critical value z_{0.10}.',
+         'Make a decision. Do the data support the manager’s claim that the bills have increased?']),
+ ('p', '**Excel:** =NORM.S.INV(0.90) gives the critical value, and =1-NORM.S.DIST(z, TRUE) gives the p-value.'),
+
+ ('h2', 'Task 3. Do Students Game More or Less?'),
+ ('p', 'A gaming platform reports that its players aged 18–25 play **3 hours** per day on average, with a standard deviation of σ = 0.8 hours. A student project team wants to know whether IBU students play a different amount, so they survey a random sample of **100 students**. The sample mean is x̄ = 2.82 hours per day. Test at α = 0.05 whether IBU students play a different amount than the platform’s average.'),
+ ('al', ['Write H₀ and H₁ and state the type of test.',
+         'Calculate the test statistic and the p-value.',
+         'Make a decision and write a conclusion in words.']),
+ ('p', '**Excel:** =NORM.S.INV(0.975) gives the critical value, and =2*NORM.S.DIST(z, TRUE) gives the p-value (here z is negative).'),
+
+ ('h2', 'Task 4. Does the Battery Tool Really Work?'),
+ ('p', 'A group of computer science students found a free app that promises to “boost” laptop batteries during long coding sessions. According to the app’s website, a laptop running the app lasts **168 minutes** on average while you code. The students are skeptical, so they write a small script that logs battery life and test the app on **25 different laptops** during real programming sessions. They get:'),
+ ('ul', ['sample mean battery life: x̄ = 172.5 minutes;',
+         'sample standard deviation: s = 15.4 minutes.']),
+ ('p', 'Battery life is approximately normally distributed. At α = 0.05, test whether the true average battery life with the app is **different** from the 168 minutes claimed on the website.'),
+ ('al', ['Write H₀ and H₁. Which type of test is this, and why do we use t instead of z?',
+         'Calculate the test statistic and find the critical value.',
+         'Make a decision and write a conclusion in words. Can the students say that the website is wrong?']),
+ ('p', '**Excel:** =T.INV.2T(0.05, 24) gives the critical value, and =T.DIST.2T(ABS(t), 24) gives the p-value.'),
+
+ ('h2', 'Task 5. Do Students Use AI for Their Homework?'),
+ ('p', 'The faculty claims that **no more than 30%** of students use AI tools (such as ChatGPT) to write their homework. A student newspaper doubts this and runs an anonymous survey of a random sample of **150 students**: **57** of them say that they use AI tools to write their homework.'),
+ ('al', ['Find the sample proportion p, and check that the sample is large enough to use the normal approximation.',
+         'Write H₀ and H₁ and test the faculty’s claim at α = 0.05.',
+         'Find the p-value. What can the student newspaper write in its article?']),
+ ('p', '**Excel:** =SQRT(0.3*0.7/150) gives the standard error, and =1-NORM.S.DIST(z, TRUE) gives the p-value.'),
+
+ ('h2', 'Extra Practice (If You Have Time Left)'),
+ ('p', 'Tasks 6–8 practise the same ideas with a left-tailed test, a stricter significance level and a two-tailed t-test.'),
+
+ ('h2', 'Task 6. Does Your Smartwatch Keep You Moving?'),
+ ('p', 'A smartwatch company claims that its users walk **at least 8000 steps** per day on average. The population standard deviation is known: σ = 1800 steps. A random sample of **36 students** who wear the watch gives x̄ = 7350 steps per day. Use α = 0.05 to test the company’s claim.'),
+ ('al', ['Write H₀ and H₁. Which type of test is this?',
+         'Calculate the test statistic and the p-value.',
+         'Make a decision. Do the data support the company’s claim?']),
+ ('p', '**Hint:** σ is known, so use the z-test for the mean. A claim of “at least” goes into H₀: H₀: μ ≥ 8000, H₁: μ < 8000, so the test is left-tailed.'),
+ ('p', '**Excel:** =NORM.S.DIST(z, TRUE) gives the p-value of a left-tailed z-test.'),
+
+ ('h2', 'Task 7. Are Code Deployments Too Buggy?'),
+ ('p', 'An IT company claims that **no more than 8%** of its code deployments result in critical bugs. In a recent audit of **200 deployments**, **21** were found to have critical bugs. Use α = 0.01 to test whether more than 8% of the deployments have critical bugs.'),
+ ('al', ['Find the sample proportion p and check that the sample is large enough.',
+         'Write H₀ and H₁, calculate the test statistic and make a decision at α = 0.01.',
+         'Would the decision change at α = 0.10? Explain using the p-value.']),
+ ('p', '**Hint:** Use the z-test for a proportion. H₀: π ≤ 0.08, H₁: π > 0.08, so the test is right-tailed.'),
+ ('p', '**Excel:** =NORM.S.INV(0.99) gives z_{0.01}, and =1-NORM.S.DIST(z, TRUE) gives the p-value.'),
+
+ ('h2', 'Task 8. How Long Is a Hit Song?'),
+ ('p', 'A music blog claims that today’s hit songs last **3 minutes** on average. A student picks a random sample of **25 songs** from the Top 50 list of a streaming platform and finds a mean length of x̄ = 3.4 minutes with a sample standard deviation of s = 0.9 minutes. Song lengths are approximately normally distributed. Using α = 0.10, test whether the average length of hit songs is different from 3 minutes.'),
+ ('al', ['Write H₀ and H₁. Why do we use t?',
+         'Calculate the test statistic and find the critical value t_{0.05, 24}.',
+         'Make a decision and write a conclusion in words.']),
+ ('p', '**Hint:** σ is unknown and the sample is small, so use the t-test with df = n − 1. H₀: μ = 3, H₁: μ ≠ 3, so the test is two-tailed.'),
+ ('p', '**Excel:** =T.INV.2T(0.10, 24) gives the critical value, and =T.DIST.2T(ABS(t), 24) gives the p-value.'),
+]
+TABLES, FIGURES = {}, {}

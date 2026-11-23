@@ -58,6 +58,8 @@ def build(blocks, at, first_page_break=True, leading_newline=True):
             paras.append((t, k, ex, sp))
         elif k in ('ul', 'ol', 'al'):
             for j, it in enumerate(b[1]):
+                if k == 'al':   # lettered sub-items as text, laid out like the Lab 6 a) b) c) lists
+                    it = 'abcdefgh'[j] + ')	' + it
                 t, sp = parse(it)
                 paras.append((t, k, ('last' if j == len(b[1]) - 1 else 'mid', id(b)), sp))
         elif k in ('table', 'figure'):
@@ -109,13 +111,15 @@ def build(blocks, at, first_page_break=True, leading_newline=True):
         elif k == 'box':
             ps.update(spaceAbove=pt(6), spaceBelow=pt(6), shading={"backgroundColor": col(SHADE)},
                       borderLeft={"color": col(BOXCOL[ex]), "width": pt(3), "padding": pt(10), "dashStyle": "SOLID"})
-        elif k in ('ul', 'ol', 'al'):
+        elif k in ('ul', 'ol'):
             ps.update(spaceBelow=pt(4), alignment="START")
+        elif k == 'al':
+            ps.update(spaceBelow=pt(4), alignment="START", indentStart=pt(72), indentFirstLine=pt(54))
         elif k == 'eq':
             ps.update(alignment="CENTER", spaceAbove=pt(4), spaceBelow=pt(8))
         elif k == 'ph':
             ps.update(alignment="CENTER", spaceAbove=pt(6), spaceBelow=pt(0), keepWithNext=(ex == 'figure'))
-        f = ','.join(list(ps.keys()) + [x for x in RESET if x not in ps and not (k in ('ul', 'ol', 'al') and x.startswith('indent'))])
+        f = ','.join(list(ps.keys()) + [x for x in RESET if x not in ps and not (k in ('ul', 'ol') and x.startswith('indent'))])
         prev = R[-1].get("updateParagraphStyle") if R else None
         if prev and prev["paragraphStyle"] == ps and prev["fields"] == f and prev["range"]["endIndex"] == s and k != 'box':
             prev["range"]["endIndex"] = e
@@ -130,7 +134,7 @@ def build(blocks, at, first_page_break=True, leading_newline=True):
     R.extend(TS)
     runs = []
     for s, e, t, k, ex, sp in ranges:
-        if k in ('ul', 'ol', 'al'):
+        if k in ('ul', 'ol'):
             if runs and runs[-1][3] == ex[1]:
                 runs[-1][1] = e
             else:
