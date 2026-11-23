@@ -49,7 +49,7 @@ def build(blocks, at, first_page_break=True, leading_newline=True):
     for b in blocks:
         k = b[0]
         if k in ('h1', 'h2', 'p', 'cap', 'box', 'eq', 'ans'):
-            t, sp = parse(b[-1])
+            t, sp = (b[-1], []) if k == 'eq' else parse(b[-1])
             ex = b[1] if k == 'box' else None
             if k == 'p' and b[-1].startswith('**Example:**'):
                 k, ex = 'box', 'ex'
