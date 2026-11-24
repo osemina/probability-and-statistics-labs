@@ -193,7 +193,6 @@ def build(solutions):
 
     def setup(ws):
         ws.set_column('A:A', 2); ws.set_column('B:B', 19); ws.set_column('C:J', 13); ws.set_column('K:K', 3); ws.set_column('L:S', 10)
-        ws.hide_gridlines(2)
 
     def textbox(ws, row, col, text, width, h, fill='#FFFFFF', line=BOX_LINE, bold=False, color='#202020', size=10, dash=False):
         ln = {'color': line, 'width': 1.25 if dash else 1}
